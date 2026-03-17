@@ -61,7 +61,7 @@ export default function Footer() {
               </motion.a>
               <div className="relative h-12">
                 <svg
-                  className="absolute left-24 top-0 h-16 w-24 rotate-3 -scale-x-100 text-[#2F5FB3]"
+                  className="absolute left-20 top-2 h-16 w-24 -rotate-85 text-[#2F5FB3]"
                   viewBox="0 0 120 80"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
