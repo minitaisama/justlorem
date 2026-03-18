@@ -47,7 +47,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative left-1/2 -translate-x-1/2 w-screen py-16 md:pt-40 md:pb-20 bg-[#0a0f1a]"
+      className="relative bg-[#0a0f1a] py-16 md:pt-40 md:pb-20"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-8">

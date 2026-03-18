@@ -55,7 +55,7 @@ export default function OurWork() {
   return (
     <section
       id="work"
-      className="relative left-1/2 -translate-x-1/2 w-screen py-16 md:py-32 bg-[#0a0f1a]"
+      className="relative bg-[#0a0f1a] py-16 md:py-32"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,95,179,0.18),transparent_55%)] opacity-70" />
       <div className="max-w-[1400px] mx-auto w-full px-6 relative z-10">

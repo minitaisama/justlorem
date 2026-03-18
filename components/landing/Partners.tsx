@@ -12,7 +12,7 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="relative left-1/2 -translate-x-1/2 w-screen py-12 md:py-20 bg-[#030712] overflow-hidden">
+    <section className="relative overflow-hidden bg-[#030712] py-12 md:py-20">
       {/* Gradient Line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-[linear-gradient(90deg,transparent,rgba(168,200,255,0.9),transparent)] animate-line-sweep-rtl" />
 
