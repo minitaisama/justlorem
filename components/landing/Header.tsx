@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 
@@ -10,11 +10,19 @@ const navLinks = [
   { name: "Our Work", href: "#work" },
   { name: "Our Service", href: "#services" },
   { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "#footer" },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   const handleSmoothScroll = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -40,7 +48,7 @@ export default function Header() {
     >
       <nav className="flex items-center justify-between gap-8 max-w-[1400px] mx-auto w-full px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
+        <Link href="/" className="flex items-center gap-2 shrink-0 cursor-default">
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}
@@ -95,33 +103,61 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="lg:hidden mt-4 pt-4 border-t border-white/10"
-        >
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={(event) => handleSmoothScroll(event, link.href)}
-                className="text-sm font-display uppercase tracking-[0.25em] text-slate-200 hover:text-[#2F5FB3] transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[#2F5FB3] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+        <div className="lg:hidden fixed inset-0 z-50">
+          <motion.button
+            type="button"
+            aria-label="Close menu overlay"
+            className="absolute inset-0 bg-black/60"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setIsOpen(false)}
+          />
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="absolute right-0 top-0 h-full w-[80%] max-w-xs bg-[#030712] border-l border-white/10 px-6 pt-24 pb-10"
+          >
+            <div className="absolute left-0 top-0 w-full px-6 py-5 flex items-center justify-between">
+              <Image
+                src="/images/logo.png"
+                alt="Lorem Logo"
+                width={130}
+                height={44}
+                className="h-9 w-auto object-contain"
+                priority
+              />
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-2 text-white"
+                aria-label="Close menu"
               >
-                {link.name}
+                <X size={22} />
+              </button>
+            </div>
+            <div className="flex flex-col gap-6 text-right items-end">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={(event) => handleSmoothScroll(event, link.href)}
+                  className="text-sm font-display uppercase tracking-[0.25em] text-slate-200 hover:text-[#2F5FB3] transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[#2F5FB3] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link
+                href="https://calendar.app.google/AC9XWNQLaUhp3yMq9"
+                className="text-sm font-display uppercase tracking-[0.25em] text-white hover:text-[#2F5FB3] transition-colors duration-300"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book a Call
               </Link>
-            ))}
-            <Link
-              href="https://calendar.app.google/AC9XWNQLaUhp3yMq9"
-              className="text-sm font-display uppercase tracking-[0.25em] text-white hover:text-[#2F5FB3] transition-colors duration-300"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Book a Call
-            </Link>
-          </div>
-        </motion.div>
+            </div>
+          </motion.div>
+        </div>
       )}
     </motion.header>
   );

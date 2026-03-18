@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  { name: "Avocadodao", href: "https://www.avocadodao.io/" },
-  { name: "SEI", href: "https://www.sei.io/" },
-  { name: "B3", href: "https://www.b3.fun/" },
-  { name: "Iota", href: "https://www.iota.org/" },
-  { name: "DDC Holdings", href: "https://hyperlaunch.xyz/" },
+  { name: "Avocadodao", href: "https://www.avocadodao.io/", logo: "/partners/avocado-logo.png" },
+  { name: "SEI", href: "https://www.sei.io/", logo: "/partners/sei-logo.png" },
+  { name: "B3", href: "https://www.b3.fun/", logo: "/partners/b3-logo.png" },
+  { name: "Iota", href: "https://www.iota.org/", logo: "/partners/iota-logo.png" },
+  { name: "DDC Holdings", href: "https://hyperlaunch.xyz/", logo: "/partners/ddc-logo.png" },
 ];
 
 export default function Partners() {
@@ -51,9 +51,16 @@ export default function Partners() {
                 show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
               }}
             >
-              <span className="text-xl md:text-2xl font-display text-white/70 hover:text-white transition-colors duration-300 whitespace-nowrap">
-                {partner.name}
-              </span>
+              <img
+                src={partner.logo}
+                alt={`${partner.name} logo`}
+                className={`h-9 md:h-11 w-auto opacity-85 hover:opacity-100 transition-all duration-300 ${
+                  partner.name === "B3"
+                    ? ""
+                    : "[filter:brightness(0)_invert(1)] hover:[filter:brightness(0)_invert(1)]"
+                }`}
+                loading="lazy"
+              />
             </motion.a>
           ))}
         </motion.div>

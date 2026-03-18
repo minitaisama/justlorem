@@ -19,25 +19,40 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: 'LOREM | Creative Digital Agency',
-  description: 'Where ideas become impact. We help brands grow through thoughtful strategy, strong design, and meaningful digital experiences.',
+  metadataBase: new URL('https://www.jusrlorem.com'),
+  title: 'Lorem — Design. Develop. Deliver.',
+  description: 'Lorem is a technology company specializing in web, app, and product development. We design, develop, and deliver scalable digital experiences.',
   generator: 'v0.app',
-  keywords: ['digital agency', 'branding', 'web design', 'UI/UX', 'creative agency'],
+  keywords: [
+    'Lorem',
+    'web development',
+    'app development',
+    'software company',
+    'product development',
+    'web3',
+    'UI UX',
+    'digital agency',
+  ],
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Lorem — Design. Develop. Deliver.',
+    description: 'We build web, apps, and digital products that scale.',
+    type: 'website',
+    url: 'https://www.jusrlorem.com/',
+    siteName: 'Lorem',
+    images: ['/og-image.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.jusrlorem.com/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lorem — Design. Develop. Deliver.',
+    description: 'We build web, apps, and digital products that scale.',
+    images: ['/og-image.jpg'],
+  },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: [{ url: '/favicon.png', type: 'image/png' }],
     apple: '/apple-icon.png',
   },
 }

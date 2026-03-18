@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 
 const projects = [
@@ -44,14 +42,12 @@ const projects = [
     id: 6,
     title: "XayKenhTikTok",
     category: "Solution Architecture",
-    image: "/projects/xaykenhtiktok.png",
+    image: "/projects/xaykenhtiktok.jpg",
     href: "https://xaykenhtiktok.com/",
   },
 ];
 
 export default function OurWork() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-
   return (
     <section
       id="work"
@@ -61,47 +57,30 @@ export default function OurWork() {
       <div className="max-w-[1400px] mx-auto w-full px-6 relative z-10">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">
               Portfolio
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display">
               <span className="gradient-text">OUR WORK</span>
             </h2>
-          </motion.div>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground max-w-md italic"
-          >
+          <p className="text-muted-foreground max-w-md italic">
             "Our projects aren't just cool, they are freezing-cold"
-          </motion.p>
+          </p>
         </div>
 
         {/* Projects Grid - Bento Style */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px] lg:auto-rows-[260px]">
           {projects.map((project) => {
             return (
-              <motion.a
+              <a
                 key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
                 href={project.href}
                 target="_blank"
                 rel="noreferrer"
                 className="group relative rounded-2xl overflow-hidden cursor-pointer"
-                onMouseEnter={() => setHoveredId(project.id)}
-                onMouseLeave={() => setHoveredId(null)}
               >
                 {/* Inner Card */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden bg-transparent">
@@ -122,42 +101,23 @@ export default function OurWork() {
                       <span className="px-3 py-1 bg-black/50 rounded-full text-xs text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                         {project.category}
                       </span>
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{
-                        opacity: hoveredId === project.id ? 1 : 0,
-                        scale: hoveredId === project.id ? 1 : 0,
-                      }}
-                      className="w-10 h-10 bg-white rounded-full flex items-center justify-center"
-                    >
-                      <ExternalLink size={18} className="text-black" />
-                    </motion.div>
-                  </div>
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center opacity-0 scale-75 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100">
+                        <ExternalLink size={18} className="text-black" />
+                      </div>
+                    </div>
 
-                  <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <motion.h3 className="font-display text-white text-lg">
-                      {project.title}
-                    </motion.h3>
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{
-                        width: hoveredId === project.id ? "50%" : 0,
-                      }}
-                      className="h-0.5 bg-white mt-2"
-                    />
-                  </div>
+                    <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <h3 className="font-display text-white text-lg">
+                        {project.title}
+                      </h3>
+                      <div className="h-0.5 bg-white mt-2 w-0 transition-all duration-300 group-hover:w-1/2" />
+                    </div>
                   </div>
                 </div>
 
                 {/* Hover Overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: hoveredId === project.id ? 0.2 : 0,
-                  }}
-                  className="absolute inset-0 bg-black"
-                />
-              </motion.a>
+                <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
+              </a>
             );
           })}
         </div>

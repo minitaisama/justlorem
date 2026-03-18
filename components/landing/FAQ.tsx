@@ -140,7 +140,10 @@ export default function FAQ() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6">
+                        <div
+                          className="px-6 pb-6 cursor-pointer"
+                          onClick={() => setOpenIndex(null)}
+                        >
                           <p className="text-muted-foreground leading-relaxed">
                             {faq.answer}
                           </p>

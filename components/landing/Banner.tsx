@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useMemo, useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import Link from "next/link";
@@ -33,7 +33,6 @@ const generateStars = (count: number) => {
   return stars;
 };
 
-const STARS = generateStars(100);
 const HERO_WORDS = ["DESIGN", "DEVELOP", "DELIVER"];
 const WORD_INTERVAL_MS = 2500;
 const wordVariants = {
@@ -48,19 +47,38 @@ const letterVariants = {
 export default function Banner() {
   const ref = useRef(null);
   const [wordIndex, setWordIndex] = useState(0);
+  const [isLowPower, setIsLowPower] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, isLowPower ? 0 : 300]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, isLowPower ? 1 : 0]);
+  const stars = useMemo(
+    () => generateStars(isLowPower ? 60 : 100),
+    [isLowPower]
+  );
 
   useEffect(() => {
     const id = window.setInterval(() => {
       setWordIndex((prev) => (prev + 1) % HERO_WORDS.length);
     }, WORD_INTERVAL_MS);
     return () => window.clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const smallScreen = window.matchMedia("(max-width: 1024px)");
+    const update = () => setIsLowPower(reduceMotion.matches || smallScreen.matches);
+    update();
+    reduceMotion.addEventListener?.("change", update);
+    smallScreen.addEventListener?.("change", update);
+    return () => {
+      reduceMotion.removeEventListener?.("change", update);
+      smallScreen.removeEventListener?.("change", update);
+    };
   }, []);
 
 
@@ -71,23 +89,16 @@ export default function Banner() {
     >
       {/* Stars Background */}
       <div className="absolute inset-0">
-        {STARS.map((star, i) => (
-          <motion.div
+        {stars.map((star, i) => (
+          <div
             key={i}
-            className="absolute w-[2px] h-[2px] bg-white rounded-full"
+            className="star-dot absolute w-[2px] h-[2px] bg-white rounded-full"
             style={{
               left: `${star.left}%`,
               top: `${star.top}%`,
               opacity: star.opacity,
-            }}
-            animate={{
-              opacity: [0.3, 1, 0.3],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: star.duration,
-              repeat: Infinity,
-              delay: star.delay,
+              animationDuration: `${star.duration}s`,
+              animationDelay: `${star.delay}s`,
             }}
           />
         ))}
@@ -165,14 +176,16 @@ export default function Banner() {
                     transform: `rotateX(70deg) rotateZ(${i * 15}deg)`,
                     transformStyle: "preserve-3d",
                   }}
-                  animate={{
-                    rotateZ: [i * 15, i * 15 + 360],
-                  }}
-                  transition={{
-                    duration: 20 + i * 5,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
+                  animate={
+                    isLowPower
+                      ? { rotateZ: i * 15 }
+                      : { rotateZ: [i * 15, i * 15 + 360] }
+                  }
+                  transition={
+                    isLowPower
+                      ? { duration: 0 }
+                      : { duration: 20 + i * 5, repeat: Infinity, ease: "linear" }
+                  }
                 />
               ))}
               {/* Center Glow */}

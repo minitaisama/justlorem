@@ -129,6 +129,16 @@
   animation: line-sweep-rtl 3s linear infinite;
 }
 
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+.star-dot {
+  animation: twinkle var(--twinkle-duration, 4s) ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;

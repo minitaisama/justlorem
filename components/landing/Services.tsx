@@ -105,15 +105,21 @@ export default function Services() {
                     <div className="flex items-center gap-4">
                       <div
                         className={`p-3 rounded-xl transition-all duration-300 ${
-                          isActive ? "bg-[#2F5FB3]" : "bg-white/5"
+                          isActive
+                            ? "bg-[#2F5FB3]"
+                            : "bg-white/5 group-hover:bg-[#2F5FB3]/70"
                         }`}
                       >
                         <Icon
                           size={24}
-                          className={isActive ? "text-white" : "text-white/60"}
+                          className={
+                            isActive
+                              ? "text-white"
+                              : "text-white/60 group-hover:text-white"
+                          }
                         />
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold uppercase">
+                      <h3 className="text-lg md:text-xl font-semibold uppercase transition-colors duration-300 group-hover:text-white">
                         {service.title}
                       </h3>
                     </div>
@@ -124,7 +130,9 @@ export default function Services() {
                       <ArrowRight
                         size={20}
                         className={`transition-colors duration-300 ${
-                          isActive ? "text-[#2F5FB3]" : "text-white/40"
+                          isActive
+                            ? "text-[#2F5FB3]"
+                            : "text-white/40 group-hover:text-white/80"
                         }`}
                       />
                     </motion.div>
