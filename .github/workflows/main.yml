@@ -1,0 +1,35 @@
+name: CI_MAIN
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build_main:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-22.04
+    env:
+      IMAGE_NAME: bc-dev
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      # - run: cp .env.prod .env
+      - run: corepack enable
+      - run: pnpm install
+      - run: CI=false NODE_OPTIONS=--max_old_space_size=4096 pnpm build
+      - name: Publish
+        uses: cloudflare/wrangler-action@v3.14.0
+        with:
+          packageManager: pnpm
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy --branch=main --project-name=justlorem out
