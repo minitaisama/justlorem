@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Palette, Code, Megaphone, BarChart, Gamepad2 } from "lucide-react";
+import { ArrowRight, Palette, Code, BarChart, Gamepad2 } from "lucide-react";
 import { useState } from "react";
 
 const services = [
@@ -49,37 +49,37 @@ export default function Services() {
       id="services"
       className="relative bg-[#0a0f1a] py-16 md:pt-40 md:pb-20"
     >
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-8">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "50px 50px",
           }}
         />
       </div>
 
-      <div className="max-w-[1400px] mx-auto w-full px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left Side - Title */}
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="self-start"
           >
-            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-muted-foreground">
               What We Do
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display mb-8">
+            <h2 className="mb-8 text-4xl font-display md:text-5xl lg:text-6xl">
               <span className="gradient-text">OUR SERVICES</span>
             </h2>
-            <p className="text-muted-foreground max-w-md leading-relaxed">
-              We design and build digital products that are clear, scalable, and made to perform.
+            <p className="max-w-md leading-relaxed text-muted-foreground">
+              We design and build digital products that are clear, scalable, and
+              made to perform.
             </p>
           </motion.div>
 
-          {/* Right Side - Services Accordion */}
           <div className="space-y-4">
             {services.map((service, index) => {
               const Icon = service.icon;
@@ -101,10 +101,10 @@ export default function Services() {
                     )
                   }
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex min-w-0 items-center gap-4">
                       <div
-                        className={`p-3 rounded-xl transition-all duration-300 ${
+                        className={`rounded-xl p-3 transition-all duration-300 ${
                           isActive ? "bg-[#2F5FB3]" : "bg-white/5"
                         }`}
                       >
@@ -113,13 +113,14 @@ export default function Services() {
                           className={isActive ? "text-white" : "text-white/60"}
                         />
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold uppercase">
+                      <h3 className="text-base font-semibold uppercase md:text-xl">
                         {service.title}
                       </h3>
                     </div>
                     <motion.div
                       animate={{ rotate: isActive ? 0 : -45 }}
                       transition={{ duration: 0.3 }}
+                      className="shrink-0"
                     >
                       <ArrowRight
                         size={20}
@@ -139,7 +140,7 @@ export default function Services() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="text-muted-foreground text-sm mt-4 pl-16 max-w-md leading-relaxed">
+                    <p className="mt-4 max-w-md pl-0 text-sm leading-relaxed text-muted-foreground md:pl-16">
                       {service.description}
                     </p>
                   </motion.div>

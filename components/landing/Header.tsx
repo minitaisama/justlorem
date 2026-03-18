@@ -36,7 +36,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="sticky top-0 z-50 w-full bg-[#030712]/95 py-4 backdrop-blur-md"
+      className="sticky top-0 z-50 w-full bg-[#030712]/95 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md md:py-4"
     >
       <nav className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-8 px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2">
@@ -82,7 +82,7 @@ export default function Header() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="ml-auto p-2 text-white lg:hidden"
+          className="ml-auto inline-flex min-h-11 min-w-11 items-center justify-center rounded-full p-3 text-white transition-colors hover:bg-white/5 lg:hidden"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
