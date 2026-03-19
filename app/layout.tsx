@@ -19,12 +19,14 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.jusrlorem.com'),
-  title: 'Lorem — Design. Develop. Deliver.',
+  metadataBase: new URL('https://justlorem.com'),
+  title: 'Lorem Technology — Design. Develop. Deliver.',
   description: 'Lorem is a technology company specializing in web, app, and product development. We design, develop, and deliver scalable digital experiences.',
-  generator: 'v0.app',
   keywords: [
     'Lorem',
+    'Lorem Tech',
+    'Lorem Technology',
+    'just Lorem',
     'web development',
     'app development',
     'software company',
@@ -35,19 +37,19 @@ export const metadata: Metadata = {
   ],
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Lorem — Design. Develop. Deliver.',
+    title: 'Lorem Technology — Design. Develop. Deliver.',
     description: 'We build web, apps, and digital products that scale.',
     type: 'website',
-    url: 'https://www.jusrlorem.com/',
-    siteName: 'Lorem',
+    url: 'https://justlorem.com/',
+    siteName: 'Lorem Technology',
     images: ['/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://www.jusrlorem.com/',
+    canonical: 'https://justlorem.com/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lorem — Design. Develop. Deliver.',
+    title: 'Lorem Technology — Design. Develop. Deliver.',
     description: 'We build web, apps, and digital products that scale.',
     images: ['/og-image.jpg'],
   },
