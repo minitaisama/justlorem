@@ -53,7 +53,7 @@ export default function Header() {
             transition={{ type: "spring", stiffness: 400 }}
           >
             <Image
-              src="/images/logo.png"
+              src="/images/logo-v2.png"
               alt="Lorem Logo"
               width={190}
               height={64}

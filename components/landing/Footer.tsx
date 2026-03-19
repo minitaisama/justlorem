@@ -86,7 +86,7 @@ export default function Footer() {
               <div className="mt-auto flex items-center gap-4">
                 <div className="relative inline-block overflow-hidden">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo-v2.png"
                     alt="Lorem Logo"
                     width={280}
                     height={96}
