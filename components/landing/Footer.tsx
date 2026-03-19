@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="relative overflow-hidden"
+      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden"
     >
       {/* Top Black CTA */}
       <div className="bg-[#030712] text-white">
@@ -90,7 +90,7 @@ export default function Footer() {
                     alt="Lorem Logo"
                     width={280}
                     height={96}
-                    className="h-24 w-auto object-contain"
+                    className="h-28 w-auto object-contain"
                   />
                 </div>
               </div>
@@ -114,10 +114,19 @@ export default function Footer() {
             </div>
 
             <div className="space-y-6 text-right lg:col-span-1">
-              <p className="text-sm italic text-white/80 leading-relaxed">
-                Design. Develop. Deliver.
+              <p className="text-sm text-white/80 leading-relaxed">
+                <span
+                  style={{
+                    background: "linear-gradient(135deg, #fff 0%, #2f5fb3 50%, #60a5fa 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  LOREM Technology
+                </span>{" "}— Design. Develop. Deliver.
                 <br />
-                We turn ideas into high-performing digital products.
+                <em>We turn ideas into high-performing digital products.</em>
               </p>
               <div className="flex flex-col items-end gap-2 font-semibold">
                 <Link
@@ -172,6 +181,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
       </div>
     </footer>
   );

@@ -57,7 +57,7 @@ export default function Header() {
               alt="Lorem Logo"
               width={190}
               height={64}
-              className="h-14 w-auto object-contain"
+              className="h-20 w-auto object-contain"
               priority
             />
           </motion.div>

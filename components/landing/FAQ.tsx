@@ -38,7 +38,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative bg-[#030712] py-16 md:py-32"
+      className="relative left-1/2 w-screen -translate-x-1/2 bg-[#030712] py-16 md:py-32"
     >
       {/* Decorative Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2F5FB3]/5 rounded-full blur-[100px]" />

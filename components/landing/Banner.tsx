@@ -187,17 +187,17 @@ export default function Banner() {
           </motion.div>
         </div>
 
-        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-end lg:justify-between">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2 }}
             className="w-full lg:w-auto"
           >
-            <p className="text-[18px] leading-[22px] text-white/80">
+            <p className="text-sm leading-relaxed text-white/80 lg:text-[18px] lg:leading-[22px]">
               Get your own custom digital solution right now !
             </p>
-            <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
+            <div className="mt-6 flex w-full flex-col gap-3 sm:flex-row sm:gap-4">
               <Link
                 href="#work"
                 onClick={handleScrollToWork}
@@ -220,7 +220,7 @@ export default function Banner() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.4 }}
-            className="flex flex-wrap gap-6 lg:flex-nowrap lg:gap-10"
+            className="flex w-full justify-around gap-6 lg:w-auto lg:flex-nowrap lg:justify-end lg:gap-10"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -228,7 +228,7 @@ export default function Banner() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.4 + index * 0.1 }}
-                className="text-left"
+                className="text-center lg:text-left"
               >
                 <span className="text-4xl font-display text-[#2F5FB3] md:text-5xl">
                   {stat.value}

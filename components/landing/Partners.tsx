@@ -7,12 +7,12 @@ const partners = [
   { name: "SEI", href: "https://www.sei.io/", logo: "/partners/sei-logo.png" },
   { name: "B3", href: "https://www.b3.fun/", logo: "/partners/b3-logo.png" },
   { name: "Iota", href: "https://www.iota.org/", logo: "/partners/iota-logo.png" },
-  { name: "DDC Holdings", href: "https://hyperlaunch.xyz/", logo: "/partners/ddc-logo.png" },
+  { name: "DDC Holdings", href: "https://ddcholdings.co/", logo: "/partners/ddc-logo.png" },
 ];
 
 export default function Partners() {
   return (
-    <section className="relative overflow-hidden bg-[#030712] py-12 md:py-20">
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#030712] py-12 md:py-20">
       {/* Gradient Line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-[linear-gradient(90deg,transparent,rgba(168,200,255,0.9),transparent)] animate-line-sweep-rtl" />
 
