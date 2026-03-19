@@ -44,11 +44,10 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="sticky top-0 z-50 w-full bg-[#030712] py-4"
+      className="sticky top-0 z-50 w-full bg-[#030712]/95 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md md:py-4"
     >
-      <nav className="flex items-center justify-between gap-8 max-w-[1400px] mx-auto w-full px-6">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0 cursor-default">
+      <nav className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-8 px-6">
+        <Link href="/" className="flex shrink-0 items-center gap-2 cursor-default">
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}
@@ -64,25 +63,23 @@ export default function Header() {
           </motion.div>
         </Link>
 
-        {/* Center Menu */}
-        <div className="hidden lg:flex flex-1 items-center justify-center gap-10">
+        <div className="hidden flex-1 items-center justify-center gap-10 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={(event) => handleSmoothScroll(event, link.href)}
-              className="text-sm font-display uppercase tracking-[0.25em] text-slate-200 hover:text-[#2F5FB3] transition-colors duration-300 whitespace-nowrap relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[#2F5FB3] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+              className="relative whitespace-nowrap text-sm font-display tracking-[0.25em] text-slate-200 uppercase transition-colors duration-300 hover:text-[#2F5FB3] after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#2F5FB3] after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
             >
               {link.name}
             </Link>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden lg:flex justify-end shrink-0">
+        <div className="hidden shrink-0 justify-end lg:flex">
           <Link
             href="https://calendar.app.google/AC9XWNQLaUhp3yMq9"
-            className="text-sm font-display uppercase tracking-[0.25em] text-white border border-white/60 rounded-full px-5 py-2 hover:text-white hover:bg-[#2F5FB3] hover:border-[#2F5FB3] transition-colors duration-300 whitespace-nowrap inline-flex items-center gap-2"
+            className="inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-display tracking-[0.25em] text-white uppercase transition-colors duration-300 hover:border-[#2F5FB3] hover:bg-[#2F5FB3] hover:text-white whitespace-nowrap"
             target="_blank"
             rel="noreferrer"
           >
@@ -91,65 +88,43 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden ml-auto p-2 text-white"
+          className="ml-auto inline-flex min-h-11 min-w-11 items-center justify-center rounded-full p-3 text-white transition-colors hover:bg-white/5 lg:hidden"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 z-50">
-          <motion.button
+        <div className="lg:hidden">
+          <button
             type="button"
-            aria-label="Close menu overlay"
-            className="absolute inset-0 bg-black/60"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
+            aria-label="Close menu backdrop"
+            className="fixed inset-0 top-[88px] z-40 bg-black/60 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           />
           <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute right-0 top-0 h-full w-[80%] max-w-xs bg-[#030712] border-l border-white/10 px-6 pt-24 pb-10"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className="relative z-50 mx-4 mt-3 rounded-2xl border border-white/10 bg-[#0a0f1a]/95 px-4 py-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl"
           >
-            <div className="absolute left-0 top-0 w-full px-6 py-5 flex items-center justify-between">
-              <Image
-                src="/images/logo.png"
-                alt="Lorem Logo"
-                width={130}
-                height={44}
-                className="h-9 w-auto object-contain"
-                priority
-              />
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-2 text-white"
-                aria-label="Close menu"
-              >
-                <X size={22} />
-              </button>
-            </div>
-            <div className="flex flex-col gap-6 text-right items-end">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={(event) => handleSmoothScroll(event, link.href)}
-                  className="text-sm font-display uppercase tracking-[0.25em] text-slate-200 hover:text-[#2F5FB3] transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[#2F5FB3] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className="rounded-xl px-4 py-3 text-sm font-display tracking-[0.25em] text-slate-200 uppercase transition-colors duration-300 hover:bg-white/5 hover:text-[#2F5FB3]"
                 >
                   {link.name}
                 </Link>
               ))}
               <Link
                 href="https://calendar.app.google/AC9XWNQLaUhp3yMq9"
-                className="text-sm font-display uppercase tracking-[0.25em] text-white hover:text-[#2F5FB3] transition-colors duration-300"
+                className="mt-3 inline-flex items-center justify-center rounded-full bg-[#2F5FB3] px-5 py-3 text-sm font-display tracking-[0.25em] text-white uppercase transition-colors duration-300 hover:bg-[#3d6ccc]"
                 target="_blank"
                 rel="noreferrer"
               >

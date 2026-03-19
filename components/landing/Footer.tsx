@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="relative left-1/2 -translate-x-1/2 w-screen overflow-hidden"
+      className="relative overflow-hidden"
     >
       {/* Top Black CTA */}
       <div className="bg-[#030712] text-white">
