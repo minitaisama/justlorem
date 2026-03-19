@@ -57,7 +57,7 @@ export default function Header() {
               alt="Lorem Logo"
               width={190}
               height={64}
-              className="h-20 w-auto object-contain"
+              className="h-12 w-auto object-contain lg:h-20"
               priority
             />
           </motion.div>
@@ -109,7 +109,7 @@ export default function Header() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="relative z-50 mx-4 mt-3 rounded-2xl border border-white/10 bg-[#0a0f1a]/95 px-4 py-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+            className="fixed inset-x-0 top-[88px] z-50 mx-4 mt-3 rounded-2xl border border-white/10 bg-[#0a0f1a]/95 px-4 py-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl"
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
