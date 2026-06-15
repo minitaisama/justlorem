@@ -1,160 +1,50 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ArrowRight, Palette, Code, BarChart, Gamepad2 } from "lucide-react";
-import { useState } from "react";
-
-const services = [
-  {
-    id: "brand",
-    title: "Website Design & Development",
-    description:
-      "From enterprise-scale applications to innovative MVPs, we architect and develop fully functional solutions that transform your vision into reality.",
-    icon: Code,
-    color: "#2F5FB3",
-  },
-  {
-    id: "visual",
-    title: "UX/UI Design",
-    description:
-      "Delivering over 20+ modern interfaces that breathe life into brands—each design crafted with its own unique personality and purpose-driven experience",
-    icon: Palette,
-    color: "#60a5fa",
-  },
-  {
-    id: "uiux",
-    title: "Game Development",
-    description:
-      "From concept to launch, we design and build engaging games with smooth performance, scalable systems, and immersive user experiences.",
-    icon: Gamepad2,
-    color: "#3b82f6",
-  },
-  {
-    id: "content",
-    title: "Solution Architecture",
-    description:
-      "We design scalable, efficient system architectures that ensure your product is reliable, flexible, and ready to grow.",
-    icon: BarChart,
-    color: "#1d4ed8",
-  },
-];
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { serviceCategories } from "@/lib/site";
 
 export default function Services() {
-  const [activeService, setActiveService] = useState<string | null>(
-    services[1].id
-  );
-
   return (
-    <section
-      id="services"
-      className="relative left-1/2 w-screen -translate-x-1/2 bg-[#0a0f1a] py-16 md:pt-24 md:pb-20"
-    >
-      <div className="absolute inset-0 opacity-8">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-            backgroundSize: "50px 50px",
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="self-start"
-          >
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-muted-foreground">
-              What We Do
+    <section id="services" className="bg-[#0a0f1a] py-20 md:py-28">
+      <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9fc2ff]">
+              Services
             </p>
-            <h2 className="mb-8 text-4xl font-display md:text-5xl lg:text-6xl">
-              <span className="gradient-text">OUR SERVICES</span>
+            <h2 className="mt-4 max-w-xl font-display text-5xl leading-[0.95] text-white md:text-7xl">
+              Built for launch, not just presentation.
             </h2>
-            <p className="max-w-md leading-relaxed text-muted-foreground">
-              We design and build digital products that are clear, scalable, and
-              made to perform.
+            <p className="mt-6 max-w-lg text-base leading-8 text-white/68">
+              Every engagement connects strategy, interface, and implementation
+              so the final product is clear for users and maintainable for the
+              team behind it.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="space-y-4">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              const isActive = activeService === service.id;
-
-              return (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`group cursor-pointer border-b border-white/10 pb-4 transition-all duration-500 ${
-                    isActive ? "opacity-100" : "opacity-60 hover:opacity-100"
-                  }`}
-                  onClick={() =>
-                    setActiveService((prev) =>
-                      prev === service.id ? null : service.id
-                    )
-                  }
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex min-w-0 items-center gap-4">
-                      <div
-                        className={`rounded-xl p-3 transition-all duration-300 ${
-                          isActive
-                            ? "bg-[#2F5FB3]"
-                            : "bg-white/5 group-hover:bg-[#2F5FB3]/70"
-                        }`}
-                      >
-                        <Icon
-                          size={24}
-                          className={
-                            isActive
-                              ? "text-white"
-                              : "text-white/60 group-hover:text-white"
-                          }
-                        />
-                      </div>
-                      <h3 className="text-base font-semibold uppercase transition-colors duration-300 group-hover:text-white md:text-xl">
-                        {service.title}
-                      </h3>
-                    </div>
-                    <motion.div
-                      animate={{ rotate: isActive ? 0 : -45 }}
-                      transition={{ duration: 0.3 }}
-                      className="shrink-0"
-                    >
-                      <ArrowRight
-                        size={20}
-                        className={`transition-colors duration-300 ${
-                          isActive
-                            ? "text-[#2F5FB3]"
-                            : "text-white/40 group-hover:text-white/80"
-                        }`}
-                      />
-                    </motion.div>
-                  </div>
-
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      height: isActive ? "auto" : 0,
-                      opacity: isActive ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <p className="mt-4 max-w-md pl-0 text-sm leading-relaxed text-muted-foreground md:pl-16">
-                      {service.description}
-                    </p>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
+          <div className="grid gap-4">
+            {serviceCategories.map((service, index) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group grid gap-4 rounded-3xl border border-white/10 bg-[#030712] p-5 transition hover:border-[#9fc2ff]/50 hover:bg-[#071225] md:grid-cols-[auto_1fr_auto] md:p-6"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2F5FB3]/20 font-display text-xl text-[#9fc2ff]">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">
+                    {service.eyebrow}
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold text-white md:text-2xl">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-white/64">
+                    {service.summary}
+                  </p>
+                </div>
+                <ArrowUpRight className="hidden text-white/40 transition group-hover:text-[#9fc2ff] md:block" />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

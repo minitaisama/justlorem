@@ -1,255 +1,117 @@
-"use client";
-
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { ArrowDown } from "lucide-react";
 import Link from "next/link";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { projects, serviceCategories, site } from "@/lib/site";
 
-const stats = [
-  { value: "50+", label: "Number Of Projects" },
-  { value: "35+", label: "Number Of Partners" },
-  { value: "9", label: "Backed By" },
+const proofPoints = [
+  { value: "50+", label: "Delivered product and web projects" },
+  { value: "35+", label: "Partners and founder teams supported" },
+  { value: "2019", label: "Registered technology company" },
 ];
 
-const generateStars = (count: number) => {
-  const stars = [];
-  for (let i = 0; i < count; i++) {
-    const seed1 = ((i * 7919) % 10000) / 100;
-    const seed2 = ((i * 104729) % 10000) / 100;
-    const seed3 = (((i * 1299709) % 7000) / 10000) + 0.3;
-
-    stars.push({
-      left: seed1,
-      top: seed2,
-      opacity: Math.min(seed3, 1),
-    });
-  }
-  return stars;
-};
-
-const STARS = generateStars(20);
-const MOBILE_STARS = STARS.slice(0, 8);
-const HERO_WORDS = ["DESIGN", "DEVELOP", "DELIVER"];
-const WORD_INTERVAL_MS = 2500;
-const wordVariants = {
-  initial: {},
-  animate: { transition: { staggerChildren: 0.04 } },
-};
-const letterVariants = {
-  initial: { y: -28, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
 export default function Banner() {
-  const ref = useRef(null);
-  const [wordIndex, setWordIndex] = useState(0);
-  const shouldReduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, shouldReduceMotion ? 120 : 300]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const starsToRender = shouldReduceMotion ? MOBILE_STARS : STARS;
-
-  useEffect(() => {
-    if (shouldReduceMotion) return;
-    const id = window.setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % HERO_WORDS.length);
-    }, WORD_INTERVAL_MS);
-    return () => window.clearInterval(id);
-  }, [shouldReduceMotion]);
-
-  const handleScrollToWork = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    const target = document.querySelector("#work");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
-    <section ref={ref} className="relative min-h-screen overflow-hidden bg-[#030712]">
-      <div className="absolute inset-0">
-        {starsToRender.map((star, i) => (
-          <motion.div
-            key={i}
-            className="absolute h-[2px] w-[2px] rounded-full bg-white"
-            style={{
-              left: `${star.left}%`,
-              top: `${star.top}%`,
-              opacity: star.opacity,
-            }}
-            animate={shouldReduceMotion ? undefined : { opacity: [star.opacity * 0.75, star.opacity] }}
-            transition={
-              shouldReduceMotion
-                ? undefined
-                : {
-                    duration: 3,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut",
-                  }
-            }
-          />
-        ))}
-      </div>
+    <section className="relative overflow-hidden border-b border-white/10 bg-[#030712]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_14%,rgba(96,165,250,0.16),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(47,95,179,0.2),transparent_30%),linear-gradient(180deg,transparent,#030712_86%)]" />
+      <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:72px_72px]" />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#030712]" />
+      <div className="relative mx-auto grid min-h-[calc(100vh-5rem)] w-full max-w-[1400px] items-center gap-10 px-5 py-16 md:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:py-20">
+        <div className="max-w-4xl">
+          <p className="mb-5 max-w-full text-xs font-semibold uppercase tracking-[0.22em] text-[#9fc2ff] sm:text-sm">
+            Ho Chi Minh City software, web, app, and product studio
+          </p>
+          <h1 className="text-balance font-display text-[3.2rem] leading-[0.92] tracking-normal text-white sm:text-7xl md:text-8xl lg:text-[8.5rem]">
+            Lorem Technology builds digital products that ship.
+          </h1>
+          <p className="mt-7 max-w-2xl text-base leading-8 text-white/76 md:text-lg">
+            We design and develop websites, app interfaces, game-facing web
+            experiences, and scalable software architecture for teams that need
+            clarity before launch.
+          </p>
 
-      <motion.div
-        style={{ y, opacity }}
-        className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-[1400px] flex-col gap-10 px-6 pb-24 pt-8 md:pb-32"
-      >
-        <div className="relative my-4 md:my-6">
-          <div className="mt-12 text-center md:mt-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mb-4 text-sm uppercase leading-5 tracking-[0.3em] text-muted-foreground sm:text-[18px] sm:leading-[22px]"
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href={site.calendarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-display uppercase tracking-[0.16em] text-[#030712] transition hover:bg-[#9fc2ff]"
             >
-              Get your own custom digital solution right now !
-            </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="mb-8 min-h-[1.1em] text-5xl font-display tracking-tight sm:text-6xl md:text-9xl lg:text-[10rem]"
+              Book Discovery Call <ArrowUpRight size={16} />
+            </Link>
+            <Link
+              href="#work"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50"
             >
-              <motion.span
-                key={HERO_WORDS[wordIndex]}
-                variants={wordVariants}
-                initial="initial"
-                animate={shouldReduceMotion ? undefined : "animate"}
-                className="gradient-text inline-block w-[8ch] text-center will-change-transform"
-              >
-                {HERO_WORDS[wordIndex].split("").map((letter, idx) => (
-                  <motion.span
-                    key={`${letter}-${idx}`}
-                    variants={letterVariants}
-                    className="inline-block"
-                    animate={shouldReduceMotion ? { y: 0, opacity: 1 } : undefined}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
-              </motion.span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="mx-auto max-w-md text-sm leading-relaxed text-muted-foreground"
-            >
-              We help brands grow through thoughtful strategy, strong design, and
-              meaningful digital experiences.
-            </motion.p>
+              See selected work
+            </Link>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="relative my-6 hidden justify-center md:my-8 md:flex"
-          >
-            <div className="relative h-[150px] w-[300px]">
-              {[0, 1, 2].map((i) => (
-                <motion.div
-                  key={i}
-                  className="absolute inset-0 rounded-[50%] border border-[#2F5FB3]/30"
-                  style={{
-                    transform: `rotateX(70deg) rotateZ(${i * 15}deg)`,
-                    transformStyle: "preserve-3d",
-                  }}
-                  animate={
-                    shouldReduceMotion
-                      ? undefined
-                      : {
-                          rotateZ: [i * 15, i * 15 + 360],
-                        }
-                  }
-                  transition={
-                    shouldReduceMotion
-                      ? undefined
-                      : {
-                          duration: 20 + i * 5,
-                          repeat: Infinity,
-                          ease: "linear",
-                        }
-                  }
-                />
-              ))}
-              <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2F5FB3] blur-sm" />
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.2 }}
-            className="w-full lg:w-auto"
-          >
-            <p className="text-sm leading-relaxed text-white/80 lg:text-[18px] lg:leading-[22px]">
-              Get your own custom digital solution right now !
-            </p>
-            <div className="mt-6 flex w-full flex-col gap-3 sm:flex-row sm:gap-4">
-              <Link
-                href="#work"
-                onClick={handleScrollToWork}
-                className="rounded-full border border-white/20 px-6 py-3 text-center text-sm text-white transition-colors duration-300 hover:border-[#2F5FB3] hover:text-[#2F5FB3]"
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            {proofPoints.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
               >
-                See Our Works
-              </Link>
-              <Link
-                href="https://calendar.app.google/AC9XWNQLaUhp3yMq9"
-                className="rounded-full bg-white px-6 py-3 text-center text-sm text-black transition-all duration-300 hover:bg-[#2F5FB3] hover:text-white"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Book Free Call
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.4 }}
-            className="flex w-full justify-around gap-6 lg:w-auto lg:flex-nowrap lg:justify-end lg:gap-10"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.4 + index * 0.1 }}
-                className="text-center lg:text-left"
-              >
-                <span className="text-4xl font-display text-[#2F5FB3] md:text-5xl">
-                  {stat.value}
-                </span>
-                <p className="mt-2 whitespace-pre-line text-sm text-muted-foreground md:text-base">
-                  {stat.label}
+                <div className="font-display text-3xl text-[#9fc2ff]">
+                  {item.value}
+                </div>
+                <p className="mt-2 text-sm leading-5 text-white/68">
+                  {item.label}
                 </p>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="absolute bottom-20 left-1/2 z-20 hidden -translate-x-1/2 md:block"
-      >
-        <ArrowDown className="animate-bounce text-muted-foreground" />
-      </motion.div>
+        <aside className="rounded-3xl border border-white/10 bg-[#0a0f1a]/90 p-5 shadow-[0_30px_100px_rgba(0,0,0,0.3)] md:p-6">
+          <div className="mb-6 flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+            <div>
+              <p className="text-xs uppercase tracking-[0.22em] text-white/45">
+                Registered entity
+              </p>
+              <p className="mt-2 font-semibold text-white">
+                {site.internationalName}
+              </p>
+            </div>
+            <Link
+              href={site.masothueUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 rounded-full bg-[#2F5FB3] px-3 py-1.5 text-xs font-bold text-white"
+            >
+              MST {site.taxId}
+            </Link>
+          </div>
+
+          <div className="space-y-4">
+            {serviceCategories.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group flex items-start gap-3 rounded-2xl border border-white/8 bg-white/[0.03] p-4 transition hover:border-[#9fc2ff]/50 hover:bg-[#2F5FB3]/12"
+              >
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#9fc2ff]" />
+                <span>
+                  <span className="block font-semibold text-white">
+                    {service.title}
+                  </span>
+                  <span className="mt-1 block text-sm leading-6 text-white/62">
+                    {service.summary}
+                  </span>
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-white/45">
+              Current portfolio
+            </p>
+            <p className="mt-2 text-sm leading-6 text-white/70">
+              {projects.map((project) => project.title).join(", ")}.
+            </p>
+          </div>
+        </aside>
+      </div>
     </section>
   );
 }

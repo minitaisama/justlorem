@@ -1,121 +1,100 @@
-"use client";
+import type { Metadata } from "next";
+import Footer from "@/components/landing/Footer";
+import Header from "@/components/landing/Header";
+import { pageMetadata } from "@/lib/seo";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Data Deletion Request",
+  description:
+    "Instructions for requesting deletion of personal data associated with Lorem Technology services and Facebook Messenger interactions.",
+  path: "/data-deletion",
+});
 
 export default function DataDeletionPage() {
   return (
     <main className="min-h-screen bg-[#030712] text-white">
-      <section className="max-w-[900px] mx-auto w-full px-6 py-20">
-        <h1 className="text-4xl md:text-5xl font-display mb-6">
-          <span className="gradient-text">Data Deletion Request</span>
+      <Header />
+      <section className="mx-auto w-full max-w-[900px] px-5 py-20 md:px-8">
+        <h1 className="font-display text-5xl md:text-6xl">
+          Data Deletion Request
         </h1>
-        <p className="text-white/80 leading-relaxed mb-8">
-          At Lorem, we respect your privacy and your right to control your
-          personal data.
-        </p>
-        <p className="text-white/80 leading-relaxed mb-10">
-          This page explains how you can request the deletion of your data
-          associated with our services, including interactions via Facebook
-          Messenger.
+        <p className="mt-6 text-lg leading-8 text-white/72">
+          At {site.name}, we respect your privacy and your right to control
+          personal data associated with our services, including interactions via
+          Facebook Messenger.
         </p>
 
-        <div className="space-y-10">
+        <div className="prose-policy mt-10 space-y-10 text-white/80">
           <section>
-            <h2 className="text-2xl font-display mb-3">
-              1. How to Request Data Deletion
-            </h2>
-            <p className="text-white/80 mb-4">
-              To request deletion of your personal data, please send an email to:
+            <h2>1. How to Request Data Deletion</h2>
+            <p>
+              Send an email to{" "}
+              <a href={`mailto:${site.email}`} className="text-[#9fc2ff]">
+                {site.email}
+              </a>{" "}
+              with the subject line "Request to delete my data".
             </p>
-            <p className="text-white/80">
-              <strong>Email:</strong> taind2512@gmail.com
-            </p>
-            <p className="text-white/80 mt-4">Your request should include:</p>
-            <ul className="list-disc pl-5 space-y-2 text-white/80">
-              <li>Your full name</li>
-              <li>Your email address</li>
-              <li>
-                A brief description of your request (e.g., "Request to delete my
-                data")
-              </li>
-            </ul>
+            <p>Your request should include your full name and email address.</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-display mb-3">2. Data We Will Delete</h2>
-            <p className="text-white/80 mb-4">
-              Upon receiving a valid request, we will delete:
-            </p>
-            <ul className="list-disc pl-5 space-y-2 text-white/80">
-              <li>Your name and email address</li>
-              <li>Any data associated with your account</li>
+            <h2>2. Data We Will Delete</h2>
+            <ul>
+              <li>Your name and email address.</li>
+              <li>Data associated with your account.</li>
               <li>
                 Messages and interactions handled by our Facebook Messenger
-                chatbot
+                chatbot services.
               </li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-display mb-3">3. Verification Process</h2>
-            <p className="text-white/80 mb-4">
-              To protect your data, we may require verification before processing
-              your request.
-            </p>
-            <p className="text-white/80 mb-4">Please make sure:</p>
-            <ul className="list-disc pl-5 space-y-2 text-white/80">
-              <li>You send the request from your registered email address</li>
-              <li>Or provide sufficient proof of account ownership</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-display mb-3">4. Processing Time</h2>
-            <p className="text-white/80">
-              We will process all valid requests within <strong>7 days</strong>.
-            </p>
-            <p className="text-white/80 mt-2">
-              In some cases, it may take slightly longer if additional
-              verification is required.
+            <h2>3. Verification Process</h2>
+            <p>
+              To protect your data, we may require verification before
+              processing your request. Please send the request from your
+              registered email address or provide sufficient proof of account
+              ownership.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-display mb-3">5. Confirmation</h2>
-            <p className="text-white/80">
-              Once your data has been deleted, we will send you a confirmation
-              email.
+            <h2>4. Processing Time</h2>
+            <p>
+              We will process valid requests within <strong>7 days</strong>. In
+              some cases, it may take slightly longer if additional verification
+              is required.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-display mb-3">6. Important Notes</h2>
-            <ul className="list-disc pl-5 space-y-2 text-white/80">
+            <h2>5. Confirmation</h2>
+            <p>Once your data has been deleted, we will send a confirmation email.</p>
+          </section>
+
+          <section>
+            <h2>6. Important Notes</h2>
+            <ul>
               <li>
                 Some data may be retained if required by law or for legitimate
-                business purposes
+                business purposes.
               </li>
               <li>
-                Data processed through Facebook may also be subject to Facebook’s
-                own data policies
+                Data processed through Facebook may also be subject to Facebook's
+                own data policies.
               </li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-display mb-3">7. Contact</h2>
-            <p className="text-white/80">
-              If you have any questions about data deletion, please contact us:
-            </p>
-            <p className="text-white/80 mt-2">
-              <strong>Email:</strong> taind2512@gmail.com
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-display mb-3">Last updated</h2>
-            <p className="text-white/80">March 18, 2026</p>
+            <h2>Last updated</h2>
+            <p>March 18, 2026</p>
           </section>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

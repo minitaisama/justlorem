@@ -1,187 +1,112 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { navLinks, serviceCategories, site } from "@/lib/site";
 
 export default function Footer() {
-  const handleSmoothScroll = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    if (!href.startsWith("#")) {
-      return;
-    }
-    event.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
-    <footer
-      id="footer"
-      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden"
-    >
-      {/* Top Black CTA */}
-      <div className="bg-[#030712] text-white">
-        <div className="max-w-[1400px] mx-auto w-full px-6 pt-12 pb-6 md:pt-20 md:pb-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/60 text-center">
-            Get your own custom digital solution right now !
+    <footer id="footer" className="border-t border-white/10 bg-[#0a0f1a]">
+      <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-5 py-12 md:px-8 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
+        <div>
+          <Image
+            src={site.logo}
+            alt="Lorem Technology logo"
+            width={240}
+            height={82}
+            className="h-20 w-auto object-contain"
+          />
+          <p className="mt-5 max-w-md text-sm leading-7 text-white/66">
+            {site.description}
           </p>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mt-6 text-center font-display leading-none text-[16vw] md:text-[12vw] lg:text-[10vw]"
-          >
-            <span className="gradient-text">CONTACT US</span>
-          </motion.h2>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href={site.calendarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-display uppercase tracking-[0.16em] text-[#030712] transition hover:bg-[#9fc2ff]"
+            >
+              Book a Call <ArrowUpRight size={16} />
+            </Link>
+            <Link
+              href={`mailto:${site.email}`}
+              className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+            >
+              {site.email}
+            </Link>
+          </div>
         </div>
-      </div>
 
-      {/* Bottom Light Bar */}
-      <div className="bg-[#0a0f1a] text-white relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto w-full px-6 py-10 md:py-14 relative z-10">
-          <div className="grid lg:grid-cols-3 gap-10 items-end">
-            <div className="relative min-h-[220px] flex flex-col gap-6 lg:col-span-1">
-              <motion.a
-                href="https://calendar.app.google/AC9XWNQLaUhp3yMq9"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex w-fit items-center gap-2 rounded-full bg-[#2F5FB3] px-8 py-3 font-semibold text-sm uppercase tracking-[0.2em] text-white"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Book Free Call
-                <ArrowUpRight size={16} />
-              </motion.a>
-              <div className="relative h-12">
-                <svg
-                  className="absolute left-20 top-2 h-16 w-24 -rotate-85 text-[#2F5FB3]"
-                  viewBox="0 0 120 80"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
+        <div className="grid grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/45">
+              Navigate
+            </h2>
+            <div className="mt-4 flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-white/72 transition hover:text-white"
                 >
-                  <path
-                    d="M10 8 C 40 8, 55 28, 46 44 C 38 58, 18 58, 18 42 C 18 28, 38 26, 54 36 C 76 50, 90 62, 108 72"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M104 62 L112 74 L96 74"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <div className="mt-auto flex items-center gap-4">
-                <div className="relative inline-block overflow-hidden">
-                  <Image
-                    src="/images/logo-v2.png"
-                    alt="Lorem Logo"
-                    width={280}
-                    height={96}
-                    className="h-28 w-auto object-contain"
-                  />
-                </div>
-              </div>
+                  {link.label}
+                </Link>
+              ))}
+              <Link href="/privacy-policy" className="text-sm text-white/72 transition hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link href="/data-deletion" className="text-sm text-white/72 transition hover:text-white">
+                Data Deletion
+              </Link>
             </div>
+          </div>
 
-            <div className="flex flex-row items-center justify-center lg:justify-center self-end">
-              <div className="flex flex-row items-center gap-6 text-sm">
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/45">
+              Services
+            </h2>
+            <div className="mt-4 flex flex-col gap-3">
+              {serviceCategories.map((service) => (
                 <Link
-                  href="/privacy-policy"
-                  className="transition-colors hover:text-[#2F5FB3]"
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className="text-sm text-white/72 transition hover:text-white"
                 >
-                  Privacy Policy
+                  {service.title}
                 </Link>
-                <Link
-                  href="/data-deletion"
-                  className="transition-colors hover:text-[#2F5FB3]"
-                >
-                  Data Deletion
-                </Link>
-              </div>
-            </div>
-
-            <div className="space-y-6 text-right lg:col-span-1">
-              <p className="text-sm text-white/80 leading-relaxed">
-                <span
-                  style={{
-                    background: "linear-gradient(135deg, #fff 0%, #2f5fb3 50%, #60a5fa 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  LOREM Technology
-                </span>{" "}— Design. Develop. Deliver.
-                <br />
-                <em>We turn ideas into high-performing digital products.</em>
-              </p>
-              <div className="flex flex-col items-end gap-2 font-semibold">
-                <Link
-                  href="#work"
-                  onClick={(event) => handleSmoothScroll(event, "#work")}
-                  className="transition-colors hover:text-[#2F5FB3]"
-                >
-                  Work
-                </Link>
-                <Link
-                  href="#services"
-                  onClick={(event) => handleSmoothScroll(event, "#services")}
-                  className="transition-colors hover:text-[#2F5FB3]"
-                >
-                  Services
-                </Link>
-                <Link
-                  href="#faq"
-                  onClick={(event) => handleSmoothScroll(event, "#faq")}
-                  className="transition-colors hover:text-[#2F5FB3]"
-                >
-                  FAQs
-                </Link>
-                <Link
-                  href="https://calendar.app.google/AC9XWNQLaUhp3yMq9"
-                  className="transition-colors hover:text-[#2F5FB3]"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Book a Call
-                </Link>
-              </div>
-              <div className="flex gap-4 justify-end text-sm">
-                <Link
-                  href="mailto:taind2512@gmail.com"
-                  className="transition-colors hover:text-[#2F5FB3]"
-                >
-                  Email
-                </Link>
-                <Link href="tel:0931138999" className="transition-colors hover:text-[#2F5FB3]">
-                  Phone
-                </Link>
-                <Link
-                  href="https://maps.app.goo.gl/xMb8egHrPFntwvcR8"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition-colors hover:text-[#2F5FB3]"
-                >
-                  Address
-                </Link>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
+        <div className="rounded-3xl border border-white/10 bg-[#030712] p-5">
+          <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/45">
+            Legal entity
+          </h2>
+          <p className="mt-4 font-semibold text-white">{site.legalName}</p>
+          <p className="mt-2 text-sm text-white/66">{site.internationalName}</p>
+          <dl className="mt-5 space-y-3 text-sm">
+            <div className="flex justify-between gap-4">
+              <dt className="text-white/45">Tax ID</dt>
+              <dd className="font-semibold text-white">{site.taxId}</dd>
+            </div>
+            <div className="flex justify-between gap-4">
+              <dt className="text-white/45">Phone</dt>
+              <dd>
+                <a href={`tel:${site.phone}`} className="text-white hover:text-[#9fc2ff]">
+                  {site.phone}
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <Link
+            href={site.masothueUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#9fc2ff] hover:text-white"
+          >
+            View official Masothue reference <ArrowUpRight size={15} />
+          </Link>
+        </div>
       </div>
     </footer>
   );

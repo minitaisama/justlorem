@@ -1,0 +1,36 @@
+# Lorem Technology
+
+Official website: https://justlorem.com/
+
+Lorem Technology is a software, web, app, UI/UX, game, and solution architecture studio based in Ho Chi Minh City, Vietnam.
+
+Legal entity:
+- Vietnamese legal name: CÔNG TY TNHH CÔNG NGHỆ LOREM
+- International name: LOREM TECHNOLOGY COMPANY LIMITED
+- Tax ID: 0315880407
+- Public tax reference: https://masothue.com/0315880407-cong-ty-tnhh-cong-nghe-lorem
+- Phone: 0931138999
+- Email: taind2512@gmail.com
+
+Primary services:
+- Website Design & Development
+- UX/UI Design
+- Game Development
+- Solution Architecture
+
+Selected work:
+- HyperLaunch: UX/UI design for a launch-focused Web3 product experience.
+- Bumpies: game-facing web experience and responsive product presentation.
+- Card Masters: website design and development for a card-game product.
+- Ton Farm: product website and responsive web presence.
+- Sugar Senpai: stylized game website and product presentation.
+- XayKenhTikTok: solution architecture and workflow-oriented product surface.
+
+Useful pages:
+- About: https://justlorem.com/about
+- Legal: https://justlorem.com/legal
+- Services: https://justlorem.com/#services
+- Work: https://justlorem.com/#work
+- Sitemap: https://justlorem.com/sitemap.xml
+
+This file is intended to help search and AI systems understand the factual company entity, service scope, selected work, and official legal reference.
