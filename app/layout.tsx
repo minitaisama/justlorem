@@ -1,81 +1,81 @@
-import type { Metadata, Viewport } from 'next'
-import { Anton, Raleway } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata, Viewport } from "next";
+import { Anton, Raleway } from "next/font/google";
+import { organizationJsonLd } from "@/lib/seo";
+import { absoluteUrl, site } from "@/lib/site";
+import "./globals.css";
 
-// Display font for large titles and menu
-const anton = Anton({ 
-  weight: '400',
+const anton = Anton({
+  weight: "400",
   subsets: ["latin"],
-  variable: '--font-display',
-  display: 'swap'
+  variable: "--font-display",
+  display: "swap",
 });
 
-// Body font for content
-const raleway = Raleway({ 
+const raleway = Raleway({
   subsets: ["latin"],
-  variable: '--font-body',
-  display: 'swap'
+  variable: "--font-body",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://justlorem.com'),
-  title: 'Lorem Technology — Design. Develop. Deliver.',
-  description: 'Lorem is a technology company specializing in web, app, and product development. We design, develop, and deliver scalable digital experiences.',
-  keywords: [
-    'Lorem',
-    'Lorem Tech',
-    'Lorem Technology',
-    'just Lorem',
-    'web development',
-    'app development',
-    'software company',
-    'product development',
-    'web3',
-    'UI UX',
-    'digital agency',
-  ],
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: 'Lorem Technology — Design. Develop. Deliver.',
-    description: 'We build web, apps, and digital products that scale.',
-    type: 'website',
-    url: 'https://justlorem.com/',
-    siteName: 'Lorem Technology',
-    images: ['/og-image.jpg'],
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} — Software, Web, App & Product Development`,
+    template: `%s | ${site.name}`,
   },
+  description: site.description,
+  robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://justlorem.com/',
+    canonical: site.url,
+  },
+  openGraph: {
+    title: `${site.name} — Software, Web, App & Product Development`,
+    description: site.description,
+    type: "website",
+    url: site.url,
+    siteName: site.name,
+    images: [{ url: absoluteUrl(site.ogImage), width: 1200, height: 630 }],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Lorem Technology — Design. Develop. Deliver.',
-    description: 'We build web, apps, and digital products that scale.',
-    images: ['/og-image.jpg'],
+    card: "summary_large_image",
+    title: `${site.name} — Software, Web, App & Product Development`,
+    description: site.description,
+    images: [absoluteUrl(site.ogImage)],
   },
   icons: {
-    icon: [{ url: '/favicon.png', type: 'image/png' }],
-    apple: '/apple-icon.png',
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: light)" },
+      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: dark)" },
+    ],
+    apple: "/apple-icon.png",
   },
-}
+};
 
 export const viewport: Viewport = {
-  themeColor: '#030712',
-  width: 'device-width',
+  themeColor: "#030712",
+  width: "device-width",
   initialScale: 1,
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${anton.variable} ${raleway.variable} font-body antialiased bg-[#030712] text-white`}>
+      <body
+        className={`${anton.variable} ${raleway.variable} font-body antialiased bg-[#030712] text-white`}
+      >
         {children}
-        <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd()),
+          }}
+        />
       </body>
     </html>
-  )
+  );
 }

@@ -22,10 +22,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22'
-      # - run: cp .env.prod .env
       - run: corepack enable
-      - run: pnpm install
-      - run: CI=false NODE_OPTIONS=--max_old_space_size=4096 pnpm build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm audit --audit-level=moderate
+      - run: NODE_OPTIONS=--max_old_space_size=4096 pnpm build
       - name: Publish
         uses: cloudflare/wrangler-action@v3.14.0
         with:
