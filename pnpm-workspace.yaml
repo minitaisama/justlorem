@@ -1,2 +1,6 @@
 overrides:
   postcss: 8.5.15
+
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver
