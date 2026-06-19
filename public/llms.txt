@@ -2,7 +2,7 @@
 
 Official website: https://justlorem.com/
 
-Lorem Technology is a software, web, app, UI/UX, game, and solution architecture studio based in Ho Chi Minh City, Vietnam.
+Lorem Technology is an AI-first development studio based in Ho Chi Minh City, Vietnam. The company builds agentic workflows, product interfaces, AI UX prototypes, and launch-ready software with human-reviewed engineering quality gates.
 
 Legal entity:
 - Vietnamese legal name: CÔNG TY TNHH CÔNG NGHỆ LOREM
@@ -13,10 +13,10 @@ Legal entity:
 - Email: taind2512@gmail.com
 
 Primary services:
-- Website Design & Development
-- UX/UI Design
-- Game Development
-- Solution Architecture
+- AI Product Engineering
+- AI UX & Prototype Systems
+- Agentic Workflow Automation
+- Product Architecture
 
 Selected work:
 - HyperLaunch: UX/UI design for a launch-focused Web3 product experience.
@@ -25,6 +25,13 @@ Selected work:
 - Ton Farm: product website and responsive web presence.
 - Sugar Senpai: stylized game website and product presentation.
 - XayKenhTikTok: solution architecture and workflow-oriented product surface.
+
+AI-first delivery model:
+- Prompt intake: clarify goals, constraints, risks, and launch path.
+- Agent plan: break product work into reviewed tasks and interfaces.
+- UI build: generate, refine, and implement product surfaces.
+- Tests: run lint, typecheck, audit, build, and browser checks.
+- PR/deploy: ship through reviewable commits and deployment gates.
 
 Useful pages:
 - About: https://justlorem.com/about

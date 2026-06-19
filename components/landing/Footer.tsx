@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { navLinks, serviceCategories, site } from "@/lib/site";
+import { aiPositioning, navLinks, serviceCategories, site } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -25,7 +25,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-display uppercase tracking-[0.16em] text-[#030712] transition hover:bg-[#9fc2ff]"
             >
-              Book a Call <ArrowUpRight size={16} />
+              {aiPositioning.primaryCta} <ArrowUpRight size={16} />
             </Link>
             <Link
               href={`mailto:${site.email}`}
