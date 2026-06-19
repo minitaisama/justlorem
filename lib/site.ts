@@ -16,7 +16,17 @@ export const site = {
   logo: "/images/logo-v2.webp",
   ogImage: "/og-image.jpg",
   description:
-    "Lorem Technology designs and builds web products, app experiences, games, and scalable software architecture for founders and digital teams.",
+    "Lorem Technology is an AI-first development studio building agentic workflows, product interfaces, and launch-ready software for founders and digital teams.",
+};
+
+export const aiPositioning = {
+  eyebrow: "AI-first development studio",
+  headline: "AI-first development studio for products that need to ship.",
+  subheadline:
+    "We combine senior product engineering with AI-assisted delivery systems to design, build, test, and launch faster.",
+  primaryCta: "Book AI Build Call",
+  secondaryCta: "See AI delivery system",
+  cockpitLabel: "Live delivery cockpit",
 };
 
 export const navLinks = [
@@ -29,64 +39,98 @@ export const navLinks = [
 export const serviceCategories = [
   {
     slug: "web-design-development",
-    title: "Website Design & Development",
-    eyebrow: "Web products",
+    title: "AI Product Engineering",
+    eyebrow: "Build systems",
     summary:
-      "Conversion-focused websites and web applications designed for launch speed, maintainability, and measurable business outcomes.",
+      "AI-assisted product builds that move from product intent to interface, implementation, tests, and deployable software.",
     description:
-      "We plan, design, and build marketing sites, dashboards, landing systems, and product interfaces with a clear content model, static performance, and maintainable frontend architecture.",
+      "We combine product strategy, frontend engineering, AI-assisted coding workflows, and launch discipline so teams can ship useful software without drifting through open-ended development cycles.",
     outcomes: [
-      "Product positioning, site architecture, and conversion flows",
-      "Responsive UI implementation with production-ready components",
-      "Static-export friendly deployment for fast global delivery",
-      "SEO foundations: metadata, internal links, sitemap, and structured content",
+      "Product scope, user flows, and build-ready technical plan",
+      "Responsive product UI implemented with maintainable frontend patterns",
+      "AI-assisted coding loops with human review and quality gates",
+      "Static-export friendly deployment, metadata, and measurable launch paths",
     ],
   },
   {
     slug: "ui-ux-design",
-    title: "UX/UI Design",
-    eyebrow: "Product experience",
+    title: "AI UX & Prototype Systems",
+    eyebrow: "Experience loops",
     summary:
-      "Interface systems, product flows, and visual direction for teams that need a polished digital product instead of a generic template.",
+      "Interface systems, clickable prototypes, and AI-era product flows that make complex tools feel clear and usable.",
     description:
-      "We turn product intent into clear screens, interaction states, and a visual system that can be implemented without guesswork.",
+      "We turn fuzzy product ideas into interface systems, interaction states, and prototypes that help founders validate direction before heavy engineering spend.",
     outcomes: [
-      "User flows, information architecture, and wireframes",
-      "High-fidelity responsive UI for web and app products",
-      "Design tokens and reusable component states",
-      "Developer-ready handoff with layout, spacing, and accessibility notes",
+      "AI workflow mapping, user journeys, and information architecture",
+      "High-fidelity responsive UI for web, app, and agent-assisted products",
+      "Reusable design tokens, states, and implementation notes",
+      "Prototype screens that can become production components",
     ],
   },
   {
     slug: "game-development",
-    title: "Game Development",
-    eyebrow: "Interactive systems",
+    title: "Agentic Workflow Automation",
+    eyebrow: "Operations AI",
     summary:
-      "Playable web and app game experiences with reliable interaction loops, responsive presentation, and launch-ready interfaces.",
+      "AI-assisted operational workflows that turn repetitive handoffs into reviewable, auditable delivery pipelines.",
     description:
-      "We build lightweight game interfaces and interactive products where feel, performance, and a clear gameplay loop matter as much as visuals.",
+      "We design and build workflow systems where AI can draft, classify, summarize, generate, or route work while humans stay in control of approvals and edge cases.",
     outcomes: [
-      "Game UI, menus, onboarding, and player-facing states",
-      "Interactive prototypes and browser-based gameplay experiences",
-      "Performance-aware frontend implementation",
-      "Launch pages and community-facing product surfaces",
+      "Workflow discovery and automation opportunity mapping",
+      "Human-in-the-loop review states and escalation paths",
+      "Dashboards, queues, prompts, and operational UI surfaces",
+      "Documentation for maintaining AI-assisted business processes",
     ],
   },
   {
     slug: "solution-architecture",
-    title: "Solution Architecture",
-    eyebrow: "Technical planning",
+    title: "Product Architecture",
+    eyebrow: "Launch planning",
     summary:
-      "Architecture and implementation planning for software products that need to scale beyond a first prototype.",
+      "Practical technical direction for AI-enabled products that need to scale beyond a first prototype.",
     description:
-      "We map product requirements into practical system boundaries, frontend/backend responsibilities, data flow, and deployment paths.",
+      "We map product requirements into system boundaries, frontend/backend responsibilities, AI integration points, data flow, deployment paths, and quality gates.",
     outcomes: [
       "Technical discovery and implementation roadmap",
-      "Frontend architecture, integration boundaries, and data modeling",
+      "AI integration boundaries, data modeling, and failure-mode planning",
       "Scalable deployment and maintenance approach",
-      "Documentation that helps founders and engineers move in the same direction",
+      "Documentation that keeps founders, engineers, and AI workflows aligned",
     ],
   },
+];
+
+export const aiDeliverySteps = [
+  {
+    label: "Prompt intake",
+    detail: "Clarify goal, constraints, risks, and launch path.",
+    status: "scoping",
+  },
+  {
+    label: "Agent plan",
+    detail: "Break product work into reviewed tasks and interfaces.",
+    status: "planning",
+  },
+  {
+    label: "UI build",
+    detail: "Generate, refine, and implement product surfaces.",
+    status: "building",
+  },
+  {
+    label: "Tests",
+    detail: "Run lint, typecheck, audit, build, and browser checks.",
+    status: "verifying",
+  },
+  {
+    label: "PR / deploy",
+    detail: "Ship through reviewable commits and deployment gates.",
+    status: "ready",
+  },
+];
+
+export const aiProofPoints = [
+  { value: "AI+", label: "Human-reviewed delivery loops" },
+  { value: "19", label: "Static routes generated in the current build" },
+  { value: "2019", label: "Registered technology company" },
 ];
 
 export const projects = [
@@ -202,9 +246,19 @@ export const projects = [
 
 export const faqs = [
   {
-    question: "What does Lorem Technology build?",
+    question: "What does AI-first development mean here?",
     answer:
-      "We build websites, product interfaces, app experiences, game-facing web surfaces, and practical software architecture for founders and digital teams.",
+      "It means product strategy, design, engineering, tests, and delivery are supported by AI-assisted workflows while human engineers still review scope, code, security, and launch decisions.",
+  },
+  {
+    question: "Can you build AI features or only use AI internally?",
+    answer:
+      "Both. We can build AI-enabled product surfaces and automation workflows, and we also use AI-assisted delivery systems internally to move faster with clearer review points.",
+  },
+  {
+    question: "How do you keep AI-assisted work reliable?",
+    answer:
+      "We keep a human-in-the-loop process with scoped prompts, implementation review, linting, type checks, audits, production builds, browser checks, and explicit handoff notes.",
   },
   {
     question: "Where is the company registered?",
@@ -212,19 +266,9 @@ export const faqs = [
       "Lorem Technology is registered in Ho Chi Minh City, Vietnam as CÔNG TY TNHH CÔNG NGHỆ LOREM with tax ID 0315880407.",
   },
   {
-    question: "How long does a typical project take?",
-    answer:
-      "Small launches usually take 4 to 6 weeks. Larger product builds or architecture-led engagements are scoped after discovery so timeline, deliverables, and risk are clear.",
-  },
-  {
-    question: "Do you offer custom solutions?",
-    answer:
-      "Yes. Each engagement starts from the product goal, audience, constraints, and launch path rather than a fixed template.",
-  },
-  {
     question: "What is the best way to start?",
     answer:
-      "Book a discovery call or email the project context. We will clarify scope, constraints, and the fastest practical path to a useful launch.",
+      "Book an AI build call or email the project context. We will clarify the product goal, data boundaries, launch constraints, and the fastest practical path to a reviewed build.",
   },
 ];
 

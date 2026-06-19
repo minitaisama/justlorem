@@ -5,20 +5,21 @@ import { projects } from "@/lib/site";
 
 export default function OurWork() {
   return (
-    <section id="work" className="bg-[#030712] py-20 md:py-28">
+    <section id="work" className="bg-[#05070a] py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9fc2ff]">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#b9ff66]">
               Selected work
             </p>
             <h2 className="mt-4 font-display text-5xl leading-none text-white md:text-7xl">
-              Product surfaces with proof.
+              Product surfaces ready for the AI era.
             </h2>
           </div>
           <p className="max-w-md text-base leading-8 text-white/64">
-            Case studies are structured around the problem, scope, deliverables,
-            and live product reference instead of a hover-only gallery.
+            These projects show the kind of product clarity, responsive UI, and
+            implementation discipline we now pair with AI-assisted delivery
+            systems.
           </p>
         </div>
 
@@ -27,7 +28,7 @@ export default function OurWork() {
             <Link
               key={project.slug}
               href={`/work/${project.slug}`}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0a0f1a] transition hover:border-[#9fc2ff]/50"
+              className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0b1013] transition hover:border-[#b9ff66]/55"
             >
               <div className="relative aspect-[1.35] overflow-hidden bg-[#111827]">
                 <Image
@@ -47,7 +48,7 @@ export default function OurWork() {
                   <h3 className="font-display text-2xl text-white">
                     {project.title}
                   </h3>
-                  <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-white/42 transition group-hover:text-[#9fc2ff]" />
+                  <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-white/42 transition group-hover:text-[#b9ff66]" />
                 </div>
                 <p className="mt-3 text-sm leading-7 text-white/64">
                   {project.summary}

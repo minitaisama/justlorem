@@ -20,7 +20,7 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Software, Web, App & Product Development`,
+    default: `${site.name} — AI-First Development Studio`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     canonical: site.url,
   },
   openGraph: {
-    title: `${site.name} — Software, Web, App & Product Development`,
+    title: `${site.name} — AI-First Development Studio`,
     description: site.description,
     type: "website",
     url: site.url,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Software, Web, App & Product Development`,
+    title: `${site.name} — AI-First Development Studio`,
     description: site.description,
     images: [absoluteUrl(site.ogImage)],
   },

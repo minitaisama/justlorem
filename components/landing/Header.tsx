@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { navLinks, site } from "@/lib/site";
+import { aiPositioning, navLinks, site } from "@/lib/site";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +57,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-display uppercase tracking-[0.2em] text-[#030712] transition hover:bg-[#9fc2ff]"
           >
-            Book a Call <ArrowUpRight size={15} />
+            {aiPositioning.primaryCta} <ArrowUpRight size={15} />
           </Link>
         </div>
 
@@ -108,7 +108,7 @@ export default function Header() {
                 onClick={() => setIsOpen(false)}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-display uppercase tracking-[0.18em] text-[#030712]"
               >
-                Book a Call <ArrowUpRight size={16} />
+                {aiPositioning.primaryCta} <ArrowUpRight size={16} />
               </Link>
             </div>
           </div>

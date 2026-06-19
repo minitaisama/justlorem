@@ -6,7 +6,13 @@ import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
 import { pageMetadata } from "@/lib/seo";
-import { findProject, findService, projects, site } from "@/lib/site";
+import {
+  aiPositioning,
+  findProject,
+  findService,
+  projects,
+  site,
+} from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -138,7 +144,7 @@ export default async function WorkPage({ params }: PageProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-display uppercase tracking-[0.16em] text-[#030712] transition hover:bg-[#9fc2ff]"
           >
-            Book Discovery Call <ArrowUpRight size={16} />
+            {aiPositioning.primaryCta} <ArrowUpRight size={16} />
           </Link>
         </div>
       </section>
