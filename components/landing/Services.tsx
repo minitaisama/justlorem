@@ -1,51 +1,61 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { serviceCategories } from "@/lib/site";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { productCategories, productsForCategory } from "@/lib/catalog";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#07100d] py-20 md:py-28">
+    <section id="solutions" className="bg-[#f9fafb] px-4 py-16 md:px-8 md:py-20">
       <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#b9ff66]">
-              AI-first capabilities
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">
+              Giải pháp tư vấn
             </p>
-            <h2 className="mt-4 max-w-xl font-display text-5xl leading-[0.95] text-white md:text-7xl">
-              Build loops for products that cannot wait.
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.14] tracking-tight text-[#0a1b33] md:text-6xl">
+              Chọn đúng license trước khi mua.
             </h2>
-            <p className="mt-6 max-w-lg text-base leading-8 text-white/68">
-              We use AI to compress the path from idea to reviewed build, but
-              the work still moves through human judgment, testing, and
-              maintainable architecture.
-            </p>
           </div>
+          <p className="max-w-sm text-sm font-semibold leading-7 text-[#64748b]">
+            LOREM hỗ trợ IT và kế toán phân loại nhu cầu Windows, Office,
+            Microsoft 365 và Adobe trước khi chốt báo giá.
+          </p>
+        </div>
 
-          <div className="grid gap-4">
-            {serviceCategories.map((service, index) => (
+        <div className="grid gap-4 lg:grid-cols-4">
+            {productCategories.map((category, index) => {
+              const products = productsForCategory(category.slug);
+              return (
               <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="group grid gap-4 rounded-3xl border border-white/10 bg-[#05070a] p-5 transition hover:border-[#b9ff66]/60 hover:bg-[#0b1711] md:grid-cols-[auto_1fr_auto] md:p-6"
+                key={category.slug}
+                href={`/giai-phap/${category.slug}`}
+                className="group flex h-full flex-col rounded-[2rem] border border-slate-200/70 bg-white p-5 shadow-sm transition hover:border-slate-300"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#b9ff66]/12 font-display text-xl text-[#b9ff66]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/70 bg-[#f9fafb] text-sm font-semibold text-[#0a1b33] shadow-sm">
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">
-                    {service.eyebrow}
+                <div className="mt-5">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
+                    {category.eyebrow}
                   </p>
-                  <h3 className="mt-2 text-xl font-semibold text-white md:text-2xl">
-                    {service.title}
+                  <h3 className="mt-2 text-xl font-medium leading-tight text-[#0a1b33]">
+                    {category.title}
                   </h3>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-white/64">
-                    {service.summary}
-                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {products.map((product) => (
+                      <span
+                        key={product.slug}
+                        className="inline-flex items-center gap-1 rounded-full border border-slate-200/60 bg-[#f9fafb] px-3 py-1 text-xs font-semibold text-slate-600"
+                      >
+                        <CheckCircle2 size={13} className="text-[#0a1b33]" />
+                        {product.shortName}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <ArrowUpRight className="hidden text-white/40 transition group-hover:text-[#b9ff66] md:block" />
+                <ArrowUpRight className="mt-auto pt-5 text-slate-400 transition group-hover:text-[#0a1b33]" />
               </Link>
-            ))}
-          </div>
+              );
+            })}
         </div>
       </div>
     </section>

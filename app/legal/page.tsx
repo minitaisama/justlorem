@@ -3,70 +3,80 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
+import TrackedLink from "@/components/TrackedLink";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Legal Company Information",
+  title: "Thông tin pháp lý LOREM Technology",
   description:
-    "Official company and tax reference information for Lorem Technology, registered as CÔNG TY TNHH CÔNG NGHỆ LOREM with tax ID 0315880407.",
+    "Thông tin pháp nhân, mã số thuế, địa chỉ và Masothue của LOREM Technology.",
   path: "/legal",
 });
 
 export default function LegalPage() {
   const rows = [
-    ["Vietnamese legal name", site.legalName],
-    ["International name", site.internationalName],
-    ["Short name", site.shortName],
-    ["Tax ID", site.taxId],
-    ["Phone", site.phone],
-    ["Email", site.email],
-    ["Address", site.address],
+    { label: "Tên pháp lý", value: site.legalName },
+    { label: "Tên quốc tế", value: site.internationalName },
+    { label: "Tên ngắn", value: site.shortName },
+    { label: "Mã số thuế", value: site.taxId },
+    { label: "Hotline", value: site.phone, href: site.phoneHref },
+    { label: "Địa chỉ", value: site.address },
   ];
 
   return (
-    <main className="min-h-screen bg-[#030712] text-white">
+    <main className="min-h-screen bg-[#eef3ff] text-[#14213d]">
       <Header />
       <section className="py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1100px] px-5 md:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9fc2ff]">
-            Legal reference
+          <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-[#2f5bff]">
+            Pháp lý doanh nghiệp
           </p>
-          <h1 className="mt-4 font-display text-6xl leading-none md:text-8xl">
-            Official company information.
+          <h1 className="mt-4 text-5xl font-extrabold leading-[1.03] tracking-[-0.02em] md:text-7xl">
+            Thông tin pháp nhân LOREM Technology.
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-9 text-white/70">
-            This page exists to make Lorem Technology's legal identity clear for
-            customers, search systems, and AI answer engines. Masothue is linked
-            as a public tax reference for entity verification.
+          <p className="mt-6 max-w-3xl text-lg leading-9 text-[#4b5873]">
+            Trang này công khai thông tin pháp nhân để khách hàng, công cụ tìm
+            kiếm và hệ thống trả lời có thể đối chiếu đúng entity LOREM.
+            Masothue được liên kết như nguồn tham khảo mã số thuế công khai.
           </p>
 
-          <div className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-[#0a0f1a]">
-            {rows.map(([label, value]) => (
+          <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-[#c9d6f2] bg-white shadow-[0_22px_65px_rgba(20,33,61,0.09)]">
+            {rows.map((row) => (
               <div
-                key={label}
-                className="grid gap-2 border-b border-white/10 px-5 py-4 last:border-b-0 md:grid-cols-[240px_1fr]"
+                key={row.label}
+                className="grid gap-2 border-b border-[#e2e9f7] px-5 py-4 last:border-b-0 md:grid-cols-[240px_1fr]"
               >
-                <dt className="text-sm font-semibold text-white/45">{label}</dt>
-                <dd className="text-sm leading-7 text-white">{value}</dd>
+                <dt className="text-sm font-bold text-[#8290ad]">{row.label}</dt>
+                <dd className="text-sm leading-7 text-[#14213d]">
+                  {row.href ? (
+                    <a href={row.href} className="font-bold text-[#2f5bff] hover:text-[#244be0]">
+                      {row.value}
+                    </a>
+                  ) : (
+                    row.value
+                  )}
+                </dd>
               </div>
             ))}
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
+            <TrackedLink
               href={site.masothueUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-display uppercase tracking-[0.16em] text-[#030712] transition hover:bg-[#9fc2ff]"
+              eventName="legal_reference_click"
+              eventParameters={{ source: "legal_page" }}
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#2f5bff] px-6 py-3 text-sm font-extrabold text-white transition hover:bg-[#244be0]"
             >
-              Open Masothue record <ArrowUpRight size={16} />
-            </Link>
+              Mở hồ sơ Masothue <ArrowUpRight size={16} />
+            </TrackedLink>
             <Link
               href="/about"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/45"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#b7c7eb] bg-white px-6 py-3 text-sm font-bold text-[#14213d] transition hover:border-[#2f5bff] hover:text-[#2f5bff]"
             >
-              Read about Lorem Technology
+              Về LOREM Technology
             </Link>
           </div>
         </div>

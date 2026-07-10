@@ -1,112 +1,84 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { aiPositioning, navLinks, serviceCategories, site } from "@/lib/site";
+import CallCta from "@/components/CallCta";
+import QuoteCta from "@/components/QuoteCta";
+import { productCategories } from "@/lib/catalog";
+import { navLinks, site } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer id="footer" className="border-t border-white/10 bg-[#0a0f1a]">
-      <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-5 py-12 md:px-8 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
+    <footer id="footer" className="border-t border-slate-200/70 bg-[#f9fafb]">
+      <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-5 py-12 md:px-8 lg:grid-cols-[1fr_1.25fr]">
         <div>
           <Image
             src={site.logo}
             alt="Lorem Technology logo"
-            width={240}
-            height={82}
-            className="h-20 w-auto object-contain"
+            width={500}
+            height={500}
+            className="h-20 w-20 object-contain"
           />
-          <p className="mt-5 max-w-md text-sm leading-7 text-white/66">
+          <p className="mt-5 max-w-md text-sm leading-7 text-[#4b5873]">
             {site.description}
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={site.calendarUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-display uppercase tracking-[0.16em] text-[#030712] transition hover:bg-[#9fc2ff]"
-            >
-              {aiPositioning.primaryCta} <ArrowUpRight size={16} />
-            </Link>
-            <Link
-              href={`mailto:${site.email}`}
-              className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40"
-            >
-              {site.email}
-            </Link>
+            <CallCta
+              location="footer"
+              label="Gọi hotline"
+              className="border border-slate-200 bg-white text-[#0a1b33] hover:border-slate-300"
+            />
+            <QuoteCta
+              location="footer"
+              label="Báo giá Zalo"
+              className="bg-[#0a152d] text-white hover:bg-[#13264c]"
+            />
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-8">
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/45">
-              Navigate
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+              Điều hướng
             </h2>
             <div className="mt-4 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-white/72 transition hover:text-white"
+                  className="inline-flex min-h-11 items-center text-sm font-semibold text-slate-600 transition hover:text-[#0a1b33]"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link href="/privacy-policy" className="text-sm text-white/72 transition hover:text-white">
+              <Link href="/privacy-policy" className="inline-flex min-h-11 items-center text-sm font-semibold text-slate-600 transition hover:text-[#0a1b33]">
                 Privacy Policy
               </Link>
-              <Link href="/data-deletion" className="text-sm text-white/72 transition hover:text-white">
+              <Link href="/data-deletion" className="inline-flex min-h-11 items-center text-sm font-semibold text-slate-600 transition hover:text-[#0a1b33]">
                 Data Deletion
+              </Link>
+              <Link href="/brand-assets" className="inline-flex min-h-11 items-center text-sm font-semibold text-slate-600 transition hover:text-[#0a1b33]">
+                Brand assets
               </Link>
             </div>
           </div>
 
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/45">
-              Services
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+              Giải pháp
             </h2>
             <div className="mt-4 flex flex-col gap-3">
-              {serviceCategories.map((service) => (
+              {productCategories.map((category) => (
                 <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="text-sm text-white/72 transition hover:text-white"
+                  key={category.slug}
+                  href={`/giai-phap/${category.slug}`}
+                  className="inline-flex min-h-11 items-center text-sm font-semibold text-slate-600 transition hover:text-[#0a1b33]"
                 >
-                  {service.title}
+                  {category.title}
                 </Link>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-[#030712] p-5">
-          <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/45">
-            Legal entity
-          </h2>
-          <p className="mt-4 font-semibold text-white">{site.legalName}</p>
-          <p className="mt-2 text-sm text-white/66">{site.internationalName}</p>
-          <dl className="mt-5 space-y-3 text-sm">
-            <div className="flex justify-between gap-4">
-              <dt className="text-white/45">Tax ID</dt>
-              <dd className="font-semibold text-white">{site.taxId}</dd>
-            </div>
-            <div className="flex justify-between gap-4">
-              <dt className="text-white/45">Phone</dt>
-              <dd>
-                <a href={`tel:${site.phone}`} className="text-white hover:text-[#9fc2ff]">
-                  {site.phone}
-                </a>
-              </dd>
-            </div>
-          </dl>
-          <Link
-            href={site.masothueUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#9fc2ff] hover:text-white"
-          >
-            View official Masothue reference <ArrowUpRight size={15} />
-          </Link>
-        </div>
       </div>
     </footer>
   );
