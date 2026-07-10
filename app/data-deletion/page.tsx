@@ -5,92 +5,79 @@ import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Data Deletion Request",
+  title: "Yêu cầu xóa dữ liệu",
   description:
-    "Instructions for requesting deletion of personal data associated with Lorem Technology services and Facebook Messenger interactions.",
+    "Thông tin về yêu cầu xóa dữ liệu liên quan đến các dịch vụ của LOREM Technology.",
   path: "/data-deletion",
 });
 
 export default function DataDeletionPage() {
   return (
-    <main className="min-h-screen bg-[#030712] text-white">
+    <main className="min-h-screen bg-[#eef3ff] text-[#14213d]">
       <Header />
       <section className="mx-auto w-full max-w-[900px] px-5 py-20 md:px-8">
-        <h1 className="font-display text-5xl md:text-6xl">
-          Data Deletion Request
+        <h1 className="text-5xl font-extrabold tracking-[-0.02em] md:text-6xl">
+          Yêu cầu xóa dữ liệu
         </h1>
-        <p className="mt-6 text-lg leading-8 text-white/72">
-          At {site.name}, we respect your privacy and your right to control
-          personal data associated with our services, including interactions via
-          Facebook Messenger.
+        <p className="mt-6 text-lg leading-8 text-[#4b5873]">
+          {site.name} tôn trọng quyền kiểm soát dữ liệu cá nhân liên quan đến
+          các dịch vụ do LOREM vận hành.
         </p>
 
-        <div className="prose-policy mt-10 space-y-10 text-white/80">
+        <div className="prose-policy mt-10 space-y-10 text-[#4b5873]">
           <section>
-            <h2>1. How to Request Data Deletion</h2>
+            <h2>1. Cách gửi yêu cầu</h2>
             <p>
-              Send an email to{" "}
-              <a href={`mailto:${site.email}`} className="text-[#9fc2ff]">
-                {site.email}
-              </a>{" "}
-              with the subject line "Request to delete my data".
+              Gửi yêu cầu qua <a href={site.phoneHref}>hotline {site.phone}</a> hoặc <a href={site.zaloUrl}>Zalo chính thức</a>, với nội dung "Yêu cầu xóa dữ liệu".
             </p>
-            <p>Your request should include your full name and email address.</p>
+            <p>Chỉ cung cấp thông tin cần thiết để xác định dịch vụ hoặc tương tác liên quan.</p>
           </section>
 
           <section>
-            <h2>2. Data We Will Delete</h2>
+            <h2>2. Phạm vi xử lý</h2>
             <ul>
-              <li>Your name and email address.</li>
-              <li>Data associated with your account.</li>
+              <li>Dữ liệu gắn với dịch vụ LOREM có thể xác định được từ yêu cầu.</li>
+              <li>Dữ liệu tương tác từ các dịch vụ trước đây nếu vẫn thuộc quyền kiểm soát của LOREM.</li>
+              <li>Lựa chọn analytics có thể được xóa trực tiếp bằng cách xóa local storage của trình duyệt.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>3. Xác minh yêu cầu</h2>
+            <p>
+              LOREM có thể yêu cầu thông tin xác minh phù hợp trước khi xử lý để
+              tránh xóa dữ liệu theo yêu cầu của người không có quyền.
+            </p>
+          </section>
+
+          <section>
+            <h2>4. Thời gian xử lý</h2>
+            <p>
+              Thời gian xử lý phụ thuộc vào việc xác minh và hệ thống liên quan.
+              LOREM sẽ phản hồi qua kênh đã dùng để tiếp nhận yêu cầu.
+            </p>
+          </section>
+
+          <section>
+            <h2>5. Xác nhận</h2>
+            <p>Kết quả xử lý sẽ được xác nhận qua kênh tiếp nhận chính thức.</p>
+          </section>
+
+          <section>
+            <h2>6. Lưu ý</h2>
+            <ul>
               <li>
-                Messages and interactions handled by our Facebook Messenger
-                chatbot services.
+                Một số dữ liệu có thể cần được lưu theo nghĩa vụ pháp lý hoặc hồ sơ giao dịch.
+              </li>
+              <li>
+                Dữ liệu do nền tảng bên thứ ba kiểm soát còn phụ thuộc chính sách của nền tảng đó.
               </li>
             </ul>
           </section>
 
           <section>
-            <h2>3. Verification Process</h2>
-            <p>
-              To protect your data, we may require verification before
-              processing your request. Please send the request from your
-              registered email address or provide sufficient proof of account
-              ownership.
-            </p>
-          </section>
-
-          <section>
-            <h2>4. Processing Time</h2>
-            <p>
-              We will process valid requests within <strong>7 days</strong>. In
-              some cases, it may take slightly longer if additional verification
-              is required.
-            </p>
-          </section>
-
-          <section>
-            <h2>5. Confirmation</h2>
-            <p>Once your data has been deleted, we will send a confirmation email.</p>
-          </section>
-
-          <section>
-            <h2>6. Important Notes</h2>
-            <ul>
-              <li>
-                Some data may be retained if required by law or for legitimate
-                business purposes.
-              </li>
-              <li>
-                Data processed through Facebook may also be subject to Facebook's
-                own data policies.
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Last updated</h2>
-            <p>March 18, 2026</p>
+            <h2>Cập nhật gần nhất</h2>
+            <p>10/07/2026</p>
           </section>
         </div>
       </section>

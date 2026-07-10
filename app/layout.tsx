@@ -1,26 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Raleway } from "next/font/google";
-import { organizationJsonLd } from "@/lib/seo";
+import { Be_Vietnam_Pro } from "next/font/google";
+import Script from "next/script";
+import AnalyticsConsent from "@/components/AnalyticsConsent";
+import JsonLd from "@/components/JsonLd";
+import { siteJsonLd } from "@/lib/seo";
 import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
 
-const anton = Anton({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-display",
+const beVietnamPro = Be_Vietnam_Pro({
+  subsets: ["vietnamese"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
-});
-
-const raleway = Raleway({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
+  variable: "--font-be-vietnam-pro",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — AI-First Development Studio`,
+    default: `${site.name} — Giải pháp bản quyền Microsoft & Adobe`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
     canonical: site.url,
   },
   openGraph: {
-    title: `${site.name} — AI-First Development Studio`,
+    title: `${site.name} — Giải pháp bản quyền Microsoft & Adobe`,
     description: site.description,
     type: "website",
     url: site.url,
@@ -38,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — AI-First Development Studio`,
+    title: `${site.name} — Giải pháp bản quyền Microsoft & Adobe`,
     description: site.description,
     images: [absoluteUrl(site.ogImage)],
   },
@@ -50,10 +47,17 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
 };
 
 export const viewport: Viewport = {
-  themeColor: "#030712",
+  themeColor: "#f9fafb",
   width: "device-width",
   initialScale: 1,
 };
@@ -63,18 +67,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cloudflareToken = process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${anton.variable} ${raleway.variable} font-body antialiased bg-[#030712] text-white`}
-      >
+    <html lang="vi">
+      <body className={`${beVietnamPro.variable} antialiased`}>
         {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd()),
-          }}
-        />
+        <JsonLd data={siteJsonLd()} />
+        {measurementId ? <AnalyticsConsent measurementId={measurementId} /> : null}
+        {cloudflareToken ? (
+          <Script
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            strategy="afterInteractive"
+            data-cf-beacon={JSON.stringify({ token: cloudflareToken })}
+          />
+        ) : null}
       </body>
     </html>
   );

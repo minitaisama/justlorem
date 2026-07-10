@@ -6,119 +6,70 @@ import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Privacy Policy",
+  title: "Chính sách quyền riêng tư",
   description:
-    "Privacy Policy for Lorem Technology services, website, third-party login, and data deletion requests.",
+    "Cách LOREM Technology sử dụng dữ liệu phân tích website và bảo vệ thông tin khi người dùng truy cập justlorem.com.",
   path: "/privacy-policy",
 });
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#030712] text-white">
+    <main className="min-h-screen bg-[#f9fafb] text-[#14213d]">
       <Header />
-      <section className="mx-auto w-full max-w-[900px] px-5 py-20 md:px-8">
-        <h1 className="font-display text-5xl md:text-6xl">Privacy Policy</h1>
-        <p className="mt-4 text-sm text-white/60">
-          <strong>Effective date:</strong> March 18, 2026
+      <section className="mx-auto w-full max-w-[900px] px-5 py-16 md:px-8 md:py-20">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Privacy</p>
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+          Chính sách quyền riêng tư.
+        </h1>
+        <p className="mt-4 text-sm text-[#4b5873]">
+          <strong>Cập nhật:</strong> 10/07/2026
         </p>
 
-        <div className="prose-policy mt-10 space-y-10 text-white/80">
+        <div className="prose-policy mt-10 space-y-10 text-[#4b5873]">
           <section>
             <p>
-              {site.name} ("we", "our", or "us") operates the website{" "}
-              <Link href="/" className="text-[#9fc2ff]">
-                {site.url}
-              </Link>
-              .
+              {site.name} vận hành website <Link href="/" className="font-bold text-[#2f5bff]">{site.url}</Link> để cung cấp thông tin về sản phẩm, giá tham khảo và giải pháp bản quyền phần mềm doanh nghiệp.
             </p>
-            <p>
-              This Privacy Policy describes how we collect, use, and protect
-              information when you use our services, including when you log in
-              via third-party platforms such as Facebook.
-            </p>
+            <p>Website hiện không có form đăng ký, tài khoản người dùng hoặc checkout.</p>
           </section>
 
           <section>
-            <h2>1. Information We Collect</h2>
+            <h2>1. Dữ liệu phân tích</h2>
             <ul>
-              <li>
-                <strong>Personal Information:</strong> name and email address.
-              </li>
-              <li>
-                <strong>Social Login Data:</strong> profile name and basic
-                account information provided by third-party login providers.
-              </li>
-              <li>
-                <strong>Messaging Data:</strong> messages sent through Facebook
-                Messenger when interacting with our chatbot services.
-              </li>
+              <li><strong>Cloudflare Web Analytics:</strong> có thể được dùng để đo traffic hạ tầng theo cơ chế không sử dụng cookie phân tích.</li>
+              <li><strong>Google Analytics 4:</strong> chỉ được tải sau khi người dùng chọn đồng ý analytics.</li>
+              <li><strong>Google Search Console:</strong> được dùng để theo dõi trạng thái index và hiệu quả tìm kiếm ở cấp website.</li>
             </ul>
           </section>
 
           <section>
-            <h2>2. How We Use Your Information</h2>
-            <ul>
-              <li>To authenticate and manage user accounts.</li>
-              <li>To operate and improve chatbot services.</li>
-              <li>To respond to user messages and provide support.</li>
-              <li>To communicate with users when necessary.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>3. Data Sharing</h2>
-            <p>We do not sell personal data.</p>
+            <h2>2. Event được ghi nhận</h2>
             <p>
-              We may share data with trusted third-party services only when
-              necessary to operate our services, including hosting providers,
-              analytics tools when applicable, and Facebook platform services.
+              Khi analytics được cho phép, website có thể ghi nhận việc xem bảng giá, mở trang sản phẩm, xem bảng so sánh, nhấp CTA Zalo, gọi hotline hoặc mở nguồn pháp lý.
+            </p>
+            <p>
+              Event không gửi tên, số điện thoại, địa chỉ email, nội dung cuộc gọi, nội dung tin nhắn hoặc thông tin nhập trong ứng dụng Zalo.
             </p>
           </section>
 
           <section>
-            <h2>4. Data Retention</h2>
+            <h2>3. Tùy chọn analytics</h2>
             <p>
-              We retain information only as long as necessary to provide our
-              services or comply with legal obligations.
+              Lựa chọn đồng ý hoặc từ chối được lưu trong local storage của trình duyệt. Nếu chưa có lựa chọn, Google Analytics không được tải.
             </p>
           </section>
 
           <section>
-            <h2>5. Your Rights</h2>
+            <h2>4. Liên kết bên thứ ba</h2>
             <p>
-              You may request access, correction, or deletion of your personal
-              data. Please refer to the{" "}
-              <Link href="/data-deletion" className="text-[#9fc2ff]">
-                Data Deletion Request
-              </Link>{" "}
-              page for instructions.
+              Website có liên kết đến Zalo, Masothue, Microsoft, Adobe và các nguồn tham khảo khác. Khi rời justlorem.com, chính sách của website hoặc nền tảng đích được áp dụng.
             </p>
           </section>
 
           <section>
-            <h2>6. Data Security</h2>
+            <h2>5. Liên hệ và yêu cầu dữ liệu</h2>
             <p>
-              We take reasonable measures to protect information from
-              unauthorized access, disclosure, or misuse.
-            </p>
-          </section>
-
-          <section>
-            <h2>7. Contact Us</h2>
-            <p>
-              For questions about this policy or your data, contact{" "}
-              <a href={`mailto:${site.email}`} className="text-[#9fc2ff]">
-                {site.email}
-              </a>
-              .
-            </p>
-          </section>
-
-          <section>
-            <h2>8. Updates to This Policy</h2>
-            <p>
-              We may update this Privacy Policy from time to time. Changes will
-              be posted on this page with an updated effective date.
+              Gửi yêu cầu qua <a href={site.phoneHref} className="font-bold text-[#2f5bff]">hotline {site.phone}</a> hoặc <a href={site.zaloUrl} className="font-bold text-[#2f5bff]">Zalo chính thức</a>. Hướng dẫn xử lý yêu cầu dữ liệu được nêu tại trang <Link href="/data-deletion" className="font-bold text-[#2f5bff]">Data Deletion</Link>.
             </p>
           </section>
         </div>

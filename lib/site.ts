@@ -1,295 +1,425 @@
+import { productCategories, productFamilies } from "./catalog";
+import { knowledgeArticles } from "./knowledge";
+
 export const site = {
-  name: "Lorem Technology",
+  name: "LOREM Technology",
   legalName: "CÔNG TY TNHH CÔNG NGHỆ LOREM",
   internationalName: "LOREM TECHNOLOGY COMPANY LIMITED",
   shortName: "LOREM",
   url: "https://justlorem.com",
   taxId: "0315880407",
-  phone: "0931138999",
-  email: "taind2512@gmail.com",
+  phone: "0382520281",
+  phoneHref: "tel:+84382520281",
+  zaloUrl: "https://zalo.me/0382520281",
+  email: "",
   address:
     "196/11/10 Tan Son Nhi, Tan Son Nhi Ward, Tan Phu District, Ho Chi Minh City, Vietnam",
   masothueUrl:
     "https://masothue.com/0315880407-cong-ty-tnhh-cong-nghe-lorem",
-  calendarUrl: "https://calendar.app.google/AC9XWNQLaUhp3yMq9",
   mapsUrl: "https://maps.app.goo.gl/xMb8egHrPFntwvcR8",
-  logo: "/images/logo-v2.webp",
+  logo: "/images/lorem-logo-blue.png",
   ogImage: "/og-image.jpg",
   description:
-    "Lorem Technology is an AI-first development studio building agentic workflows, product interfaces, and launch-ready software for founders and digital teams.",
-};
-
-export const aiPositioning = {
-  eyebrow: "AI-first development studio",
-  headline: "AI-first development studio for products that need to ship.",
-  subheadline:
-    "We combine senior product engineering with AI-assisted delivery systems to design, build, test, and launch faster.",
-  primaryCta: "Book AI Build Call",
-  secondaryCta: "See AI delivery system",
-  cockpitLabel: "Live delivery cockpit",
+    "LOREM Technology tư vấn và cung cấp giải pháp bản quyền Microsoft GGWA, Windows, Office LTSC, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam.",
 };
 
 export const navLinks = [
-  { label: "Work", href: "/#work" },
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/about" },
-  { label: "Legal", href: "/legal" },
+  { label: "Giải pháp", href: "/#solutions" },
+  { label: "Bảng giá", href: "/#pricing" },
+  { label: "Kiến thức", href: "/kien-thuc" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Pháp lý", href: "/legal" },
 ];
 
-export const serviceCategories = [
-  {
-    slug: "web-design-development",
-    title: "AI Product Engineering",
-    eyebrow: "Build systems",
-    summary:
-      "AI-assisted product builds that move from product intent to interface, implementation, tests, and deployable software.",
-    description:
-      "We combine product strategy, frontend engineering, AI-assisted coding workflows, and launch discipline so teams can ship useful software without drifting through open-ended development cycles.",
-    outcomes: [
-      "Product scope, user flows, and build-ready technical plan",
-      "Responsive product UI implemented with maintainable frontend patterns",
-      "AI-assisted coding loops with human review and quality gates",
-      "Static-export friendly deployment, metadata, and measurable launch paths",
-    ],
-  },
-  {
-    slug: "ui-ux-design",
-    title: "AI UX & Prototype Systems",
-    eyebrow: "Experience loops",
-    summary:
-      "Interface systems, clickable prototypes, and AI-era product flows that make complex tools feel clear and usable.",
-    description:
-      "We turn fuzzy product ideas into interface systems, interaction states, and prototypes that help founders validate direction before heavy engineering spend.",
-    outcomes: [
-      "AI workflow mapping, user journeys, and information architecture",
-      "High-fidelity responsive UI for web, app, and agent-assisted products",
-      "Reusable design tokens, states, and implementation notes",
-      "Prototype screens that can become production components",
-    ],
-  },
-  {
-    slug: "game-development",
-    title: "Agentic Workflow Automation",
-    eyebrow: "Operations AI",
-    summary:
-      "AI-assisted operational workflows that turn repetitive handoffs into reviewable, auditable delivery pipelines.",
-    description:
-      "We design and build workflow systems where AI can draft, classify, summarize, generate, or route work while humans stay in control of approvals and edge cases.",
-    outcomes: [
-      "Workflow discovery and automation opportunity mapping",
-      "Human-in-the-loop review states and escalation paths",
-      "Dashboards, queues, prompts, and operational UI surfaces",
-      "Documentation for maintaining AI-assisted business processes",
-    ],
-  },
-  {
-    slug: "solution-architecture",
-    title: "Product Architecture",
-    eyebrow: "Launch planning",
-    summary:
-      "Practical technical direction for AI-enabled products that need to scale beyond a first prototype.",
-    description:
-      "We map product requirements into system boundaries, frontend/backend responsibilities, AI integration points, data flow, deployment paths, and quality gates.",
-    outcomes: [
-      "Technical discovery and implementation roadmap",
-      "AI integration boundaries, data modeling, and failure-mode planning",
-      "Scalable deployment and maintenance approach",
-      "Documentation that keeps founders, engineers, and AI workflows aligned",
-    ],
-  },
-];
+const windowsBoxImage = "/product-visuals/windows-11-pro-box.png";
+const microsoft365BoxImage =
+  "/product-visuals/microsoft-365-business-standard-box.png";
+const microsoft365BusinessBoxImage =
+  "/product-visuals/microsoft-365-business-standard-retail-box.png";
+const microsoft365PersonalBoxImage =
+  "/product-visuals/microsoft-365-personal-box.png";
+const office2024BoxImage =
+  "/product-visuals/office-2024-home-business-box.png";
 
-export const aiDeliverySteps = [
+export const productVisuals = [
   {
-    label: "Prompt intake",
-    detail: "Clarify goal, constraints, risks, and launch path.",
-    status: "scoping",
+    name: "Windows GGWA",
+    note: "Theo hồ sơ thiết bị",
+    image: "/product-icons/windows-ggwa.svg",
+    imageClass: "h-16 w-16",
+    href: "/san-pham/windows-ggwa",
   },
   {
-    label: "Agent plan",
-    detail: "Break product work into reviewed tasks and interfaces.",
-    status: "planning",
+    name: "Windows 11 Pro",
+    note: "Thiết bị doanh nghiệp",
+    image: "/product-icons/windows-pro.svg",
+    imageClass: "h-16 w-16",
+    href: "/san-pham/windows-11-pro",
   },
   {
-    label: "UI build",
-    detail: "Generate, refine, and implement product surfaces.",
-    status: "building",
+    name: "Office LTSC 2024",
+    note: "Office mua theo license",
+    image: "/product-icons/office-ltsc.svg",
+    imageClass: "h-16 w-16",
+    href: "/san-pham/office-ltsc-2024",
   },
   {
-    label: "Tests",
-    detail: "Run lint, typecheck, audit, build, and browser checks.",
-    status: "verifying",
+    name: "Microsoft 365",
+    note: "Email, Office, cloud",
+    image: "/product-icons/microsoft-365.svg",
+    imageClass: "h-16 w-16",
+    href: "/san-pham/microsoft-365-business-standard",
   },
   {
-    label: "PR / deploy",
-    detail: "Ship through reviewable commits and deployment gates.",
-    status: "ready",
+    name: "M365 Apps",
+    note: "Office theo người dùng",
+    image: "/product-icons/m365-apps.svg",
+    imageClass: "h-16 w-16",
+    href: "/san-pham/microsoft-365-apps-for-business",
+  },
+  {
+    name: "Adobe Teams",
+    note: "Creative Cloud for teams",
+    image: "/product-icons/adobe-teams.svg",
+    imageClass: "h-16 w-16",
+    href: "/san-pham/adobe-creative-cloud-teams",
+  },
+  {
+    name: "Acrobat Pro",
+    note: "Quy trình PDF",
+    image: "/product-icons/acrobat-pro.svg",
+    imageClass: "h-16 w-16",
+    href: "/san-pham/acrobat-pro-teams",
+  },
+  {
+    name: "License advisory",
+    note: "Tư vấn hồ sơ",
+    image: "/images/lorem-mark-blue.png",
+    imageClass: "h-16 w-16",
+    href: "/nguon-hang-ho-so",
   },
 ];
 
-export const aiProofPoints = [
-  { value: "AI+", label: "Human-reviewed delivery loops" },
-  { value: "19", label: "Static routes generated in the current build" },
-  { value: "2019", label: "Registered technology company" },
+export const pricingNotice =
+  "Giá có thể đã được cập nhật, vui lòng liên hệ Zalo hoặc gọi hotline để có giá mới nhất.";
+
+export const pricingCatalog = [
+  {
+    id: "windows",
+    label: "Windows",
+    eyebrow: "Phần mềm Windows",
+    summary: "GGWA, Windows 11 Pro và Windows 11 Home cho thiết bị doanh nghiệp.",
+    accent: "#2563eb",
+    image: windowsBoxImage,
+    products: [
+      {
+        slug: "windows-ggwa",
+        name: "Windows GGWA",
+        detail: "Windows 11 Pro - Legalization Get Genuine",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 4500000,
+        image: windowsBoxImage,
+      },
+      {
+        slug: "windows-11-pro",
+        name: "Windows 11 Pro DSP OEI DVD",
+        detail: "Win Pro 11 64Bit Eng Intl 1pk DSP OEI DVD",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 3830000,
+        image: windowsBoxImage,
+      },
+      {
+        slug: "windows-11-pro",
+        name: "Windows 11 Pro Online Download",
+        detail: "Win Pro 11 64-bit All Lng PK Lic Online Download NR",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 5060000,
+        image: windowsBoxImage,
+      },
+      {
+        slug: "windows-11-home",
+        name: "Windows 11 Home DSP OEI DVD",
+        detail: "Win Home 11 64Bit Eng Intl 1pk DSP OEI DVD",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 2980000,
+        image: windowsBoxImage,
+      },
+      {
+        slug: "windows-11-home",
+        name: "Windows 11 Home Online Download",
+        detail: "WIN HOME 11 64-bit All Lng PK Lic Online Download",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 3300000,
+        image: windowsBoxImage,
+      },
+    ],
+  },
+  {
+    id: "microsoft-365",
+    label: "Microsoft 365",
+    eyebrow: "Subscription cloud",
+    summary: "Business Standard, Apps for business và Personal theo người dùng.",
+    accent: "#0f766e",
+    image: microsoft365BusinessBoxImage,
+    products: [
+      {
+        slug: "microsoft-365-business-standard",
+        name: "Microsoft 365 Business Standard",
+        detail: "Email, Office apps, cloud và cộng tác doanh nghiệp",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 3030000,
+        image: microsoft365BusinessBoxImage,
+      },
+      {
+        slug: "microsoft-365-apps-for-business",
+        name: "Microsoft 365 Apps for business",
+        detail: "Office desktop, web và mobile theo người dùng",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 2710000,
+        image: microsoft365BoxImage,
+      },
+      {
+        slug: "microsoft-365-personal",
+        name: "Microsoft 365 Personal",
+        detail: "1 người dùng, 12 tháng, Office apps và cloud storage",
+        unit: "License",
+        quantity: 1,
+        priceLabel: "Liên hệ",
+        image: microsoft365PersonalBoxImage,
+      },
+    ],
+  },
+  {
+    id: "office",
+    label: "Office",
+    eyebrow: "Phần mềm Office",
+    summary: "Office LTSC 2024 và Office Home & Business 2024.",
+    accent: "#ea580c",
+    image: office2024BoxImage,
+    products: [
+      {
+        slug: "office-ltsc-2024",
+        name: "Office LTSC Standard 2024",
+        detail: "Office mua theo license cho môi trường ổn định",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 11840000,
+        image: office2024BoxImage,
+      },
+      {
+        slug: "office-home-business-2024",
+        name: "Office Home & Business 2024",
+        detail: "English APAC EM Medialess EP2-06630",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 5960000,
+        image: office2024BoxImage,
+      },
+      {
+        slug: "office-home-business-2024",
+        name: "Office Home & Business 2024 ESD",
+        detail: "All Lng APAC EM Retail Online ESD",
+        unit: "License",
+        quantity: 1,
+        priceVnd: 5380000,
+        image: office2024BoxImage,
+      },
+    ],
+  },
+] as const;
+
+export function formatVnd(value: number) {
+  return new Intl.NumberFormat("vi-VN").format(value) + "đ";
+}
+
+export const quoteSteps = [
+  {
+    label: "Gửi nhu cầu qua Zalo hoặc hotline",
+    detail:
+      "Doanh nghiệp gửi sản phẩm cần mua, số lượng dự kiến và yêu cầu chứng từ.",
+    status: "tiếp nhận",
+  },
+  {
+    label: "Rà soát phiên bản phù hợp",
+    detail:
+      "LOREM kiểm tra nhu cầu theo thiết bị, người dùng, môi trường triển khai và mục đích sử dụng.",
+    status: "tư vấn",
+  },
+  {
+    label: "Báo giá theo hồ sơ",
+    detail:
+      "Báo giá dựa trên số lượng, dòng sản phẩm, điều kiện giao dịch và loại chứng từ cần có.",
+    status: "báo giá",
+  },
+  {
+    label: "Bàn giao license & chứng từ",
+    detail:
+      "Hỗ trợ bàn giao thông tin license, hóa đơn và chứng từ theo từng giao dịch.",
+    status: "bàn giao",
+  },
+  {
+    label: "Hỗ trợ sau bàn giao",
+    detail:
+      "Lưu lại thông tin giao dịch và hỗ trợ các câu hỏi cơ bản cho IT hoặc kế toán.",
+    status: "hỗ trợ",
+  },
 ];
 
-export const projects = [
+export const trustSignals = [
   {
-    slug: "hyperlaunch",
-    title: "HyperLaunch",
-    category: "UX / UI Design",
-    serviceSlug: "ui-ux-design",
-    image: "/projects/hyperlaunch.webp",
-    href: "https://hyperlaunch.xyz/",
-    summary:
-      "A launch-focused product interface for a Web3 ecosystem that needed clearer onboarding and stronger visual momentum.",
-    problem:
-      "The product needed to make a complex launch experience feel fast, credible, and easy to scan for early users.",
-    scope: ["Interface direction", "Landing experience", "Product UI system"],
-    deliverables: [
-      "High-impact landing and product sections",
-      "Token/category presentation patterns",
-      "Responsive visual system for launch content",
-    ],
+    title: "Hàng chính hãng",
+    body: "Tư vấn và cung cấp license Microsoft, Windows, Office, Microsoft 365 và Adobe theo hồ sơ mua hàng rõ nguồn.",
   },
   {
-    slug: "bumpies",
-    title: "Bumpies",
-    category: "Game Development",
-    serviceSlug: "game-development",
-    image: "/projects/bumpie.webp",
-    href: "https://www.bumpies.gg/",
-    summary:
-      "A playful game-facing web experience built to communicate character, community, and product energy quickly.",
-    problem:
-      "The brand needed a web surface that felt game-native while still being simple enough for new visitors to understand.",
-    scope: ["Game web UI", "Responsive pages", "Visual polish"],
-    deliverables: [
-      "Character-forward page composition",
-      "Interactive content structure",
-      "Launch-ready responsive implementation",
-    ],
+    title: "Nguồn nhập ủy quyền",
+    body: "Nguồn nhập từ kênh phân phối hoặc đại lý được ủy quyền của Microsoft tại Việt Nam theo từng hồ sơ giao dịch.",
   },
   {
-    slug: "card-masters",
-    title: "Card Masters",
-    category: "Website Design & Development",
-    serviceSlug: "web-design-development",
-    image: "/projects/cardmasters.webp",
-    href: "https://cardmasters.io/",
-    summary:
-      "A product website for a card-game experience where clarity, atmosphere, and conversion needed to work together.",
-    problem:
-      "The site had to show the game world, explain the product, and give visitors a direct path into the live experience.",
-    scope: ["Website design", "Frontend build", "Product storytelling"],
-    deliverables: [
-      "Responsive product landing page",
-      "Visual hierarchy for game features",
-      "External launch and community paths",
-    ],
+    title: "Nguồn hàng uy tín",
+    body: "Ưu tiên nguồn hàng từ các đầu mối phân phối uy tín như FPT/Synnex FPT khi phù hợp với sản phẩm và hồ sơ.",
   },
   {
-    slug: "ton-farm",
-    title: "Ton Farm",
-    category: "Website Design & Development",
-    serviceSlug: "web-design-development",
-    image: "/projects/tonfarm.webp",
-    href: "https://tonfarm.co/",
-    summary:
-      "A clean web product surface for a farming-themed digital product with a focus on fast comprehension.",
-    problem:
-      "The product needed a web presence that could explain mechanics and value without overwhelming visitors.",
-    scope: ["Landing page", "Product sections", "Responsive UI"],
-    deliverables: [
-      "Structured content sections",
-      "Product-benefit hierarchy",
-      "Performance-conscious static implementation",
-    ],
+    title: "Chứng từ rõ ràng",
+    body: "Bàn giao thông tin license, chứng từ và hồ sơ liên quan để IT/kế toán dễ đối chiếu sau mua.",
   },
   {
-    slug: "sugar-senpai",
-    title: "Sugar Senpai",
-    category: "Game Development",
-    serviceSlug: "game-development",
-    image: "/projects/sugarsenpai.webp",
-    href: "https://sugarsenpai.com/",
-    summary:
-      "A stylized game website designed to make the product feel distinct while keeping core actions visible.",
-    problem:
-      "The experience needed enough personality to be memorable without hiding navigation, product context, or calls to action.",
-    scope: ["Game landing page", "UI direction", "Responsive polish"],
-    deliverables: [
-      "Brand-forward website composition",
-      "Gameplay and feature presentation blocks",
-      "Mobile-friendly launch surface",
-    ],
+    title: "Hợp đồng",
+    body: "Hỗ trợ hồ sơ hợp đồng theo nhu cầu mua hàng của doanh nghiệp và quy trình nội bộ.",
   },
   {
-    slug: "xaykenhtiktok",
-    title: "XayKenhTikTok",
-    category: "Solution Architecture",
-    serviceSlug: "solution-architecture",
-    image: "/projects/xaykenhtiktok.webp",
-    href: "https://xaykenhtiktok.com/",
-    summary:
-      "A business automation and content-operation product where system clarity mattered more than visual decoration.",
-    problem:
-      "The project needed a practical architecture that could connect operations, content workflows, and customer-facing surfaces.",
-    scope: ["Architecture planning", "Workflow design", "Product implementation"],
-    deliverables: [
-      "Operational flow mapping",
-      "Scalable technical direction",
-      "Production-ready digital product surface",
-    ],
+    title: "Hóa đơn VAT",
+    body: "Hỗ trợ hóa đơn VAT theo từng giao dịch khi thông tin doanh nghiệp và điều kiện hồ sơ đã được xác nhận.",
   },
 ];
 
-export const faqs = [
+export const complianceFaqs: Array<{
+  category: string;
+  question: string;
+  answer: string;
+  href?: string;
+  linkLabel?: string;
+}> = [
   {
-    question: "What does AI-first development mean here?",
+    category: "Báo giá",
+    question: "Giá trên website có phải giá cuối cùng không?",
     answer:
-      "It means product strategy, design, engineering, tests, and delivery are supported by AI-assisted workflows while human engineers still review scope, code, security, and launch decisions.",
+      "Không. Đây là giá tham khảo cho số lượng và SKU đang hiển thị. Giá xác nhận có thể thay đổi theo thời điểm, số lượng, ngôn ngữ, hình thức bàn giao và hồ sơ mua hàng. Liên hệ Zalo hoặc hotline để xác nhận giá mới nhất. Nếu giá đã quá ngày kiểm tra, website sẽ chuyển sang trạng thái liên hệ thay vì tiếp tục hiển thị một mức giá cũ.",
   },
   {
-    question: "Can you build AI features or only use AI internally?",
+    category: "Chuẩn bị nhu cầu",
+    question: "Cần chuẩn bị thông tin gì để nhận đúng báo giá?",
     answer:
-      "Both. We can build AI-enabled product surfaces and automation workflows, and we also use AI-assisted delivery systems internally to move faster with clearer review points.",
+      "Tối thiểu cần có tên sản phẩm hoặc nhu cầu sử dụng, số thiết bị hoặc người dùng, hệ điều hành và phiên bản hiện tại, thời hạn subscription nếu có, cùng yêu cầu về hợp đồng, hóa đơn VAT và chứng từ bàn giao. Với Windows GGWA, nên chuẩn bị thêm danh sách thiết bị và hồ sơ Windows đang có.",
+    href: "/kien-thuc/ho-so-mua-license-doanh-nghiep",
+    linkLabel: "Xem checklist hồ sơ mua license",
   },
   {
-    question: "How do you keep AI-assisted work reliable?",
+    category: "Windows",
+    question: "Windows GGWA phù hợp với trường hợp nào?",
     answer:
-      "We keep a human-in-the-loop process with scoped prompts, implementation review, linting, type checks, audits, production builds, browser checks, and explicit handoff notes.",
+      "GGWA là hướng cấp phép Windows đầy đủ cho một số trường hợp doanh nghiệp cần xử lý thiết bị hiện hữu đang thiếu quyền sử dụng Windows hợp lệ. Đây không phải một key bán lẻ dùng chung cho mọi tình huống; số lượng, hiện trạng máy và hồ sơ đang có cần được rà soát trước khi chọn SKU.",
+    href: "/kien-thuc/windows-ggwa-la-gi",
+    linkLabel: "Đọc hướng dẫn Windows GGWA",
   },
   {
-    question: "Where is the company registered?",
+    category: "Windows",
+    question: "Windows DSP/OEI, ESD và GGWA có giống nhau không?",
     answer:
-      "Lorem Technology is registered in Ho Chi Minh City, Vietnam as CÔNG TY TNHH CÔNG NGHỆ LOREM with tax ID 0315880407.",
+      "Không. Các tên này phản ánh hình thức sản phẩm, phương thức bàn giao hoặc tình huống cấp phép khác nhau. Hai SKU cùng là Windows 11 Pro vẫn có thể khác ngôn ngữ, cách giao hàng và điều kiện gắn với thiết bị. IT và mua hàng nên đối chiếu tên đầy đủ, part number và thiết bị áp dụng trước khi duyệt.",
+    href: "/kien-thuc/windows-oem-dsp-esd-ggwa-khac-nhau",
+    linkLabel: "So sánh các hình thức Windows",
   },
   {
-    question: "What is the best way to start?",
+    category: "Office",
+    question: "Office LTSC 2024 khác Microsoft 365 như thế nào?",
     answer:
-      "Book an AI build call or email the project context. We will clarify the product goal, data boundaries, launch constraints, and the fastest practical path to a reviewed build.",
+      "Office LTSC 2024 là phiên bản mua theo license cho môi trường cần bộ ứng dụng ổn định; sản phẩm nhận cập nhật bảo mật và chất lượng nhưng không nhận tính năng mới liên tục sau khi phát hành. Microsoft 365 là subscription theo người dùng, ứng dụng được cập nhật thường xuyên và quyền lợi email, cloud hoặc cộng tác phụ thuộc từng gói.",
+    href: "/kien-thuc/office-ltsc-2024-va-microsoft-365",
+    linkLabel: "So sánh Office LTSC và Microsoft 365",
+  },
+  {
+    category: "Microsoft 365",
+    question: "Business Standard khác Apps for business ở điểm nào?",
+    answer:
+      "Cả hai đều cấp theo người dùng và có ứng dụng Office. Business Standard bổ sung email doanh nghiệp Exchange cùng các dịch vụ cộng tác theo cấu hình gói. Apps for business tập trung vào ứng dụng Office và lưu trữ cloud, phù hợp khi doanh nghiệp đã có hệ thống email riêng.",
+    href: "/kien-thuc/microsoft-365-business-standard-va-apps-for-business",
+    linkLabel: "Xem bảng so sánh hai gói",
+  },
+  {
+    category: "Microsoft 365",
+    question: "Một license Microsoft 365 cài được trên bao nhiêu thiết bị?",
+    answer:
+      "Với Business Standard và Apps for business, Microsoft hiện cho phép mỗi người dùng cài ứng dụng trên tối đa 5 PC hoặc Mac, 5 máy tính bảng và 5 điện thoại. Quyền sử dụng gắn với người dùng được cấp license, không phải một key dùng chung; doanh nghiệp vẫn cần kiểm tra điều khoản của đúng gói tại thời điểm mua.",
+    href: "/giai-phap/microsoft-365",
+    linkLabel: "Xem các gói Microsoft 365",
+  },
+  {
+    category: "Adobe",
+    question: "Adobe Teams khác gói Individual như thế nào?",
+    answer:
+      "Adobe Teams dành cho tổ chức cần quản lý người dùng và license tập trung qua Adobe Admin Console. Quản trị viên có thể gán hoặc thu hồi seat khi nhân sự thay đổi, theo dõi license đang dùng và quản lý tài sản của nhóm. Gói Individual không có cùng mô hình quản trị dành cho doanh nghiệp.",
+    href: "/kien-thuc/adobe-individual-va-adobe-teams",
+    linkLabel: "So sánh Adobe Individual và Teams",
+  },
+  {
+    category: "Chứng từ",
+    question: "Một giao dịch license doanh nghiệp được bàn giao những gì?",
+    answer:
+      "Bộ hồ sơ phụ thuộc sản phẩm và giao dịch đã xác nhận, thường gồm báo giá hoặc đơn hàng, hợp đồng khi có yêu cầu, hóa đơn VAT, thông tin SKU và số lượng, hướng dẫn kích hoạt hoặc phân bổ seat, cùng biên bản hoặc xác nhận bàn giao phù hợp. Danh mục chứng từ cần được chốt ngay trong báo giá.",
+    href: "/nguon-hang-ho-so",
+    linkLabel: "Xem quy trình nguồn hàng và hồ sơ",
+  },
+  {
+    category: "Sau bàn giao",
+    question: "IT và kế toán nên lưu lại thông tin nào sau khi mua?",
+    answer:
+      "IT nên lưu tên SKU, part number, số lượng, thiết bị hoặc người dùng được cấp, tài khoản quản trị và ngày bắt đầu hoặc gia hạn. Kế toán nên lưu báo giá, hợp đồng, hóa đơn và chứng từ bàn giao cùng một hồ sơ. Không nên chỉ lưu product key hoặc email kích hoạt riêng lẻ.",
+    href: "/kien-thuc/checklist-ban-giao-license-it-ke-toan",
+    linkLabel: "Mở checklist bàn giao",
   },
 ];
+
+export const brandAssets = {
+  approvedWording: [
+    "tư vấn bản quyền",
+    "báo giá theo số lượng",
+    "hỗ trợ hồ sơ/chứng từ",
+    "nguồn cung có chứng từ theo hồ sơ giao dịch",
+    "bàn giao license rõ ràng",
+  ],
+  avoidedWording: [
+    "Không tự nhận quan hệ đối tác nếu chưa có tài liệu xác minh.",
+    "Không dùng ngôn ngữ tạo áp lực pháp lý hoặc hứa hẹn tuyệt đối.",
+    "Không định vị bằng hàng hóa không rõ nguồn gốc.",
+    "Không gọi subscription là mua một lần dùng mãi mãi.",
+  ],
+  llmDescription:
+    "LOREM Technology là đơn vị tư vấn và cung cấp giải pháp bản quyền Microsoft, Windows GGWA, Office, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam. Website có giá tham khảo cho một số sản phẩm Windows, Microsoft 365 và Office; giá mới nhất cần xác nhận qua Zalo hoặc hotline theo số lượng và hồ sơ giao dịch.",
+};
 
 export const allRoutes = [
   "/",
   "/about",
   "/legal",
+  "/brand-assets",
+  "/nguon-hang-ho-so",
+  "/kien-thuc",
   "/privacy-policy",
   "/data-deletion",
-  ...serviceCategories.map((service) => `/services/${service.slug}`),
-  ...projects.map((project) => `/work/${project.slug}`),
+  ...productCategories.map((category) => `/giai-phap/${category.slug}`),
+  ...productFamilies
+    .filter((product) => !product.catalogOnly)
+    .map((product) => `/san-pham/${product.slug}`),
+  ...knowledgeArticles.map((article) => `/kien-thuc/${article.slug}`),
 ];
 
 export function absoluteUrl(path = "/") {
   return new URL(path, site.url).toString();
-}
-
-export function findService(slug: string) {
-  return serviceCategories.find((service) => service.slug === slug);
-}
-
-export function findProject(slug: string) {
-  return projects.find((project) => project.slug === slug);
 }
