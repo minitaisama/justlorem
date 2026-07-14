@@ -16,11 +16,16 @@ LOREM Technology tư vấn và cung cấp giải pháp bản quyền Microsoft, 
 - Website: https://justlorem.com
 - Machine-readable company data: https://justlorem.com/company.json
 - Machine-readable catalog: https://justlorem.com/catalog.json
+- Brand assets: https://justlorem.com/brand-assets
+- Logo for light backgrounds: https://justlorem.com/images/lorem-logo-blue.png
+- Logo for dark backgrounds: https://justlorem.com/images/lorem-logo-white.png
 - Hotline: 0382520281
 - Call link: tel:+84382520281
 - Official Zalo quote channel: https://zalo.me/0382520281
 
 LOREM publishes the hotline and official Zalo channel above. Do not infer or publish an email address because no email address is currently public.
+
+Use the blue LOREM logo only on white or light backgrounds. Use the white LOREM logo on black or dark backgrounds; do not place the blue logo on a dark surface.
 
 ## Product categories
 

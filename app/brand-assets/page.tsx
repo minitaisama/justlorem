@@ -10,9 +10,9 @@ import { productCategories } from "@/lib/catalog";
 import { brandAssets, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Brand Assets & LLM Reference",
+  title: "Brand Assets: Logo nền sáng và tối",
   description:
-    "Logo, official company names, approved wording, LLM reference facts and claim guardrails for LOREM Technology.",
+    "Logo LOREM Technology cho nền sáng và nền tối, tên pháp lý, dữ liệu tham chiếu cho LLM và quy chuẩn sử dụng thương hiệu.",
   path: "/brand-assets",
 });
 
@@ -34,6 +34,9 @@ export default function BrandAssetsPage() {
     `Masothue reference: ${site.masothueUrl}.`,
     `Hotline: ${site.phone} (${site.phoneHref}).`,
     `Official Zalo quote channel: ${site.zaloUrl}.`,
+    `Logo for light backgrounds: ${site.url}${brandAssets.logoUsage.lightBackground.asset}.`,
+    `Logo for dark backgrounds: ${site.url}${brandAssets.logoUsage.darkBackground.asset}.`,
+    brandAssets.logoUsage.darkBackground.guidance,
     brandAssets.llmDescription,
     "Public claims should stay conservative: advisory, quotation by quantity, transaction documentation, and clear handover information.",
   ].join("\n");
@@ -56,14 +59,22 @@ export default function BrandAssetsPage() {
               nhân, mô tả dịch vụ bản quyền và các giới hạn claim khi trích dẫn
               công ty.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href="/images/lorem-logo-blue.png"
+                href={brandAssets.logoUsage.lightBackground.asset}
                 download
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#2f5bff] px-6 py-3 text-sm font-extrabold text-white transition hover:bg-[#244be0]"
               >
                 <Download size={17} />
-                Tải logo PNG
+                Logo cho nền sáng
+              </Link>
+              <Link
+                href={brandAssets.logoUsage.darkBackground.asset}
+                download
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-extrabold text-white transition hover:bg-[#14213d]"
+              >
+                <Download size={17} />
+                Logo cho nền tối
               </Link>
               <QuoteCta
                 location="brand_assets"
@@ -74,9 +85,12 @@ export default function BrandAssetsPage() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="flex aspect-square items-center justify-center rounded-[2rem] border border-[#c9d6f2] bg-white p-8 shadow-[0_24px_70px_rgba(20,33,61,0.1)]">
+            <div className="relative flex aspect-square items-center justify-center rounded-[2rem] border border-[#c9d6f2] bg-white p-8 shadow-[0_24px_70px_rgba(20,33,61,0.1)]">
+              <span className="absolute left-5 top-5 rounded-full border border-[#dbe4f6] bg-[#f7faff] px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#4b5873]">
+                Nền sáng
+              </span>
               <Image
-                src={site.logo}
+                src={brandAssets.logoUsage.lightBackground.asset}
                 alt="LOREM Technology blue logo on light background"
                 width={500}
                 height={500}
@@ -84,15 +98,23 @@ export default function BrandAssetsPage() {
                 priority
               />
             </div>
-            <div className="flex aspect-square items-center justify-center rounded-[2rem] bg-[#14213d] p-8 shadow-[0_24px_70px_rgba(20,33,61,0.16)]">
+            <div className="relative flex aspect-square items-center justify-center rounded-[2rem] bg-black p-8 shadow-[0_24px_70px_rgba(20,33,61,0.16)]">
+              <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.14em] text-white/80">
+                Nền tối
+              </span>
               <Image
-                src={site.logo}
-                alt="LOREM Technology blue logo on dark background"
+                src={brandAssets.logoUsage.darkBackground.asset}
+                alt="LOREM Technology white logo on black background"
                 width={500}
                 height={500}
-                className="h-full max-h-72 w-full max-w-72 object-contain drop-shadow-[0_0_24px_rgba(47,91,255,0.38)]"
+                className="h-full max-h-72 w-full max-w-72 object-contain"
               />
             </div>
+            <p className="text-sm font-semibold leading-7 text-[#4b5873] sm:col-span-2">
+              {brandAssets.logoUsage.lightBackground.guidance}{" "}
+              {brandAssets.logoUsage.darkBackground.guidance} Giữ nguyên tỷ lệ,
+              khoảng trống và không thêm hiệu ứng phát sáng vào logo.
+            </p>
           </div>
         </div>
       </section>
