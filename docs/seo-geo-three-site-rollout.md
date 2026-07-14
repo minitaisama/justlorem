@@ -33,6 +33,7 @@ VietLicense:
 - `https://vietlicense.org/huong-dan/microsoft-365-cho-team-marketing-content`
 - `https://vietlicense.org/tai-nguyen/mau-yeu-cau-bao-gia-ban-quyen-microsoft`
 - `https://vietlicense.org/downloads/mau-yeu-cau-bao-gia-ban-quyen-microsoft.csv`
+- `https://vietlicense.org/data/resources.json`
 
 XayKenhTikTok:
 
@@ -40,6 +41,7 @@ XayKenhTikTok:
 - `https://xaykenhtiktok.com/resources/he-thong-tai-khoan-va-ban-giao-tai-san-so-team-tiktok`
 - `https://xaykenhtiktok.com/resources/gui-brief-xay-kenh-tiktok`
 - `https://xaykenhtiktok.com/downloads/mau-brief-xay-kenh-tiktok.docx`
+- `https://xaykenhtiktok.com/resources.json`
 
 ## Link graph
 
@@ -62,6 +64,41 @@ Required parameters:
 
 No UTM parameters or personal data are added. The event only records a click when the site's existing analytics consent/loading policy permits it.
 
+## Release record
+
+Release date: 2026-07-14
+
+| Repository | Pull requests | Production workflow | Result |
+| --- | --- | --- | --- |
+| LOREM | [#11](https://github.com/minitaisama/justlorem/pull/11) | [29310576323](https://github.com/minitaisama/justlorem/actions/runs/29310576323) | Merged, deployed |
+| XayKenhTikTok | [#40](https://github.com/thanh20002105/xaykenhtiktok/pull/40), [#41](https://github.com/thanh20002105/xaykenhtiktok/pull/41) | [29313637127](https://github.com/thanh20002105/xaykenhtiktok/actions/runs/29313637127) | Merged, deployed |
+| VietLicense | [#229](https://github.com/SwiftForge-Tevel/vietlicense/pull/229), [#232](https://github.com/SwiftForge-Tevel/vietlicense/pull/232), [#235](https://github.com/SwiftForge-Tevel/vietlicense/pull/235) | [29316999529](https://github.com/SwiftForge-Tevel/vietlicense/actions/runs/29316999529) | Merged, deployed, IndexNow notified |
+
+The XayKenhTikTok dependency-policy hotfix is isolated in PR #41. It moves pnpm overrides to `pnpm-workspace.yaml` for pnpm 11 compatibility and keeps the content packet in PR #40 independently revertible.
+
 ## Post-deploy verification
 
-For each URL: check HTTP 200, self-canonical, index/follow, visible source/review date, valid JSON-LD, sitemap/LLM discovery and no viewport overflow. For each editorial link: check the final URL returns 200 without a redirect chain and the rendered anchor does not use `nofollow` or `sponsored`.
+| Domain | Sitemap before | Sitemap after | New editorial links out | New editorial links in |
+| --- | ---: | ---: | ---: | ---: |
+| justlorem.com | 35 | 37 | 3 | 2 |
+| vietlicense.org | 78 | 81 | 1 | 2 |
+| xaykenhtiktok.com | 51 | 53 | 1 | 1 |
+
+Production crawl result:
+
+- All 13 HTML, download and JSON surfaces in the manifest return HTTP 200 without a redirect chain.
+- All seven new or upgraded HTML pages use a self-referencing canonical.
+- Every JSON-LD block inspected on the new HTML pages parses as valid JSON and matches the visible page type.
+- All new page URLs are present in the correct sitemap and `llms.txt`.
+- Every cross-domain editorial anchor resolves directly to HTTP 200 and does not use `nofollow` or `sponsored`.
+- There is no direct VietLicense-to-XayKenhTikTok link and no cross-domain `sameAs` or `parentOrganization` relation.
+- Mobile 390 px and tablet layouts were checked from each static production build before merge; no horizontal overflow was found and download/CTA controls remain at least 44 px high.
+- Vietnamese diacritics, source dates, review dates and download labels are visible in rendered content.
+
+## Measurement baseline
+
+- `related_site_click` is implemented on all five editorial links with `target_domain`, `target_path`, `source_path`, `content_slug` and `link_context`.
+- No cross-site UTM or personal data is sent.
+- Technical baseline at release: five tracked editorial links, 37/81/53 sitemap URLs and zero pre-release cross-domain editorial links.
+- Search impressions, organic sessions and assisted contact conversions are intentionally left unset until Search Console and analytics accumulate post-release data.
+- First comparison window: 30 days after release. Compare indexed URLs, query impressions, editorial-link clicks and assisted conversions by source path; do not infer ranking impact from the release-day crawl.
