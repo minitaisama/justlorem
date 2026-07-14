@@ -8,9 +8,9 @@ import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Thông tin pháp lý LOREM Technology",
+  title: "Thông tin pháp lý doanh nghiệp",
   description:
-    "Thông tin pháp nhân, mã số thuế, địa chỉ và Masothue của LOREM Technology.",
+    "Thông tin pháp nhân, mã số thuế 0315880407, địa chỉ, hotline và hồ sơ Masothue để đối chiếu LOREM Technology trước giao dịch.",
   path: "/legal",
 });
 

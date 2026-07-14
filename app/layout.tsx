@@ -17,8 +17,8 @@ const beVietnamPro = Be_Vietnam_Pro({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Giải pháp bản quyền Microsoft & Adobe`,
-    template: `%s | ${site.name}`,
+    default: `Bản quyền Microsoft & Adobe cho doanh nghiệp | ${site.shortName}`,
+    template: `%s | ${site.shortName}`,
   },
   description: site.description,
   robots: { index: true, follow: true },
@@ -26,26 +26,35 @@ export const metadata: Metadata = {
     canonical: site.url,
   },
   openGraph: {
-    title: `${site.name} — Giải pháp bản quyền Microsoft & Adobe`,
+    title: `Bản quyền Microsoft & Adobe cho doanh nghiệp | ${site.shortName}`,
     description: site.description,
     type: "website",
     url: site.url,
     siteName: site.name,
-    images: [{ url: absoluteUrl(site.ogImage), width: 1200, height: 630 }],
+    locale: "vi_VN",
+    images: [
+      {
+        url: absoluteUrl(site.ogImage),
+        width: 1200,
+        height: 630,
+        alt: site.ogImageAlt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Giải pháp bản quyền Microsoft & Adobe`,
+    title: `Bản quyền Microsoft & Adobe cho doanh nghiệp | ${site.shortName}`,
     description: site.description,
     images: [absoluteUrl(site.ogImage)],
   },
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: light)" },
-      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: dark)" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
     ],
-    apple: "/apple-icon.png",
+    shortcut: "/favicon-32x32.png",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? {
