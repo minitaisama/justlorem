@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ProductFamily } from "./catalog";
 import type { KnowledgeArticle } from "./knowledge";
+import type { DownloadableResource } from "./resources";
 import {
   absoluteUrl,
   complianceFaqs,
@@ -203,6 +204,28 @@ export function articleJsonLd(article: KnowledgeArticle) {
     inLanguage: "vi-VN",
     mainEntityOfPage: absoluteUrl(`/kien-thuc/${article.slug}`),
     author: { "@id": absoluteUrl("/#organization") },
+    publisher: { "@id": absoluteUrl("/#organization") },
+  };
+}
+
+export function resourceJsonLd(resource: DownloadableResource) {
+  const resourcePath = `/tai-nguyen/${resource.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "DigitalDocument",
+    "@id": absoluteUrl(`${resourcePath}#resource`),
+    name: resource.title,
+    description: resource.description,
+    inLanguage: "vi-VN",
+    datePublished: resource.publishedAt,
+    dateModified: resource.reviewedAt,
+    mainEntityOfPage: absoluteUrl(resourcePath),
+    url: absoluteUrl(resourcePath),
+    encodingFormat: resource.downloadFormat,
+    contentUrl: absoluteUrl(resource.downloadPath),
+    isAccessibleForFree: true,
+    creator: { "@id": absoluteUrl("/#organization") },
     publisher: { "@id": absoluteUrl("/#organization") },
   };
 }

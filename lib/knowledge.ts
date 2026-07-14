@@ -6,6 +6,14 @@ type KnowledgeSection = {
   bullets?: string[];
 };
 
+export type CrossSiteResource = {
+  label: string;
+  description: string;
+  href: string;
+  targetDomain: "vietlicense.org" | "xaykenhtiktok.com";
+  linkContext: string;
+};
+
 export type KnowledgeArticle = {
   slug: string;
   title: string;
@@ -22,6 +30,7 @@ export type KnowledgeArticle = {
   keyTakeaways: string[];
   sources: SourceDocument[];
   sections: KnowledgeSection[];
+  externalResources?: CrossSiteResource[];
 };
 
 const publishedAt = "2026-07-10";
@@ -126,6 +135,21 @@ const sources = {
     title: "Adobe Acrobat Pro for teams",
     publisher: "Adobe" as const,
     url: "https://www.adobe.com/creativecloud/business/acrobat-pro.html",
+  },
+  tiktokBusinessCenter: {
+    title: "How to set up a TikTok Business Center",
+    publisher: "TikTok" as const,
+    url: "https://ads.tiktok.com/help/article/create-tiktok-business-center?lang=en",
+  },
+  tiktokBusinessRoles: {
+    title: "About Business Center roles and permissions",
+    publisher: "TikTok" as const,
+    url: "https://ads.tiktok.com/help/article/about-business-center-roles-and-permissions?lang=en",
+  },
+  tiktokBusinessSecurity: {
+    title: "Best practices for securing your Business Center",
+    publisher: "TikTok" as const,
+    url: "https://ads.tiktok.com/help/article/best-practices-for-securing-your-business-center?lang=en",
   },
 };
 
@@ -902,6 +926,180 @@ export const knowledgeArticles: KnowledgeArticle[] = [
         paragraphs: [
           "Tăng khi có nhu cầu user mới đã được phê duyệt và có owner nhận bàn giao. Giữ khi seat đang gán đúng người và vai trò còn cần. Giảm hoặc tái phân bổ khi seat không có owner, user đã chuyển vai trò hoặc không còn dùng ứng dụng trong phạm vi công việc.",
           "Adobe và Microsoft đều có cơ chế quản lý gán/thu hồi license trong admin surface của họ; doanh nghiệp vẫn cần quy trình phê duyệt riêng để việc thay đổi seat có dấu vết và khớp ngân sách.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "bo-cong-cu-so-cho-team-marketing-windows-microsoft-365-adobe-tiktok",
+    title: "Bộ công cụ số cho team marketing: Windows, Microsoft 365, Adobe và TikTok",
+    seoTitle: "Bộ công cụ số cho team marketing doanh nghiệp",
+    description:
+      "Khung triển khai Windows, Microsoft 365, Adobe Teams và TikTok Business Center để doanh nghiệp quản lý người dùng, tài sản nội dung và bàn giao khi nhân sự thay đổi.",
+    answer:
+      "Một team marketing vận hành bền vững cần tách bốn lớp: thiết bị dùng Windows phù hợp, tài khoản làm việc thuộc tenant Microsoft 365 của doanh nghiệp, ứng dụng sáng tạo được cấp theo người dùng qua Adobe Teams và tài sản TikTok được quản lý bằng vai trò thay vì chia sẻ mật khẩu. Điểm quan trọng nhất không phải mua nhiều công cụ, mà là doanh nghiệp giữ quyền sở hữu và có quy trình thu hồi khi người dùng rời team.",
+    publishedAt: "2026-07-14",
+    reviewedAt: "2026-07-14",
+    category: "Procurement",
+    relatedCategory: "microsoft-365",
+    relatedProductSlugs: [
+      "microsoft-365-business-standard",
+      "adobe-creative-cloud-teams",
+      "windows-11-pro",
+    ],
+    audience: [
+      "Marketing lead và content lead",
+      "IT quản trị tài khoản, thiết bị",
+      "Procurement và kế toán",
+      "Doanh nghiệp làm việc với agency hoặc freelancer",
+    ],
+    readingMinutes: 14,
+    keyTakeaways: [
+      "License thiết bị, license người dùng và quyền truy cập nền tảng phải được quản lý bằng ba danh sách riêng.",
+      "Email, cloud storage và tài khoản admin phải thuộc doanh nghiệp, không phụ thuộc hộp thư cá nhân.",
+      "Bàn giao chỉ hoàn tất khi đã thu hồi quyền, xác nhận file gốc và cập nhật người sở hữu mới.",
+    ],
+    sources: [
+      sources.windowsPro,
+      sources.m365Standard,
+      sources.m365AdminUsers,
+      sources.m365AdminRoles,
+      sources.adobeTeamsAdmin,
+      sources.adobeAssignTeams,
+      sources.tiktokBusinessCenter,
+      sources.tiktokBusinessRoles,
+      sources.tiktokBusinessSecurity,
+    ],
+    externalResources: [
+      {
+        label: "Microsoft 365 Business Standard tại VietLicense",
+        description:
+          "Tham khảo cấu hình sản phẩm và trạng thái giá khi doanh nghiệp đã xác định số người dùng cần email, Office desktop và công cụ cộng tác.",
+        href: "https://vietlicense.org/san-pham/microsoft-365-business-standard",
+        targetDomain: "vietlicense.org",
+        linkContext: "m365_product_reference",
+      },
+      {
+        label: "So sánh Microsoft 365 Business Basic, Standard và Premium",
+        description:
+          "Bảng so sánh theo nhu cầu mua hàng để chuyển từ yêu cầu vận hành sang lựa chọn gói phù hợp.",
+        href: "https://vietlicense.org/huong-dan/microsoft-365-business-basic-vs-standard-vs-premium-doanh-nghiep-nho-chon-gi",
+        targetDomain: "vietlicense.org",
+        linkContext: "m365_plan_comparison",
+      },
+      {
+        label: "Mẫu brief xây kênh TikTok",
+        description:
+          "Checklist đầu vào cho mục tiêu, tài sản thương hiệu, quyền truy cập, output và người duyệt khi làm việc với team sản xuất TikTok.",
+        href: "https://xaykenhtiktok.com/resources/gui-brief-xay-kenh-tiktok",
+        targetDomain: "xaykenhtiktok.com",
+        linkContext: "tiktok_brief_template",
+      },
+    ],
+    sections: [
+      {
+        heading: "Bắt đầu bằng quyền sở hữu, không bắt đầu bằng danh sách phần mềm",
+        paragraphs: [
+          "Team marketing thường hình thành theo từng chiến dịch: một laptop có sẵn, một email cá nhân để tạo tài khoản, một thư mục cloud do người đầu tiên mở và một tài khoản quảng cáo được agency hỗ trợ. Cấu hình này có thể chạy nhanh ở giai đoạn đầu nhưng tạo ra rủi ro khi nhân sự đổi vai trò, agency kết thúc hợp đồng hoặc doanh nghiệp cần truy xuất file gốc. Vì vậy, bước đầu tiên là xác định tổ chức nào sở hữu thiết bị, tenant, tài khoản thanh toán và tài sản nội dung.",
+          "Hãy phân biệt người sở hữu với người đang sử dụng. Doanh nghiệp có thể giao một laptop cho nhân viên, cấp một seat Microsoft 365 hoặc Adobe và phân quyền TikTok cho agency, nhưng quyền quản trị cao nhất, email khôi phục, thông tin thanh toán và nơi lưu file bàn giao phải do doanh nghiệp kiểm soát. Mỗi công cụ cần ít nhất hai đầu mối nội bộ có khả năng tiếp quản, thay vì một tài khoản admin duy nhất nằm trong hộp thư cá nhân.",
+        ],
+        bullets: [
+          "Thiết bị: asset tag, người dùng, Windows edition, ngày bàn giao và hồ sơ mua.",
+          "Danh tính: email công việc, Microsoft 365 user, vai trò admin và trạng thái nhân sự.",
+          "Ứng dụng sáng tạo: Adobe product, seat được gán, ngày gia hạn và nơi lưu file nguồn.",
+          "Nền tảng TikTok: Business Center, TikTok account, ad account, pixel/catalog và quyền của từng bên.",
+        ],
+      },
+      {
+        heading: "Bốn lớp công cụ cần được quản lý khác nhau",
+        paragraphs: [
+          "Windows thường đi theo thiết bị. Microsoft 365 và Adobe Teams thường được quản lý theo người dùng hoặc seat trong tenant/Admin Console. TikTok Business Center lại quản lý vai trò và quyền đối với nhiều account hoặc asset. Nếu đưa tất cả vào một cột “đã mua license”, IT sẽ không biết cần thu hồi thiết bị, gỡ seat hay xóa quyền nền tảng khi có thay đổi nhân sự.",
+          "Một register tốt có thể dùng chung một mã nhân sự hoặc mã dự án, nhưng phải tách trạng thái theo lớp. Ví dụ: nhân viên đã trả laptop không có nghĩa Microsoft 365 user đã bị khóa; gỡ Adobe seat không tự động chuyển quyền sở hữu thư mục thiết kế; kết thúc hợp đồng agency không tự động xóa quyền Business Center. Offboarding chỉ hoàn tất khi bốn trạng thái đều được kiểm tra.",
+        ],
+      },
+      {
+        heading: "Windows: chuẩn hóa thiết bị trước khi cấp tài khoản",
+        paragraphs: [
+          "Với máy mới, procurement nên ghi rõ Windows edition trong yêu cầu mua và lưu thông tin Windows cùng asset tag. Với máy hiện hữu, IT cần rà soát phiên bản, nguồn thiết bị và bằng chứng đang có trước khi chọn hướng xử lý. Team marketing thường cần Windows 11 Pro khi doanh nghiệp dùng các tính năng quản trị hoặc chính sách bảo mật phù hợp, nhưng quyết định phải dựa trên tiêu chuẩn thiết bị của tổ chức thay vì chức danh người dùng.",
+          "Không nên cấp toàn bộ quyền truy cập công việc cho một máy chưa nằm trong inventory. Trước ngày onboarding, IT cần xác nhận máy đã được gắn owner, cập nhật bảo mật, mã hóa hoặc quản trị theo chính sách nội bộ và có quy trình trả thiết bị. Nếu nhân sự dùng máy cá nhân, doanh nghiệp phải xác định rõ dữ liệu nào được phép lưu cục bộ và cách xóa dữ liệu công việc khi kết thúc cộng tác.",
+        ],
+        bullets: [
+          "Mỗi thiết bị có asset tag và người chịu trách nhiệm hiện tại.",
+          "Windows edition và hồ sơ mua được ghi trong register.",
+          "Tài khoản công việc không dùng chung giữa nhiều người.",
+          "Quy trình trả máy bao gồm sao lưu dữ liệu, đăng xuất và xác nhận tình trạng.",
+        ],
+      },
+      {
+        heading: "Microsoft 365: lấy danh tính doanh nghiệp làm trục",
+        paragraphs: [
+          "Microsoft 365 nên được thiết kế quanh email công việc và user lifecycle. Business Standard phù hợp khi người dùng cần email doanh nghiệp, ứng dụng Office desktop và dịch vụ cộng tác; Apps for business tập trung vào ứng dụng Office và lưu trữ theo cấu hình gói; các lựa chọn khác cần được so sánh theo đúng dịch vụ đang cần. Không nên mua theo số máy rồi chia một tài khoản cho nhiều người vì quyền sử dụng và dữ liệu được gắn với user được cấp license.",
+          "Microsoft hướng dẫn quản trị viên tạo user và gán license trong admin center. Doanh nghiệp nên có quy tắc tên user, nhóm/phòng ban, vai trò admin, người phê duyệt license và thời điểm khóa tài khoản. Với tài khoản admin, áp dụng nguyên tắc quyền tối thiểu: người làm nội dung không cần global admin; agency không nên dùng chung tài khoản admin của client; tài khoản khẩn cấp cần được quản lý theo chính sách bảo mật riêng.",
+        ],
+        bullets: [
+          "Onboarding: tạo user, gán nhóm và license, cấp quyền thư mục theo vai trò.",
+          "Role change: rà lại group, mailbox, file share và quyền ứng dụng trước khi chỉ đổi chức danh.",
+          "Offboarding: khóa đăng nhập, thu hồi session, chuyển dữ liệu và ghi người nhận bàn giao.",
+          "Renewal: đối chiếu seat đang mua với danh sách nhân sự active trước khi yêu cầu báo giá.",
+        ],
+      },
+      {
+        heading: "Adobe Teams: quản lý seat và file nguồn như một quy trình",
+        paragraphs: [
+          "Gói Adobe dành cho teams có Admin Console để quản lý người dùng và gán license tập trung. Lợi ích vận hành không chỉ nằm ở việc mở ứng dụng mà ở khả năng biết seat nào đang được cấp, thu hồi khi nhân sự rời team và tái phân bổ theo quy trình. Tài khoản cá nhân mua rời rạc khiến procurement khó đối chiếu số lượng, còn team sáng tạo dễ để file nguồn và thư viện phụ thuộc một người.",
+          "Mỗi dự án cần quy định nơi lưu file gốc, font, stock license, template và phiên bản đã duyệt. Khi thu hồi Adobe seat, hãy xác nhận người nhận file nguồn và quyền truy cập kho lưu trữ trước. Không coi việc gỡ ứng dụng khỏi máy là bàn giao hoàn tất; dữ liệu sáng tạo, lịch sử phê duyệt và quyền sử dụng asset liên quan mới là phần cần bảo toàn.",
+        ],
+      },
+      {
+        heading: "TikTok Business Center: cấp quyền thay vì gửi mật khẩu",
+        paragraphs: [
+          "TikTok mô tả Business Center là nơi quản lý tập trung account, asset, thành viên và đối tác. Admin có thể gán quyền ở mức account hoặc asset, trong khi người dùng Standard chỉ làm việc với phần được giao. Cấu trúc này phù hợp hơn việc gửi mật khẩu TikTok hoặc mã xác thực qua nhóm chat, đặc biệt khi doanh nghiệp làm việc đồng thời với nhân sự nội bộ và agency.",
+          "Doanh nghiệp nên giữ ít nhất hai admin nội bộ hợp lệ, bật biện pháp xác thực phù hợp và định kỳ rà soát thành viên hoặc đối tác không còn hoạt động. TikTok cũng khuyến nghị giới hạn admin, kiểm tra thành viên/đối tác và gỡ quyền không còn cần. Khi kết thúc hợp đồng, hãy thu hồi đúng vai trò và asset; đổi mật khẩu đơn thuần không cho biết ad account, pixel, catalog hoặc TikTok account nào vẫn đang được chia sẻ.",
+        ],
+        bullets: [
+          "Client giữ quyền sở hữu Business Center và các asset cốt lõi.",
+          "Agency nhận quyền cần thiết cho phạm vi công việc, không nhận toàn bộ admin mặc định.",
+          "Quyền đăng nội dung, chạy quảng cáo, xem tài chính và quản lý asset được tách riêng.",
+          "Danh sách thành viên/đối tác được rà lại theo tháng và khi dự án kết thúc.",
+        ],
+      },
+      {
+        heading: "Decision table theo quy mô team",
+        paragraphs: [
+          "Quy mô không tự quyết định sản phẩm, nhưng giúp xác định độ chặt của quy trình. Bảng dưới đây có thể dùng làm baseline rồi điều chỉnh theo yêu cầu bảo mật, số thương hiệu và số agency tham gia.",
+        ],
+        bullets: [
+          "Team 3–10 người: một tenant doanh nghiệp, hai admin nội bộ, license gán theo user, một kho file chung và checklist onboarding/offboarding đơn giản.",
+          "Team 11–50 người: nhóm quyền theo department/project, owner ngân sách, register tập trung, lịch rà soát seat hàng quý và phân quyền Business Center theo asset.",
+          "Trên 50 người hoặc nhiều thương hiệu: chuẩn hóa naming, role matrix, approval flow, chính sách thiết bị, owner theo business unit và audit quyền định kỳ.",
+          "Có agency/freelancer: hợp đồng phải nêu ownership, nơi lưu file gốc, quyền được cấp, thời điểm thu hồi và đầu mối xác nhận bàn giao.",
+        ],
+      },
+      {
+        heading: "Onboarding trong một ngày làm việc",
+        paragraphs: [
+          "Trước ngày bắt đầu, manager gửi role và dự án; IT chuẩn bị thiết bị, user và nhóm quyền; marketing operations xác định Adobe/TikTok asset; procurement chỉ cấp seat đã được phê duyệt. Người dùng nhận một danh sách rõ: thiết bị nào, email nào, thư mục nào, ứng dụng nào và ai hỗ trợ. Không gửi từng thông tin rời rạc qua nhiều kênh mà không có người xác nhận hoàn tất.",
+          "Sau lần đăng nhập đầu tiên, người dùng xác nhận truy cập được công cụ nhưng không có quyền vượt phạm vi. Register được cập nhật ngay trong ngày, bao gồm ngày cấp, owner phê duyệt và mốc rà soát. Việc này mất ít thời gian hơn nhiều so với tìm lại quyền truy cập sau vài tháng.",
+        ],
+      },
+      {
+        heading: "Offboarding và bàn giao: thứ tự giảm rủi ro",
+        paragraphs: [
+          "Trước thời điểm khóa tài khoản, manager xác định file, campaign và trao đổi cần bàn giao; IT xác định người nhận mailbox/file; marketing operations chuyển quyền dự án và asset; sau đó mới thu hồi session, license và quyền nền tảng theo thời điểm đã duyệt. Trong trường hợp khẩn cấp, khóa truy cập trước nhưng vẫn phải mở ticket bàn giao dữ liệu có owner và hạn xử lý.",
+          "Biên bản nội bộ nên ghi ai đã nhận thiết bị, ai nhận dữ liệu, seat nào đã thu hồi, quyền TikTok/Adobe nào đã xóa và còn hạng mục nào chờ xử lý. Một ảnh chụp màn hình “đã remove user” không thay thế register cập nhật và xác nhận của người tiếp quản.",
+        ],
+        bullets: [
+          "Chuyển ownership của mailbox, thư mục, file nguồn và lịch nội dung.",
+          "Thu hồi Microsoft 365/Adobe seat sau khi hoàn tất bước bảo toàn dữ liệu cần thiết.",
+          "Xóa thành viên hoặc partner access khỏi đúng TikTok account/asset.",
+          "Nhận lại thiết bị, cập nhật asset register và đóng checklist bằng người chịu trách nhiệm.",
+        ],
+      },
+      {
+        heading: "Bộ hồ sơ tối thiểu để IT, marketing và kế toán cùng đọc được",
+        paragraphs: [
+          "Hồ sơ vận hành nên có bốn phần: danh sách thiết bị; danh sách user/seat; role matrix cho nền tảng; và hồ sơ thương mại gồm báo giá, hợp đồng, hóa đơn, thời hạn. Các phần dùng cùng mã nhân sự hoặc mã dự án để truy xuất. Kế toán không cần xem mật khẩu, nhưng cần biết sản phẩm, số lượng, kỳ hạn, owner ngân sách và chứng từ; marketing không cần quyền global admin, nhưng cần biết nơi yêu cầu cấp hoặc thu hồi quyền.",
+          "Mẫu kiểm kê license của LOREM cung cấp cấu trúc khởi đầu cho register. Sau khi kiểm kê xong, doanh nghiệp mới nên chuyển sang bước so sánh gói và yêu cầu báo giá. Cách làm này giảm việc mua thừa seat, mua sai mô hình hoặc để các tài khoản quan trọng không có người sở hữu rõ ràng.",
         ],
       },
     ],

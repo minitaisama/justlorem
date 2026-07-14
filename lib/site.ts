@@ -1,5 +1,6 @@
 import { productCategories, productFamilies } from "./catalog";
 import { knowledgeArticles } from "./knowledge";
+import { downloadableResources } from "./resources";
 
 export const site = {
   name: "LOREM Technology",
@@ -432,6 +433,7 @@ export const allRoutes = [
     .filter((product) => !product.catalogOnly)
     .map((product) => `/san-pham/${product.slug}`),
   ...knowledgeArticles.map((article) => `/kien-thuc/${article.slug}`),
+  ...downloadableResources.map((resource) => `/tai-nguyen/${resource.slug}`),
 ];
 
 export function absoluteUrl(path = "/") {

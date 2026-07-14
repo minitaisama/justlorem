@@ -3,6 +3,7 @@ import { Be_Vietnam_Pro } from "next/font/google";
 import Script from "next/script";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
 import JsonLd from "@/components/JsonLd";
+import RelatedSiteAnalytics from "@/components/RelatedSiteAnalytics";
 import { siteJsonLd } from "@/lib/seo";
 import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
@@ -84,6 +85,7 @@ export default function RootLayout({
       <body className={`${beVietnamPro.variable} antialiased`}>
         {children}
         <JsonLd data={siteJsonLd()} />
+        <RelatedSiteAnalytics />
         {measurementId ? <AnalyticsConsent measurementId={measurementId} /> : null}
         {cloudflareToken ? (
           <Script

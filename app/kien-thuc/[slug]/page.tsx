@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight, BadgeCheck, CalendarDays, Clock3, ExternalLink, UsersRound } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, CalendarDays, Clock3, ExternalLink, Link2, UsersRound } from "lucide-react";
 import Breadcrumbs from "@/components/catalog/Breadcrumbs";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
@@ -114,6 +114,46 @@ export default async function KnowledgeArticlePage({ params }: PageProps) {
                 ) : null}
               </section>
             ))}
+
+            {article.externalResources?.length ? (
+              <section aria-labelledby="related-resources-heading">
+                <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#2457d6]">
+                  <Link2 size={15} aria-hidden="true" /> Tài nguyên biên tập
+                </p>
+                <h2 id="related-resources-heading" className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+                  Đọc tiếp theo nhu cầu triển khai
+                </h2>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+                  Các liên kết dưới đây bổ sung thông tin sản phẩm hoặc quy trình chuyên môn; không thể hiện quan hệ sở hữu hay đối tác giữa các website.
+                </p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {article.externalResources.map((resource) => (
+                    <a
+                      key={resource.href}
+                      href={resource.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-related-site-link="true"
+                      data-target-domain={resource.targetDomain}
+                      data-target-path={new URL(resource.href).pathname}
+                      data-source-path={`/kien-thuc/${article.slug}`}
+                      data-content-slug={article.slug}
+                      data-link-context={resource.linkContext}
+                      className="group flex min-h-40 flex-col rounded-[1.5rem] border border-slate-200 bg-white p-5 transition hover:border-blue-300 hover:shadow-[0_18px_45px_-34px_rgba(37,87,214,0.65)]"
+                    >
+                      <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                        {resource.targetDomain}
+                      </p>
+                      <h3 className="mt-2 text-base font-bold leading-6 group-hover:text-[#2457d6]">{resource.label}</h3>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">{resource.description}</p>
+                      <span className="mt-auto inline-flex items-center gap-2 pt-4 text-xs font-bold text-[#2457d6]">
+                        Mở tài nguyên <ExternalLink size={14} aria-hidden="true" />
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
             <section>
               <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Nguồn tham khảo chính thức</h2>
