@@ -19,8 +19,9 @@ export const site = {
   mapsUrl: "https://maps.app.goo.gl/xMb8egHrPFntwvcR8",
   logo: "/images/lorem-logo-blue.png",
   ogImage: "/og-image.jpg",
+  ogImageAlt: "LOREM Technology - bản quyền Microsoft và Adobe cho doanh nghiệp",
   description:
-    "LOREM Technology tư vấn và cung cấp giải pháp bản quyền Microsoft GGWA, Windows, Office LTSC, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam.",
+    "LOREM tư vấn bản quyền Windows GGWA, Office LTSC, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam. Xem bảng giá hoặc liên hệ hotline, Zalo.",
 };
 
 export const navLinks = [

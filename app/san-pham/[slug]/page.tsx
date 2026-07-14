@@ -44,10 +44,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return {};
 
   return pageMetadata({
-    title: `${product.name} - bản quyền cho doanh nghiệp`,
+    title: `${product.name}: giá & tư vấn`,
     description: product.summary,
     path: `/san-pham/${product.slug}`,
-    image: product.image,
   });
 }
 

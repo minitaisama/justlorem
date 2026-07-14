@@ -9,6 +9,7 @@ type KnowledgeSection = {
 export type KnowledgeArticle = {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
   answer: string;
   publishedAt: string;
@@ -132,6 +133,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "windows-ggwa-la-gi",
     title: "Windows GGWA là gì và phù hợp trường hợp nào?",
+    seoTitle: "Windows GGWA là gì? Khi nào doanh nghiệp nên dùng",
     description:
       "Hướng dẫn đọc Windows GGWA theo hiện trạng thiết bị, điều kiện sản phẩm và hồ sơ doanh nghiệp cần chuẩn bị.",
     answer:
@@ -191,6 +193,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "windows-oem-dsp-esd-ggwa-khac-nhau",
     title: "Windows OEM, DSP/OEI, ESD và GGWA: đọc SKU trước khi mua",
+    seoTitle: "Windows OEM, DSP, ESD và GGWA khác nhau thế nào?",
     description:
       "Cách phân biệt các tên Windows thường gặp theo thiết bị áp dụng, phương thức bàn giao và các điểm phải xác nhận trước khi duyệt mua.",
     answer:
@@ -246,6 +249,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "windows-11-pro-cho-doanh-nghiep",
     title: "Chọn Windows 11 Pro cho doanh nghiệp: checklist máy mới và máy hiện hữu",
+    seoTitle: "Windows 11 Pro doanh nghiệp: checklist chọn mua",
     description:
       "Khung quyết định ngắn để tách nhu cầu Windows 11 Pro cho máy mới khỏi thiết bị đang vận hành và chuẩn bị thông tin trước báo giá.",
     answer:
@@ -293,6 +297,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "office-ltsc-2024-va-microsoft-365",
     title: "Office LTSC 2024 và Microsoft 365: chọn theo mô hình vận hành",
+    seoTitle: "Office LTSC 2024 hay Microsoft 365: chọn loại nào?",
     description:
       "So sánh Office LTSC 2024 với Microsoft 365 theo cập nhật, cloud, cách cấp phép, triển khai và nhu cầu quản trị IT.",
     answer:
@@ -347,6 +352,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "office-home-business-2024-cho-doanh-nghiep",
     title: "Office Home & Business 2024: khi nào phù hợp doanh nghiệp nhỏ?",
+    seoTitle: "Office Home & Business 2024 cho doanh nghiệp nhỏ",
     description:
       "Cách đánh giá Office Home & Business 2024 theo mô hình một máy, ứng dụng cần dùng, cài đặt và giới hạn so với Microsoft 365.",
     answer:
@@ -395,6 +401,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "office-ltsc-2024-trien-khai-cap-nhat",
     title: "Triển khai và cập nhật Office LTSC 2024: những việc IT cần chốt",
+    seoTitle: "Cách triển khai và cập nhật Office LTSC 2024",
     description:
       "Checklist triển khai Office LTSC 2024 gồm kiểm thử tương thích, kích hoạt, update channel và kế hoạch cập nhật bảo mật sau bàn giao.",
     answer:
@@ -442,6 +449,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "microsoft-365-business-standard-va-apps-for-business",
     title: "Microsoft 365 Business Standard và Apps for business: chọn theo dịch vụ cần dùng",
+    seoTitle: "Microsoft 365 Business Standard hay Apps for business?",
     description:
       "So sánh Business Standard với Apps for business theo email, Office apps, cloud, số người dùng và cách bàn giao cho IT.",
     answer:
@@ -498,6 +506,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "trien-khai-microsoft-365-cho-doanh-nghiep",
     title: "Triển khai Microsoft 365 cho doanh nghiệp: checklist trước ngày cấp license",
+    seoTitle: "Checklist triển khai Microsoft 365 cho doanh nghiệp",
     description:
       "Checklist tạo user, phân vai trò admin, cấp license và bàn giao để Microsoft 365 có thể dùng ngay sau khi mua.",
     answer:
@@ -552,6 +561,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "quan-ly-license-microsoft-365-theo-nguoi-dung",
     title: "Quản lý license Microsoft 365 theo người dùng: vận hành sau khi mua",
+    seoTitle: "Cách quản lý license Microsoft 365 theo người dùng",
     description:
       "Hướng dẫn thiết lập sổ theo dõi license, cấp/thu hồi user và phân quyền admin tối thiểu cho Microsoft 365.",
     answer:
@@ -596,6 +606,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "adobe-individual-va-adobe-teams",
     title: "Adobe Individual và Adobe Teams: khác nhau ở chỗ quản trị",
+    seoTitle: "Adobe Individual và Adobe Teams khác nhau thế nào?",
     description:
       "Phân biệt Adobe cho cá nhân và Adobe Teams theo quản lý seat, người dùng, tài sản, thay đổi nhân sự và quy trình bàn giao.",
     answer:
@@ -650,6 +661,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "quan-ly-seat-adobe-teams",
     title: "Quản lý seat Adobe Teams: onboarding, thay đổi nhân sự và offboarding",
+    seoTitle: "Cách quản lý seat Adobe Teams khi nhân sự thay đổi",
     description:
       "Checklist vận hành Adobe Teams từ thêm user, gán seat, sửa email sai, thu hồi quyền đến rà soát seat trước kỳ gia hạn.",
     answer:
@@ -697,6 +709,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "acrobat-pro-va-creative-cloud-teams",
     title: "Acrobat Pro for teams và Creative Cloud for teams: đừng mua sai phạm vi",
+    seoTitle: "Acrobat Pro hay Creative Cloud for teams?",
     description:
       "Cách tách nhu cầu PDF/document workflow khỏi nhu cầu thiết kế, hình ảnh và video trước khi chọn Adobe cho team.",
     answer:
@@ -744,6 +757,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "ho-so-mua-license-doanh-nghiep",
     title: "Hồ sơ mua license doanh nghiệp: từ yêu cầu kỹ thuật đến chứng từ",
+    seoTitle: "Hồ sơ mua license doanh nghiệp cần những gì?",
     description:
       "Mẫu checklist cho IT, mua hàng và kế toán để yêu cầu báo giá Windows, Office, Microsoft 365 hoặc Adobe có thể duyệt và bàn giao.",
     answer:
@@ -794,6 +808,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "checklist-ban-giao-license-it-ke-toan",
     title: "Checklist bàn giao license: IT và kế toán cần lưu gì?",
+    seoTitle: "Checklist bàn giao license cho IT và kế toán",
     description:
       "Cách tổ chức hồ sơ sau mua để IT quản lý việc dùng license, kế toán đối chiếu giao dịch và người tiếp quản không mất dấu quyền sử dụng.",
     answer:
@@ -847,6 +862,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   {
     slug: "gia-han-license-subscription-doanh-nghiep",
     title: "Gia hạn Microsoft 365 và Adobe: checklist trước ngày renewal",
+    seoTitle: "Checklist gia hạn Microsoft 365 và Adobe",
     description:
       "Quy trình rà soát seat, user, owner, ngân sách và hồ sơ trước khi gia hạn subscription Microsoft 365 hoặc Adobe Teams.",
     answer:

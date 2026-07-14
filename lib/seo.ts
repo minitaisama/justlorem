@@ -21,10 +21,15 @@ export function pageMetadata({
   image = site.ogImage,
 }: PageMetadata): Metadata {
   const url = absoluteUrl(path);
-  const fullTitle = title === site.name ? title : `${title} | ${site.name}`;
+  const fullTitle = title === site.name ? title : `${title} | ${site.shortName}`;
   const openGraphImage =
     image === site.ogImage
-      ? { url: absoluteUrl(image), width: 1200, height: 630 }
+      ? {
+          url: absoluteUrl(image),
+          width: 1200,
+          height: 630,
+          alt: site.ogImageAlt,
+        }
       : { url: absoluteUrl(image) };
 
   return {
@@ -41,6 +46,7 @@ export function pageMetadata({
       type: "website",
       url,
       siteName: site.name,
+      locale: "vi_VN",
       images: [openGraphImage],
     },
     twitter: {

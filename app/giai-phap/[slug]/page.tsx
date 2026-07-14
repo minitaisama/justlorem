@@ -35,10 +35,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!category) return {};
 
   return pageMetadata({
-    title: `${category.title} cho doanh nghiệp`,
-    description: category.summary,
+    title: `${category.title}: sản phẩm & tư vấn`,
+    description: category.description,
     path: `/giai-phap/${category.slug}`,
-    image: category.icon,
   });
 }
 

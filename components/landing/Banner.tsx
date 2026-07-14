@@ -31,14 +31,14 @@ export default function Banner() {
         <div className="relative z-20 flex-1 px-8 md:px-16 pt-12 md:pt-16 flex flex-col items-start">
           <div className="max-w-[690px]">
             <p className="mb-4 inline-flex rounded-full border border-slate-200/70 bg-white/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 backdrop-blur-xl">
-              Giải pháp bản quyền doanh nghiệp
+              Tư vấn bản quyền doanh nghiệp
             </p>
             <h1 className="text-[42px] font-semibold leading-[1.12] tracking-tight text-[#0a1b33] md:text-[56px]">
-              Giải pháp bản quyền Microsoft & Adobe cho doanh nghiệp
+              Bản quyền Microsoft & Adobe cho doanh nghiệp
             </h1>
             <p className="mt-5 max-w-[520px] text-[14px] leading-7 text-[#64748b] md:text-[15px]">
-              Tư vấn Windows GGWA, Office LTSC, Microsoft 365 và Adobe theo số
-              lượng, hồ sơ giao dịch và nhu cầu triển khai của doanh nghiệp.
+              Windows GGWA, Office LTSC, Microsoft 365 và Adobe theo số lượng,
+              kèm hợp đồng, hóa đơn VAT và hồ sơ bàn giao theo giao dịch.
             </p>
           </div>
         </div>

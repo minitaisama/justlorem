@@ -13,9 +13,9 @@ import { productCategories } from "@/lib/catalog";
 import { complianceFaqs } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Giải pháp bản quyền Microsoft, GGWA, Office, Adobe cho doanh nghiệp",
+  title: "Bản quyền Microsoft & Adobe cho doanh nghiệp",
   description:
-    "LOREM tư vấn bản quyền Microsoft GGWA, Windows, Microsoft 365, Office LTSC và Adobe cho doanh nghiệp tại Việt Nam, có bảng giá tham khảo và báo giá mới qua Zalo hoặc hotline.",
+    "LOREM tư vấn bản quyền Windows GGWA, Office LTSC, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam. Xem bảng giá hoặc liên hệ hotline, Zalo.",
   path: "/",
 });
 
