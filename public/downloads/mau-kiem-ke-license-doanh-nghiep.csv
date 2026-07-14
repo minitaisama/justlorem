@@ -1,0 +1,4 @@
+Ma_tai_san,Loai_doi_tuong,Thiet_bi_hoac_email,Phong_ban,San_pham,Phien_ban,Mo_hinh_license,Tai_khoan_so_huu,Ngay_bat_dau,Ngay_gia_han,Nha_cung_cap,Ma_hoa_don_hop_dong,Trang_thai_ban_giao,Nguoi_phu_trach,Ghi_chu
+LAP-MKT-001,Thiet_bi,Laptop marketing 01,Marketing,Windows,Windows 11 Pro,Per device,,2026-07-01,,Theo PO-2026-014,INV-2026-014,Da xac nhan,IT Operations,Khong luu product key day du trong file
+USR-MKT-001,Nguoi_dung,user@congty.vn,Marketing,Microsoft 365,Business Standard,Subscription theo user,user@congty.vn,2026-07-01,2027-07-01,Theo PO-2026-015,INV-2026-015,Da cap license,IT Operations,Rà soát trước renewal 30 ngày
+USR-DES-001,Nguoi_dung,designer@congty.vn,Creative,Adobe,Creative Cloud for teams,Subscription theo seat,designer@congty.vn,2026-07-01,2027-07-01,Theo PO-2026-016,INV-2026-016,Cho xac nhan file goc,Creative Operations,Ghi nơi lưu file trong hệ thống nội bộ

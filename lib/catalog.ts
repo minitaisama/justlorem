@@ -2,7 +2,7 @@ export type CategorySlug = "windows" | "office" | "microsoft-365" | "adobe";
 
 export type SourceDocument = {
   title: string;
-  publisher: "Microsoft" | "Adobe";
+  publisher: "Microsoft" | "Adobe" | "TikTok";
   url: string;
 };
 

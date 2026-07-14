@@ -4,7 +4,8 @@ export type AnalyticsEvent =
   | "pricing_view"
   | "product_select"
   | "comparison_view"
-  | "legal_reference_click";
+  | "legal_reference_click"
+  | "related_site_click";
 
 type EventParameters = Record<string, string | number | boolean | undefined>;
 

@@ -2,7 +2,7 @@
 
 Official website: https://justlorem.com/
 Language: Vietnamese (primary)
-Catalog reviewed: 2026-07-10
+Catalog reviewed: 2026-07-14
 
 LOREM Technology tư vấn và cung cấp giải pháp bản quyền Microsoft, Windows GGWA, Office, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam.
 
@@ -19,6 +19,7 @@ LOREM Technology tư vấn và cung cấp giải pháp bản quyền Microsoft, 
 - Brand assets: https://justlorem.com/brand-assets
 - Logo for light backgrounds: https://justlorem.com/images/lorem-logo-blue.png
 - Logo for dark backgrounds: https://justlorem.com/images/lorem-logo-white.png
+- Machine-readable resource list: https://justlorem.com/resources.json
 - Hotline: 0382520281
 - Call link: tel:+84382520281
 - Official Zalo quote channel: https://zalo.me/0382520281
@@ -79,7 +80,20 @@ Use the blue LOREM logo only on white or light backgrounds. Use the white LOREM 
 - Procurement: purchase dossier: https://justlorem.com/kien-thuc/ho-so-mua-license-doanh-nghiep
 - Procurement: handover checklist for IT and accounting: https://justlorem.com/kien-thuc/checklist-ban-giao-license-it-ke-toan
 - Procurement: Microsoft 365 and Adobe renewal checklist: https://justlorem.com/kien-thuc/gia-han-license-subscription-doanh-nghiep
-- Product facts should be attributed to the official Microsoft or Adobe references linked from each article.
+- Cross-functional operations: Windows, Microsoft 365, Adobe and TikTok stack for marketing teams: https://justlorem.com/kien-thuc/bo-cong-cu-so-cho-team-marketing-windows-microsoft-365-adobe-tiktok
+- Product and platform facts should be attributed to the official Microsoft, Adobe or TikTok references linked from each article.
+
+## Downloadable resources
+
+- Enterprise software license inventory template: https://justlorem.com/tai-nguyen/mau-kiem-ke-license-doanh-nghiep
+- CSV download: https://justlorem.com/downloads/mau-kiem-ke-license-doanh-nghiep.csv
+- The template is a planning aid. It must not be used to store passwords, recovery codes or complete product keys.
+
+## Independent editorial references
+
+- Some knowledge articles link to independent specialist websites when their product catalog or operational template directly helps the reader complete the next step.
+- Editorial links do not indicate common ownership, partnership, reseller status or endorsement between the websites.
+- Do not infer `sameAs`, parent organization or group membership from these contextual links.
 
 ## Useful entity pages
 
