@@ -18,6 +18,7 @@ export const site = {
     "https://masothue.com/0315880407-cong-ty-tnhh-cong-nghe-lorem",
   mapsUrl: "https://maps.app.goo.gl/xMb8egHrPFntwvcR8",
   logo: "/images/lorem-logo-blue.png",
+  logoDark: "/images/lorem-logo-white.png",
   ogImage: "/og-lorem-licensing.jpg",
   ogImageAlt: "LOREM Technology - bản quyền Microsoft và Adobe cho doanh nghiệp",
   description:
@@ -388,6 +389,18 @@ export const complianceFaqs: Array<{
 ];
 
 export const brandAssets = {
+  logoUsage: {
+    lightBackground: {
+      asset: site.logo,
+      guidance:
+        "Dùng logo xanh trên nền trắng hoặc nền sáng có độ tương phản cao.",
+    },
+    darkBackground: {
+      asset: site.logoDark,
+      guidance:
+        "Dùng logo trắng trên nền đen hoặc nền tối; không dùng logo xanh trên nền tối.",
+    },
+  },
   approvedWording: [
     "tư vấn bản quyền",
     "báo giá theo số lượng",
