@@ -18,7 +18,7 @@ export const site = {
     "https://masothue.com/0315880407-cong-ty-tnhh-cong-nghe-lorem",
   mapsUrl: "https://maps.app.goo.gl/xMb8egHrPFntwvcR8",
   logo: "/images/lorem-logo-blue.png",
-  ogImage: "/og-image.jpg",
+  ogImage: "/og-lorem-licensing.jpg",
   ogImageAlt: "LOREM Technology - bản quyền Microsoft và Adobe cho doanh nghiệp",
   description:
     "LOREM tư vấn bản quyền Windows GGWA, Office LTSC, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam. Xem bảng giá hoặc liên hệ hotline, Zalo.",

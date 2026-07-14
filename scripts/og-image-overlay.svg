@@ -1,0 +1,38 @@
+<!-- Composited over public/videos/lorem-licensing-hero-poster.jpg to create the Open Graph banner. -->
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="veil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F8FAFC" stop-opacity="0.99" />
+      <stop offset="0.48" stop-color="#F8FAFC" stop-opacity="0.94" />
+      <stop offset="0.72" stop-color="#F8FAFC" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#F8FAFC" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.72" stop-color="#0A1B33" stop-opacity="0" />
+      <stop offset="1" stop-color="#0A1B33" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#veil)" />
+  <rect width="1200" height="630" fill="url(#bottomFade)" />
+
+  <g transform="translate(72 58)" stroke="#1267E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="31" cy="31" r="28" />
+    <path d="M16 28V44H32" />
+    <path d="M46 34V18H30" />
+    <path d="M24 39L39 24" />
+  </g>
+  <text x="150" y="82" fill="#1267E8" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="24" font-weight="700">LOREM TECHNOLOGY</text>
+  <text x="150" y="108" fill="#64748B" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="14" font-weight="600" letter-spacing="1.8">BẢN QUYỀN PHẦN MỀM DOANH NGHIỆP</text>
+
+  <text x="72" y="232" fill="#0A1B33" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="55" font-weight="700">Microsoft &amp; Adobe</text>
+  <text x="72" y="299" fill="#0A1B33" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="55" font-weight="700">cho doanh nghiệp</text>
+
+  <text x="74" y="372" fill="#52647D" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="21" font-weight="500">Windows GGWA  ·  Office LTSC  ·  Microsoft 365  ·  Adobe</text>
+  <text x="74" y="411" fill="#52647D" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="19">Tư vấn đúng phiên bản. Báo giá theo số lượng. Hồ sơ rõ ràng.</text>
+
+  <line x1="74" y1="482" x2="530" y2="482" stroke="#B8C9E2" stroke-width="2" />
+  <text x="74" y="526" fill="#0A1B33" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="20" font-weight="700">Hotline &amp; Zalo</text>
+  <text x="244" y="526" fill="#1267E8" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="20" font-weight="700">0382 520 281</text>
+  <text x="74" y="562" fill="#64748B" font-family="Avenir Next, Helvetica Neue, sans-serif" font-size="18" font-weight="600">justlorem.com</text>
+</svg>
