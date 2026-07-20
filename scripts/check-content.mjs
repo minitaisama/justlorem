@@ -51,3 +51,18 @@ if (findings.length > 0) {
 }
 
 console.log(`Content governance check passed (${files.length} files scanned).`);
+
+const llmsText = await readFile(join(root, "public/llms.txt"), "utf8");
+const llmsH1Count = (llmsText.match(/^#\s+\S.+$/gm) ?? []).length;
+const llmsMarkdownLinks = llmsText.match(/\[[^\]]+\]\(https?:\/\/[^)]+\)/g) ?? [];
+
+if (llmsH1Count !== 1 || llmsMarkdownLinks.length === 0) {
+  console.error(
+    "Agentic content check failed: public/llms.txt must contain exactly one H1 and at least one Markdown HTTP link.",
+  );
+  process.exit(1);
+}
+
+console.log(
+  `Agentic content check passed (${llmsMarkdownLinks.length} Markdown links in public/llms.txt).`,
+);

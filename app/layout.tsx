@@ -4,6 +4,7 @@ import Script from "next/script";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
 import JsonLd from "@/components/JsonLd";
 import RelatedSiteAnalytics from "@/components/RelatedSiteAnalytics";
+import WebMcpTools from "@/components/WebMcpTools";
 import { siteJsonLd } from "@/lib/seo";
 import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
@@ -86,6 +87,7 @@ export default function RootLayout({
         {children}
         <JsonLd data={siteJsonLd()} />
         <RelatedSiteAnalytics />
+        <WebMcpTools />
         {measurementId ? <AnalyticsConsent measurementId={measurementId} /> : null}
         {cloudflareToken ? (
           <Script
