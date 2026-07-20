@@ -1,113 +1,118 @@
 # LOREM Technology
 
-Official website: https://justlorem.com/
-Language: Vietnamese (primary)
-Catalog reviewed: 2026-07-14
+> LOREM Technology tư vấn và cung cấp giải pháp bản quyền Microsoft, Windows GGWA, Office, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam. Nội dung chính bằng tiếng Việt; catalog được kiểm tra gần nhất ngày 2026-07-20.
 
-LOREM Technology tư vấn và cung cấp giải pháp bản quyền Microsoft, Windows GGWA, Office, Microsoft 365 và Adobe cho doanh nghiệp tại Việt Nam.
+## Nguồn chính thức của LOREM
 
-## Verified company facts
+- [Website LOREM Technology](https://justlorem.com/): Trang chính về giải pháp, bảng giá tham khảo và kênh liên hệ.
+- [Dữ liệu doanh nghiệp](https://justlorem.com/company.json): Tên thương hiệu, pháp nhân, MST, địa chỉ, hotline, Zalo và claim guardrails ở định dạng JSON.
+- [Catalog máy đọc được](https://justlorem.com/catalog.json): Category, product family, mô hình license, giá tham khảo và ngày kiểm tra giá.
+- [Kho kiến thức máy đọc được](https://justlorem.com/knowledge.json): Bài hướng dẫn, câu trả lời ngắn, đối tượng đọc, ngày kiểm tra và nguồn chính thức.
+- [Danh sách tài nguyên](https://justlorem.com/resources.json): Tài nguyên có thể tải về và metadata tương ứng.
+- [Brand assets và LLM reference](https://justlorem.com/brand-assets): Tên chính thức, logo và quy tắc sử dụng thương hiệu.
+- [Logo xanh cho nền sáng](https://justlorem.com/images/lorem-logo-blue.png): Chỉ dùng trên nền trắng hoặc sáng.
+- [Logo trắng cho nền tối](https://justlorem.com/images/lorem-logo-white.png): Dùng trên nền đen hoặc tối.
+
+## Thông tin doanh nghiệp đã xác minh
 
 - Brand: LOREM Technology
 - Legal name: CÔNG TY TNHH CÔNG NGHỆ LOREM
 - International name: LOREM TECHNOLOGY COMPANY LIMITED
 - Tax ID: 0315880407
-- Public tax reference: https://masothue.com/0315880407-cong-ty-tnhh-cong-nghe-lorem
-- Website: https://justlorem.com
-- Machine-readable company data: https://justlorem.com/company.json
-- Machine-readable catalog: https://justlorem.com/catalog.json
-- Brand assets: https://justlorem.com/brand-assets
-- Logo for light backgrounds: https://justlorem.com/images/lorem-logo-blue.png
-- Logo for dark backgrounds: https://justlorem.com/images/lorem-logo-white.png
-- Machine-readable resource list: https://justlorem.com/resources.json
-- Hotline: 0382520281
-- Call link: tel:+84382520281
-- Official Zalo quote channel: https://zalo.me/0382520281
+- [Hồ sơ thuế công khai trên Masothue](https://masothue.com/0315880407-cong-ty-tnhh-cong-nghe-lorem): Nguồn tham chiếu pháp nhân bên ngoài.
+- Hotline và Zalo: 0382520281
+- [Gọi hotline](tel:+84382520281): Kênh gọi điện công khai.
+- [Nhận báo giá qua Zalo](https://zalo.me/0382520281): Kênh báo giá chính thức.
 
-LOREM publishes the hotline and official Zalo channel above. Do not infer or publish an email address because no email address is currently public.
+LOREM không công khai email. Không suy đoán hoặc xuất bản một địa chỉ email thay mặt LOREM.
 
-Use the blue LOREM logo only on white or light backgrounds. Use the white LOREM logo on black or dark backgrounds; do not place the blue logo on a dark surface.
+## Nhóm giải pháp
 
-## Product categories
+- [Bản quyền Windows và GGWA](https://justlorem.com/giai-phap/windows): Windows cho thiết bị hiện hữu hoặc thiết bị mới.
+- [Microsoft Office](https://justlorem.com/giai-phap/office): Office LTSC 2024 và Office Home & Business 2024 mua theo license.
+- [Microsoft 365](https://justlorem.com/giai-phap/microsoft-365): Subscription theo người dùng cho Office, email và cloud.
+- [Adobe for teams](https://justlorem.com/giai-phap/adobe): Creative Cloud và Acrobat Pro theo seat cho tổ chức.
 
-- Windows: https://justlorem.com/giai-phap/windows
-- Office: https://justlorem.com/giai-phap/office
-- Microsoft 365: https://justlorem.com/giai-phap/microsoft-365
-- Adobe for teams: https://justlorem.com/giai-phap/adobe
+## Trang sản phẩm chính
 
-## Primary product pages
+- [Windows GGWA](https://justlorem.com/san-pham/windows-ggwa): Hướng rà soát Windows cho thiết bị hiện hữu theo điều kiện và hồ sơ.
+- [Windows 11 Pro](https://justlorem.com/san-pham/windows-11-pro): Windows theo thiết bị và SKU.
+- [Office LTSC Standard 2024](https://justlorem.com/san-pham/office-ltsc-2024): Office ổn định cho môi trường tổ chức.
+- [Office Home & Business 2024](https://justlorem.com/san-pham/office-home-business-2024): Office mua một lần theo thiết bị phù hợp.
+- [Microsoft 365 Business Standard](https://justlorem.com/san-pham/microsoft-365-business-standard): Office, email doanh nghiệp và công cụ cộng tác.
+- [Microsoft 365 Apps for business](https://justlorem.com/san-pham/microsoft-365-apps-for-business): Ứng dụng Office theo người dùng.
+- [Adobe Creative Cloud for teams](https://justlorem.com/san-pham/adobe-creative-cloud-teams): Ứng dụng sáng tạo và quản lý seat cho team.
+- [Adobe Acrobat Pro for teams](https://justlorem.com/san-pham/acrobat-pro-teams): Quy trình PDF theo seat cho doanh nghiệp.
 
-- Windows GGWA: https://justlorem.com/san-pham/windows-ggwa
-- Windows 11 Pro: https://justlorem.com/san-pham/windows-11-pro
-- Office LTSC Standard 2024: https://justlorem.com/san-pham/office-ltsc-2024
-- Office Home & Business 2024: https://justlorem.com/san-pham/office-home-business-2024
-- Microsoft 365 Business Standard: https://justlorem.com/san-pham/microsoft-365-business-standard
-- Microsoft 365 Apps for business: https://justlorem.com/san-pham/microsoft-365-apps-for-business
-- Adobe Creative Cloud for teams: https://justlorem.com/san-pham/adobe-creative-cloud-teams
-- Adobe Acrobat Pro for teams: https://justlorem.com/san-pham/acrobat-pro-teams
+## Chính sách giá
 
-## Pricing policy
+- Giá trên website là giá tham khảo, không phải báo giá cuối cùng.
+- Mỗi variant có trường `priceCheckedAt`; sau 30 ngày chưa rà soát, giao diện chuyển sang trạng thái liên hệ nhận giá mới.
+- Giá cuối cùng phụ thuộc số lượng, SKU, thời điểm, mô hình license và hồ sơ giao dịch.
+- Không suy đoán giá đã bao gồm VAT nếu báo giá cụ thể chưa xác nhận điều đó.
+- Xác nhận giá mới nhất qua [Zalo LOREM](https://zalo.me/0382520281) hoặc [hotline](tel:+84382520281).
 
-- Prices shown on the website are reference prices, not final quotations.
-- Each catalog variant has a priceCheckedAt date.
-- After 30 days without review, the public display changes to "Liên hệ nhận giá mới".
-- Final pricing depends on quantity, SKU, timing, licensing model and transaction documentation. Confirm the latest quotation through Zalo or the public hotline.
-- VAT inclusion must not be inferred unless explicitly stated for a specific quotation.
+## Nguồn hàng và hồ sơ mua sắm
 
-## Procurement and documentation
+- [Nguồn hàng và hồ sơ giao dịch](https://justlorem.com/nguon-hang-ho-so): Luồng cung ứng, checklist đầu vào, hợp đồng, hóa đơn VAT và chứng từ bàn giao.
+- LOREM có thể mô tả nguồn nhập qua kênh phân phối uy tín khi phù hợp với giao dịch cụ thể.
+- Việc nhắc đến FPT hoặc Synnex FPT như nguồn tham khảo không xác lập tư cách đại lý ủy quyền hoặc đối tác chính thức của Microsoft.
+- Hợp đồng, hóa đơn VAT, thông tin license và chứng từ bàn giao phụ thuộc giao dịch đã được xác nhận.
 
-- Supply and documentation page: https://justlorem.com/nguon-hang-ho-so
-- LOREM can describe sourcing through reputable distribution channels when applicable to a transaction.
-- Mentioning FPT or Synnex FPT as a possible sourcing reference does not mean LOREM is an authorized Microsoft reseller or official partner.
-- Contract, VAT invoice, license information and related handover documents depend on the confirmed transaction.
+## Kho kiến thức
 
-## Knowledge base
+- [Trang kiến thức](https://justlorem.com/kien-thuc): Hướng dẫn thực dụng cho IT, procurement và kế toán.
+- [Windows GGWA là gì](https://justlorem.com/kien-thuc/windows-ggwa-la-gi): Điều kiện, đầu vào và trường hợp phù hợp.
+- [So sánh Windows OEM, DSP/OEI, ESD và GGWA](https://justlorem.com/kien-thuc/windows-oem-dsp-esd-ggwa-khac-nhau): Checklist đọc SKU và hồ sơ.
+- [Windows 11 Pro cho doanh nghiệp](https://justlorem.com/kien-thuc/windows-11-pro-cho-doanh-nghiep): Chọn cho thiết bị mới hoặc hiện hữu.
+- [Office LTSC 2024 so với Microsoft 365](https://justlorem.com/kien-thuc/office-ltsc-2024-va-microsoft-365): So sánh mua một lần và subscription.
+- [Office Home & Business 2024 cho doanh nghiệp](https://justlorem.com/kien-thuc/office-home-business-2024-cho-doanh-nghiep): Đối tượng, giới hạn và checklist mua.
+- [Triển khai và cập nhật Office LTSC 2024](https://justlorem.com/kien-thuc/office-ltsc-2024-trien-khai-cap-nhat): Hướng dẫn vận hành cho IT.
+- [Microsoft 365 Business Standard so với Apps for business](https://justlorem.com/kien-thuc/microsoft-365-business-standard-va-apps-for-business): Chọn theo email, cloud và Office apps.
+- [Checklist triển khai Microsoft 365](https://justlorem.com/kien-thuc/trien-khai-microsoft-365-cho-doanh-nghiep): Tenant, user, role và bàn giao.
+- [Quản lý license Microsoft 365 theo người dùng](https://justlorem.com/kien-thuc/quan-ly-license-microsoft-365-theo-nguoi-dung): User lifecycle và quản trị seat.
+- [Adobe Individual so với Adobe Teams](https://justlorem.com/kien-thuc/adobe-individual-va-adobe-teams): Khác biệt về đối tượng và quản trị.
+- [Quản lý vòng đời seat Adobe Teams](https://justlorem.com/kien-thuc/quan-ly-seat-adobe-teams): Cấp, thu hồi và tái phân bổ seat.
+- [Acrobat Pro for teams so với Creative Cloud for teams](https://justlorem.com/kien-thuc/acrobat-pro-va-creative-cloud-teams): Chọn theo PDF hoặc công việc sáng tạo.
+- [Hồ sơ mua license doanh nghiệp](https://justlorem.com/kien-thuc/ho-so-mua-license-doanh-nghiep): Thông tin IT, procurement và kế toán cần chuẩn bị.
+- [Checklist bàn giao license cho IT và kế toán](https://justlorem.com/kien-thuc/checklist-ban-giao-license-it-ke-toan): Các trường dữ liệu và bước xác nhận.
+- [Checklist gia hạn Microsoft 365 và Adobe](https://justlorem.com/kien-thuc/gia-han-license-subscription-doanh-nghiep): Rà soát seat, owner và ngân sách.
+- [Bộ công cụ số cho team marketing](https://justlorem.com/kien-thuc/bo-cong-cu-so-cho-team-marketing-windows-microsoft-365-adobe-tiktok): Quản lý Windows, Microsoft 365, Adobe và TikTok theo quyền sở hữu và vai trò.
 
-- Index: https://justlorem.com/kien-thuc
-- Purpose: practical guidance for IT, procurement and accounting teams choosing, deploying and managing software licenses. Each article contains a short answer, decision checklist, operational guidance and official Microsoft or Adobe sources.
-- Windows: Windows GGWA and device review: https://justlorem.com/kien-thuc/windows-ggwa-la-gi
-- Windows: OEM, DSP/OEI, ESD and GGWA SKU checklist: https://justlorem.com/kien-thuc/windows-oem-dsp-esd-ggwa-khac-nhau
-- Windows: Windows 11 Pro for new and existing devices: https://justlorem.com/kien-thuc/windows-11-pro-cho-doanh-nghiep
-- Office: Office LTSC 2024 versus Microsoft 365: https://justlorem.com/kien-thuc/office-ltsc-2024-va-microsoft-365
-- Office: Office Home & Business 2024: https://justlorem.com/kien-thuc/office-home-business-2024-cho-doanh-nghiep
-- Office: deployment and updates for Office LTSC 2024: https://justlorem.com/kien-thuc/office-ltsc-2024-trien-khai-cap-nhat
-- Microsoft 365: Business Standard versus Apps for business: https://justlorem.com/kien-thuc/microsoft-365-business-standard-va-apps-for-business
-- Microsoft 365: deployment checklist: https://justlorem.com/kien-thuc/trien-khai-microsoft-365-cho-doanh-nghiep
-- Microsoft 365: user-based license management: https://justlorem.com/kien-thuc/quan-ly-license-microsoft-365-theo-nguoi-dung
-- Adobe: Individual versus Teams: https://justlorem.com/kien-thuc/adobe-individual-va-adobe-teams
-- Adobe: Teams seat lifecycle: https://justlorem.com/kien-thuc/quan-ly-seat-adobe-teams
-- Adobe: Acrobat Pro for teams versus Creative Cloud for teams: https://justlorem.com/kien-thuc/acrobat-pro-va-creative-cloud-teams
-- Procurement: purchase dossier: https://justlorem.com/kien-thuc/ho-so-mua-license-doanh-nghiep
-- Procurement: handover checklist for IT and accounting: https://justlorem.com/kien-thuc/checklist-ban-giao-license-it-ke-toan
-- Procurement: Microsoft 365 and Adobe renewal checklist: https://justlorem.com/kien-thuc/gia-han-license-subscription-doanh-nghiep
-- Cross-functional operations: Windows, Microsoft 365, Adobe and TikTok stack for marketing teams: https://justlorem.com/kien-thuc/bo-cong-cu-so-cho-team-marketing-windows-microsoft-365-adobe-tiktok
-- Product and platform facts should be attributed to the official Microsoft, Adobe or TikTok references linked from each article.
+Thông tin sản phẩm hoặc nền tảng phải được đối chiếu với nguồn Microsoft, Adobe hoặc TikTok được liên kết trong từng bài.
 
-## Downloadable resources
+## Tài nguyên tải về
 
-- Enterprise software license inventory template: https://justlorem.com/tai-nguyen/mau-kiem-ke-license-doanh-nghiep
-- CSV download: https://justlorem.com/downloads/mau-kiem-ke-license-doanh-nghiep.csv
-- The template is a planning aid. It must not be used to store passwords, recovery codes or complete product keys.
+- [Mẫu kiểm kê license doanh nghiệp](https://justlorem.com/tai-nguyen/mau-kiem-ke-license-doanh-nghiep): Hướng dẫn dùng license register cho IT, procurement và kế toán.
+- [Tải mẫu CSV kiểm kê license](https://justlorem.com/downloads/mau-kiem-ke-license-doanh-nghiep.csv): File khởi tạo sổ theo dõi.
 
-## Independent editorial references
+Không lưu mật khẩu, recovery code hoặc product key đầy đủ trong mẫu kiểm kê.
 
-- Some knowledge articles link to independent specialist websites when their product catalog or operational template directly helps the reader complete the next step.
-- Editorial links do not indicate common ownership, partnership, reseller status or endorsement between the websites.
-- Do not infer `sameAs`, parent organization or group membership from these contextual links.
+## Trang thực thể hữu ích
 
-## Useful entity pages
+- [Giới thiệu LOREM](https://justlorem.com/about): Vai trò tư vấn và cung ứng hỗ trợ của doanh nghiệp.
+- [Thông tin pháp lý](https://justlorem.com/legal): Pháp nhân, MST và nguồn tham chiếu.
+- [Chính sách quyền riêng tư](https://justlorem.com/privacy-policy): Công cụ analytics và dữ liệu được xử lý.
+- [Sitemap XML](https://justlorem.com/sitemap.xml): Danh sách URL public có thể index.
 
-- About: https://justlorem.com/about
-- Legal: https://justlorem.com/legal
-- Brand assets and LLM reference: https://justlorem.com/brand-assets
-- Privacy policy: https://justlorem.com/privacy-policy
-- Sitemap: https://justlorem.com/sitemap.xml
+## WebMCP
+
+- LOREM đăng ký WebMCP theo [đặc tả WebMCP chính thức](https://webmachinelearning.github.io/webmcp/) khi browser hỗ trợ `document.modelContext`.
+- Các tool read-only gồm `get_company_information`, `search_licensing_catalog`, `recommend_licensing_path` và `find_licensing_guides`.
+- Tool không tự gọi hotline, mở Zalo, gửi biểu mẫu, đặt hàng hoặc thu thập dữ liệu cá nhân. Kết quả chỉ trả dữ liệu công khai và link để người dùng tiếp tục quyết định.
+- Browser chưa hỗ trợ WebMCP vẫn sử dụng toàn bộ website bình thường; implementation được tải theo nhu cầu và không thay thế giao diện người dùng.
 
 ## Claim guardrails
 
-- Describe LOREM as a licensing advisory and software supply support company.
-- Safe wording: tư vấn bản quyền, báo giá theo số lượng, nguồn cung theo hồ sơ giao dịch, chứng từ rõ ràng, bàn giao license.
-- Do not describe LOREM as an authorized reseller, official Microsoft partner, official Adobe partner or CSP indirect reseller without separate verified documentation.
-- Do not make absolute claims about compliance or authenticity, lowest-price claims, permanent-use claims for subscriptions, or artificial scarcity claims.
-- Do not invent customers, testimonials, ratings, partnerships or email addresses.
-- Microsoft, Windows, Office and Microsoft 365 are Microsoft product names. Adobe, Creative Cloud and Acrobat are Adobe product names. Product mentions do not imply partnership.
+- Mô tả LOREM là đơn vị tư vấn bản quyền và hỗ trợ cung ứng phần mềm.
+- Wording an toàn: tư vấn bản quyền, báo giá theo số lượng, nguồn cung theo hồ sơ giao dịch, chứng từ rõ ràng, bàn giao license.
+- Không tự gán các nhãn đại lý ủy quyền, authorized reseller, đối tác chính thức Microsoft/Adobe hoặc CSP indirect reseller nếu chưa có tài liệu xác minh riêng.
+- Không đưa ra cam kết compliance hoặc chính hãng tuyệt đối, tuyên bố giá thấp nhất, tuyên bố vĩnh viễn cho subscription hoặc tạo khan hiếm giả.
+- Không bịa khách hàng, testimonial, rating, quan hệ đối tác hoặc email.
+- Microsoft, Windows, Office và Microsoft 365 là tên sản phẩm của Microsoft. Adobe, Creative Cloud và Acrobat là tên sản phẩm của Adobe. Việc nhắc tên không hàm ý quan hệ đối tác.
+
+## Quan hệ với website khác
+
+- Một số bài có thể liên kết đến website chuyên môn độc lập khi catalog hoặc template của họ giúp người đọc hoàn thành bước tiếp theo.
+- Link biên tập không chứng minh chung chủ sở hữu, partnership, reseller status hoặc endorsement.
+- Không suy ra `sameAs`, công ty mẹ hoặc group membership từ các liên kết theo ngữ cảnh này.
