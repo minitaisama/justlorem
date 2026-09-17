@@ -270,7 +270,7 @@ function Header({ locale, copy, onLocaleChange }: { locale: Locale; copy: Studio
     <>
       <header className={`site-header ${overHero || open ? "header-on-dark" : ""}`}>
         <a href="#home" aria-label={`LOREM Technology — ${copy.navigation[0]}`} className="brand-mark" onClick={() => setOpen(false)}>
-          <Image src="/images/lorem-mark-blue.png" alt="" width={64} height={64} priority />
+          <Image src="/apple-touch-icon-v2.png" alt="" width={180} height={180} priority />
         </a>
         <div className="header-controls">
           <div className="locale-switch" role="group" aria-label={locale === "vi" ? "Ngôn ngữ" : "Language"}>

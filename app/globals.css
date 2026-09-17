@@ -30,9 +30,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .locale-switch button:hover, .locale-switch button[aria-pressed="true"] { opacity: 1; }
 .locale-switch button[aria-pressed="true"]::after { content: ""; position: absolute; inset: auto 7px 7px; height: 1px; background: currentColor; }
 .header-on-dark .locale-switch { color: #f7f7f5; }
-.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #f7f7f5; transition: background .3s, transform .3s; }
-.brand-mark:hover { transform: rotate(-12deg); }
-.brand-mark img { width: 34px; height: 34px; object-fit: contain; }
+.brand-mark { display: grid; place-items: center; width: 48px; height: 48px; transition: transform .25s; }
+.brand-mark:hover { transform: translateY(-2px); }
+.brand-mark img { display: block; width: 48px; height: 48px; object-fit: contain; }
 .menu-toggle { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 48px; height: 44px; padding: 6px 0; border: 0; background: transparent; cursor: pointer; color: var(--ink); }
 .menu-toggle span { display: block; width: 44px; height: 1px; background: currentColor; transition: transform .3s, opacity .3s; }
 .header-on-dark .menu-toggle { color: #f7f7f5; }
@@ -199,8 +199,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .site-header { padding: 17px 16px; }
   .header-controls { gap: 7px; }
   .locale-switch { font-size: 11px; }
-  .brand-mark { width: 44px; height: 44px; }
-  .brand-mark img { width: 32px; height: 32px; }
+  .brand-mark, .brand-mark img { width: 44px; height: 44px; }
   .menu-toggle { width: 44px; }
   .menu-toggle span { width: 35px; }
   .navigation-overlay { padding: 90px 16px 25px; }
