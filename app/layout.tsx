@@ -1,102 +1,79 @@
 import type { Metadata, Viewport } from "next";
-import { Be_Vietnam_Pro } from "next/font/google";
-import Script from "next/script";
-import AnalyticsConsent from "@/components/AnalyticsConsent";
-import JsonLd from "@/components/JsonLd";
-import RelatedSiteAnalytics from "@/components/RelatedSiteAnalytics";
-import WebMcpTools from "@/components/WebMcpTools";
-import { siteJsonLd } from "@/lib/seo";
-import { absoluteUrl, site } from "@/lib/site";
+import { Instrument_Serif, Lora, Manrope } from "next/font/google";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import "./globals.css";
 
-const beVietnamPro = Be_Vietnam_Pro({
-  subsets: ["vietnamese"],
-  weight: ["400", "500", "600", "700", "800"],
+const heroPoster = readFileSync(join(process.cwd(), "public/videos/lorem-studio-hero-poster.jpg")).toString("base64");
+
+const manrope = Manrope({
+  subsets: ["latin", "vietnamese"],
   display: "swap",
-  variable: "--font-be-vietnam-pro",
+  variable: "--font-manrope",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  style: "italic",
+  weight: "400",
+  display: "swap",
+  preload: false,
+  variable: "--font-instrument-serif",
+});
+
+const vietnameseSerif = Lora({
+  subsets: ["vietnamese"],
+  style: "italic",
+  weight: "400",
+  display: "swap",
+  preload: false,
+  variable: "--font-lora",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: {
-    default: `Bản quyền Microsoft & Adobe cho doanh nghiệp | ${site.shortName}`,
-    template: `%s | ${site.shortName}`,
-  },
-  description: site.description,
-  robots: { index: true, follow: true },
-  alternates: {
-    canonical: site.url,
-  },
+  metadataBase: new URL("https://justlorem.com"),
+  title: "LOREM Technology — Digital Experiences",
+  description:
+    "LOREM Technology crafts Web3 solutions, immersive games, scalable architectures, and seamless digital experiences.",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: `Bản quyền Microsoft & Adobe cho doanh nghiệp | ${site.shortName}`,
-    description: site.description,
     type: "website",
-    url: site.url,
-    siteName: site.name,
-    locale: "vi_VN",
-    images: [
-      {
-        url: absoluteUrl(site.ogImage),
-        width: 1200,
-        height: 630,
-        alt: site.ogImageAlt,
-      },
-    ],
+    url: "/",
+    siteName: "LOREM Technology",
+    title: "LOREM Technology — Digital Experiences",
+    description:
+      "Building the future of digital experiences through Web3, games, architecture, and design.",
+    images: [{ url: "/og-lorem-studio.jpg", width: 1200, height: 630, alt: "LOREM Technology" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `Bản quyền Microsoft & Adobe cho doanh nghiệp | ${site.shortName}`,
-    description: site.description,
-    images: [absoluteUrl(site.ogImage)],
+    title: "LOREM Technology — Digital Experiences",
+    description: "Building the future of digital experiences.",
+    images: ["/og-lorem-studio.jpg"],
   },
   icons: {
     icon: [
       { url: "/favicon-brand.ico", sizes: "any" },
-      { url: "/favicon-brand-32.png", type: "image/png", sizes: "32x32" },
-      { url: "/favicon-brand-96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon-brand-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-brand-96.png", sizes: "96x96", type: "image/png" },
     ],
-    shortcut: "/favicon-brand-32.png",
     apple: [{ url: "/apple-touch-icon-v2.png", sizes: "180x180", type: "image/png" }],
   },
-  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    ? {
-        verification: {
-          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-        },
-      }
-    : {}),
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f9fafb",
   width: "device-width",
   initialScale: 1,
+  themeColor: "#f7f7f5",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const cloudflareToken = process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
-  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="vi">
-      <body className={`${beVietnamPro.variable} antialiased`}>
-        {children}
-        <JsonLd data={siteJsonLd()} />
-        <RelatedSiteAnalytics />
-        <WebMcpTools />
-        {measurementId ? <AnalyticsConsent measurementId={measurementId} /> : null}
-        {cloudflareToken ? (
-          <Script
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            strategy="afterInteractive"
-            data-cf-beacon={JSON.stringify({ token: cloudflareToken })}
-          />
-        ) : null}
-      </body>
+    <html lang="en">
+      <body
+        className={`${manrope.variable} ${instrumentSerif.variable} ${vietnameseSerif.variable}`}
+        style={{ "--hero-poster": `url(data:image/jpeg;base64,${heroPoster})` } as React.CSSProperties}
+      >{children}</body>
     </html>
   );
 }
