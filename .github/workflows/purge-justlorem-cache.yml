@@ -12,20 +12,19 @@ jobs:
       - name: Purge justlorem.com hostname only
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
         run: |
           node --input-type=module <<'NODE'
           const headers = { Authorization: `Bearer ${process.env.CF_API_TOKEN}` };
-          const query = new URLSearchParams({ name: "justlorem.com", "account.id": process.env.CF_ACCOUNT_ID });
+          const query = new URLSearchParams({ name: "justlorem.com" });
           const zonesResponse = await fetch(`https://api.cloudflare.com/client/v4/zones?${query}`, { headers });
           const zones = await zonesResponse.json();
           if (!zonesResponse.ok || !zones.success) {
             console.error("Cloudflare zone lookup failed:", zonesResponse.status, zones.errors);
             process.exit(1);
           }
-          const matches = zones.result.filter((zone) => zone.name === "justlorem.com" && zone.account.id === process.env.CF_ACCOUNT_ID);
+          const matches = zones.result.filter((zone) => zone.name === "justlorem.com");
           if (matches.length !== 1) {
-            console.error("Expected exactly one justlorem.com zone in the deployment account; found", matches.length);
+            console.error("Expected exactly one accessible justlorem.com zone; found", matches.length);
             process.exit(1);
           }
           const purgeResponse = await fetch(`https://api.cloudflare.com/client/v4/zones/${matches[0].id}/purge_cache`, {
