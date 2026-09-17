@@ -1,0 +1,42 @@
+name: Purge justlorem.com cache
+
+on:
+  workflow_dispatch:
+
+jobs:
+  purge:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    steps:
+      - name: Purge justlorem.com hostname only
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          node --input-type=module <<'NODE'
+          const headers = { Authorization: `Bearer ${process.env.CF_API_TOKEN}` };
+          const query = new URLSearchParams({ name: "justlorem.com", "account.id": process.env.CF_ACCOUNT_ID });
+          const zonesResponse = await fetch(`https://api.cloudflare.com/client/v4/zones?${query}`, { headers });
+          const zones = await zonesResponse.json();
+          if (!zonesResponse.ok || !zones.success) {
+            console.error("Cloudflare zone lookup failed:", zonesResponse.status, zones.errors);
+            process.exit(1);
+          }
+          const matches = zones.result.filter((zone) => zone.name === "justlorem.com" && zone.account.id === process.env.CF_ACCOUNT_ID);
+          if (matches.length !== 1) {
+            console.error("Expected exactly one justlorem.com zone in the deployment account; found", matches.length);
+            process.exit(1);
+          }
+          const purgeResponse = await fetch(`https://api.cloudflare.com/client/v4/zones/${matches[0].id}/purge_cache`, {
+            method: "POST",
+            headers: { ...headers, "Content-Type": "application/json" },
+            body: JSON.stringify({ hosts: ["justlorem.com"] }),
+          });
+          const purge = await purgeResponse.json();
+          if (!purgeResponse.ok || !purge.success) {
+            console.error("Cloudflare hostname purge failed:", purgeResponse.status, purge.errors);
+            process.exit(1);
+          }
+          console.log("Purged cached responses for justlorem.com only.");
+          NODE
