@@ -8,6 +8,7 @@ export type DomainItem = {
 
 export type FaqItem = { question: string; answer: string };
 export type ProjectText = { category: string; description: string; imageAlt: string };
+export type LegalItem = { label: string; value: string };
 
 type SectionText = {
   first: string;
@@ -36,6 +37,7 @@ export type StudioCopy = {
   services: SectionText & { items: string[] };
   work: SectionText & { projects: ProjectText[]; visit: string; newTab: string };
   faq: SectionText & { promptFirst: string; promptSecond: string; contact: string; items: FaqItem[] };
+  legal: SectionText & { registration: string; items: LegalItem[] };
   footer: {
     accessibleHeading: string;
     first: string;
@@ -51,7 +53,7 @@ export const studioCopy: Record<Locale, StudioCopy> = {
   en: {
     pageTitle: "LOREM Technology — Digital Experiences",
     pageDescription: "LOREM Technology crafts Web3 solutions, immersive games, scalable architectures, and seamless digital experiences.",
-    navigation: ["Home", "Our Domain", "Services", "Selected Work", "FAQ", "Contact"],
+    navigation: ["Home", "Our Domain", "Services", "Selected Work", "FAQ", "Legal", "Contact"],
     menu: {
       open: "Open navigation",
       close: "Close navigation",
@@ -132,6 +134,21 @@ export const studioCopy: Record<Locale, StudioCopy> = {
         { question: "What is your pricing model?", answer: "Pricing depends on the scope and requirements. Contact us to discuss your project and receive an estimate tailored to the work involved." },
       ],
     },
+    legal: {
+      first: "LEGAL", second: "INFORMATION",
+      description: "OUR BUSINESS DETAILS, MADE AVAILABLE FOR A CLEAR AND CONFIDENT COLLABORATION.",
+      eyebrowLeft: "COMPANY PROFILE", eyebrowRight: "LOREM TECHNOLOGY",
+      registration: "Registered business information",
+      items: [
+        { label: "Tax code", value: "0315880407" },
+        { label: "Tax address", value: "196/11/10 Tân Sơn Nhì, Phường Tân Sơn Nhì, TP Hồ Chí Minh, Việt Nam" },
+        { label: "Address", value: "196/11/10 Tân Sơn Nhì, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh, Việt Nam" },
+        { label: "Status", value: "Active" },
+        { label: "International name", value: "LOREM TECHNOLOGY INVESTMENT JOINT STOCK COMPANY" },
+        { label: "Short name", value: "LOREM TECHNOLOGY" },
+        { label: "Legal representative", value: "NGUYỄN ĐỨC TÀI" },
+      ],
+    },
     footer: {
       accessibleHeading: "Blending technology with productivity",
       first: "BLENDING", second: "TECHNOLOGY", script: "With Productivity",
@@ -142,7 +159,7 @@ export const studioCopy: Record<Locale, StudioCopy> = {
   vi: {
     pageTitle: "LOREM Technology — Trải nghiệm số",
     pageDescription: "LOREM Technology thiết kế và phát triển website, sản phẩm Web3, game và giải pháp số theo nhu cầu của bạn.",
-    navigation: ["Trang chủ", "Năng lực", "Dịch vụ", "Dự án", "Hỏi đáp", "Liên hệ"],
+    navigation: ["Trang chủ", "Năng lực", "Dịch vụ", "Dự án", "Hỏi đáp", "Pháp lý", "Liên hệ"],
     menu: {
       open: "Mở menu",
       close: "Đóng menu",
@@ -221,6 +238,21 @@ export const studioCopy: Record<Locale, StudioCopy> = {
         { question: "LOREM có làm giải pháp theo yêu cầu không?", answer: "Có. Mỗi giải pháp được xây dựng theo sản phẩm, người dùng và nhu cầu kỹ thuật cụ thể." },
         { question: "LOREM làm việc với những lĩnh vực nào?", answer: "Chúng tôi làm việc với nhiều lĩnh vực. Hãy chia sẻ bài toán; chúng tôi sẽ đề xuất hướng phù hợp với người dùng và bối cảnh của bạn." },
         { question: "Chi phí được tính như thế nào?", answer: "Chi phí phụ thuộc phạm vi công việc và yêu cầu cụ thể. Liên hệ để nhận ước tính phù hợp với dự án của bạn." },
+      ],
+    },
+    legal: {
+      first: "THÔNG TIN", second: "PHÁP LÝ",
+      description: "THÔNG TIN DOANH NGHIỆP ĐƯỢC CÔNG KHAI RÕ RÀNG ĐỂ BẠN YÊN TÂM HỢP TÁC.",
+      eyebrowLeft: "HỒ SƠ DOANH NGHIỆP", eyebrowRight: "LOREM TECHNOLOGY",
+      registration: "Thông tin đăng ký doanh nghiệp",
+      items: [
+        { label: "Mã số thuế", value: "0315880407" },
+        { label: "Địa chỉ thuế", value: "196/11/10 Tân Sơn Nhì, Phường Tân Sơn Nhì, TP Hồ Chí Minh, Việt Nam" },
+        { label: "Địa chỉ", value: "196/11/10 Tân Sơn Nhì, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh, Việt Nam" },
+        { label: "Tình trạng", value: "Đang hoạt động" },
+        { label: "Tên quốc tế", value: "LOREM TECHNOLOGY INVESTMENT JOINT STOCK COMPANY" },
+        { label: "Tên viết tắt", value: "LOREM TECHNOLOGY" },
+        { label: "Người đại diện", value: "NGUYỄN ĐỨC TÀI" },
       ],
     },
     footer: {
