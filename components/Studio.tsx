@@ -26,7 +26,7 @@ function useReducedMotion() {
   return useSyncExternalStore(subscribeReducedMotion, getReducedMotion, getServerReducedMotion);
 }
 
-const navigationHrefs = ["#home", "#domain", "#services", "#work", "#faq", "#contact"];
+const navigationHrefs = ["#home", "#domain", "#services", "#work", "#faq", "#legal", "#contact"];
 
 const projects = [
   {
@@ -522,6 +522,31 @@ function ProjectRow({ project, text, work, index, locale }: { project: (typeof p
   );
 }
 
+function LegalInformation({ legal }: { legal: StudioCopy["legal"] }) {
+  return (
+    <section id="legal" className="legal section-pad">
+      <SectionHeading {...legal} />
+      <div className="legal-layout">
+        <Reveal className="legal-intro">
+          <span className="legal-kicker">01 / 01</span>
+          <p>{legal.registration}</p>
+        </Reveal>
+        <Reveal className="legal-card" delay={0.12}>
+          <p className="legal-company">CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ LOREM</p>
+          <dl className="legal-list">
+            {legal.items.map((item, index) => (
+              <div className="legal-row" key={item.label}>
+                <dt><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{item.label}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 export default function Studio() {
   const [locale, setLocale] = useState<Locale>("en");
   const copy = studioCopy[locale];
@@ -637,6 +662,8 @@ export default function Studio() {
           <Accordion items={copy.faq.items} variant="faq" />
         </div>
       </section>
+
+      <LegalInformation legal={copy.legal} />
 
       <footer id="contact" className="closing section-pad">
         <h2 className="sr-only">{copy.footer.accessibleHeading}</h2>
