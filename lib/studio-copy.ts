@@ -141,12 +141,8 @@ export const studioCopy: Record<Locale, StudioCopy> = {
       registration: "Registered business information",
       items: [
         { label: "Tax code", value: "0315880407" },
-        { label: "Tax address", value: "196/11/10 Tân Sơn Nhì, Phường Tân Sơn Nhì, TP Hồ Chí Minh, Việt Nam" },
-        { label: "Address", value: "196/11/10 Tân Sơn Nhì, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh, Việt Nam" },
         { label: "Status", value: "Active" },
         { label: "International name", value: "LOREM TECHNOLOGY INVESTMENT JOINT STOCK COMPANY" },
-        { label: "Short name", value: "LOREM TECHNOLOGY" },
-        { label: "Legal representative", value: "NGUYỄN ĐỨC TÀI" },
       ],
     },
     footer: {
@@ -247,12 +243,8 @@ export const studioCopy: Record<Locale, StudioCopy> = {
       registration: "Thông tin đăng ký doanh nghiệp",
       items: [
         { label: "Mã số thuế", value: "0315880407" },
-        { label: "Địa chỉ thuế", value: "196/11/10 Tân Sơn Nhì, Phường Tân Sơn Nhì, TP Hồ Chí Minh, Việt Nam" },
-        { label: "Địa chỉ", value: "196/11/10 Tân Sơn Nhì, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh, Việt Nam" },
         { label: "Tình trạng", value: "Đang hoạt động" },
         { label: "Tên quốc tế", value: "LOREM TECHNOLOGY INVESTMENT JOINT STOCK COMPANY" },
-        { label: "Tên viết tắt", value: "LOREM TECHNOLOGY" },
-        { label: "Người đại diện", value: "NGUYỄN ĐỨC TÀI" },
       ],
     },
     footer: {
